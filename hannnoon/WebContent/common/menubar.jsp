@@ -1,20 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!-- #### MENU_BAR #### -->
-	<!-- Sidebar -->
-	<div id="sidebar">
-		<div class="inner">
+	pageEncoding="EUC-KR"%>
 
-			<!-- Search -->
-			<section id="search" class="alt">
+<%@ include file="/common/public.jsp"%>
+<!-- #### MENU_BAR #### -->
+<!-- Sidebar -->
+<div id="sidebar">
+	<div class="inner">
+
+		<!-- Search -->
+		<section id="search" class="alt">
 			<form method="post" action="#">
 				<input type="text" name="query" id="query" placeholder="Search" />
 			</form>
-			</section>
+		</section>
 
-			<!-- Menu -->
-			<nav id="menu"> <header class="major">
-			<h2>Menu</h2>
+		<!-- Menu -->
+		<nav id="menu">
+			<header class="major">
+				<h2>Menu</h2>
 			</header>
 			<ul>
 				<li><a href="index.jsp">Homepage</a></li>
@@ -40,10 +43,10 @@
 				<li><a href="#">Sapien Mauris</a></li>
 				<li><a href="#">Amet Lacinia</a></li>
 			</ul>
-			</nav>
+		</nav>
 
 
-<%--
+		<%--
 			<!-- Section -->
 			<section> <header class="major">
 			<h2>Ante interdum</h2>
@@ -87,15 +90,15 @@
 			</ul>
 			</section>
  --%>
- 
-			<!-- Footer -->
-			<footer id="footer">
+
+		<!-- Footer -->
+		<footer id="footer">
 			<p class="copyright">
 				&copy; Untitled. All rights reserved. Demo Images: <a
 					href="https://unsplash.com">Unsplash</a>. Design: <a
 					href="https://html5up.net">HTML5 UP</a>.
 			</p>
-			</footer>
+		</footer>
 
-		</div>
 	</div>
+</div>
