@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+	
+<%@ include file="/common/public.jsp" %>
 <!-- #### MENU_BAR #### -->
 <!-- Sidebar -->
 <div id="sidebar">
@@ -19,7 +21,7 @@
 			</header>
 			<ul>
 				<li><a href="index.jsp">Homepage</a></li>
-				<li><a href="generic.html">Generic</a></li>
+				<li><a href="<%=root%>/generic.jsp">Generic</a></li>
 				<li><a href="elements.html">Elements</a></li>
 				<li><span class="opener">Submenu</span>
 					<ul>
