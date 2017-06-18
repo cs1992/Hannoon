@@ -21,7 +21,7 @@
 			</header>
 			<ul>
 				<li><a href="index.jsp">Homepage</a></li>
-				<li><a href="<%=root%>/generic.jsp">Generic</a></li>
+				<li><a href="<%=publicRoot%>/generic.jsp">Generic</a></li>
 				<li><a href="elements.html">Elements</a></li>
 				<li><span class="opener">Submenu</span>
 					<ul>
