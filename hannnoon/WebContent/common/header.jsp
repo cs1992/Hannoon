@@ -19,15 +19,21 @@
 			
 			<!-- #### HEAD #### -->
 			<center>
-				<header id="header"> <a href="index.jsp" class="logo"><strong>Hannoon</strong>
-					by 도영, 현동, 인승, 창선, 지은</a> <!-- Search --> <section id="search"
-					class="alt">
+				
+				<header id="header" class="icons"><a href="index.jsp" class="logo"><img src="./template/images/hannoonlogo.png" width="200" hight="60">
+				</a></a> 
+				
+				<!-- Search --> 
+				<section id="search" class="alt">
 				<form method="post" action="#">
-					<input type="text" name="query" id="query" placeholder="한눈검색" />
+				<input type="text" name="query" id="query" placeholder="한눈검색" />
+				<ul class="icons">
+				</ul>
 				</form>
 				</section>
+				
 				<ul class="icons">
-
+				<li><span class="label"><img src="./template/images/notice.png" width="30" height="30"></span></li>
 				</ul>
 				<%--			
 	<ul class="icons">
