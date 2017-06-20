@@ -1,3 +1,4 @@
+<%@page import="com.hannoon.util.SearchConstance"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 
@@ -28,15 +29,16 @@ String root = request.getContextPath();
 				
 				<!-- Search --> 
 				<section id="search" class="alt">
-				<form method="post" action="#">
-				<input type="text" name="query" id="query" placeholder="ÇÑ´«°Ë»ö" />
+				<form method="get" name="searchForm" action="#">
+				<input type="hidden" name="<%=SearchConstance.SEARCH_TYPE_PARAM%>" value="<%=SearchConstance.HANNOON%>">
+				<input type="text" name="query" id="query" placeholder="ÇÑ´«°Ë»ö" onkeypress="javascript:if(event.keyCode == 13){search();}" />
 				<ul class="icons">
 				</ul>
 				</form>
 				</section>
 				
 				<ul class="icons">
-				<li><span class="label"><img src="./template/images/notice.png" width="30" height="30"></span></li>
+				<li><span class="label"><a href="javascript:search();"><img src="./template/images/notice.png" width="30" height="30"></a></span></li>
 				</ul>
 				<%--			
 	<ul class="icons">
