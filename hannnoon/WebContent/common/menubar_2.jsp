@@ -27,7 +27,7 @@
 					<ul>
 						<li><span class="opener">Lorem Dolor</span>
 							<ul>
-								<li><a href="#">a</a></li>
+								<!-- <li><a href="#">a</a></li> -->
 								<li><a href="#">b</a></li>
 							</ul></li>
 						<li><a href="#">Ipsum Adipiscing</a></li>

@@ -1,4 +1,4 @@
-package com.hannoon.db;
+package com.hannoon.util.db;
 
 import java.sql.*;
 
