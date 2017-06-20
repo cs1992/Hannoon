@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.hannoon.util.PageMove;
+
 @WebServlet("/StudyController")
 public class StudyController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -22,7 +24,8 @@ public class StudyController extends HttpServlet {
 		String act = request.getParameter("act");
 		String path = "/index.jsp";
 		if("menu".equals(act)) {
-			path= "publicRoot/study/studyroom.jsp";
+			path= "/study/studyroom.jsp";
+			PageMove.redirect(path, request, response);
 		}else
 			path = "/index.jsp";
 		
