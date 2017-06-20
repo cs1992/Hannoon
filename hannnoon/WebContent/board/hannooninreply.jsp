@@ -8,6 +8,7 @@
 <!--  우리가 꾸밀 곳 여기 메인패널 -->
 
 <center>
+
 	<h3>질문</h3>
 	<div class="box" width="900" height="500">
 		<p></p>
@@ -18,7 +19,7 @@
 		<p>
 		<div>
 		<form action="sample/viewer/index.php" method="post">
-	<textarea name="ir1" id="ir1" rows="10" cols="100" style="width:766px; height:412px; display:none;"></textarea>
+	<textarea name="ir1" id="ir1" rows="10" cols="100" style="width:766px; height:412px; display:none; align:center;"></textarea>
 	<!--textarea name="ir1" id="ir1" rows="10" cols="100" style="width:100%; height:412px; min-width:610px; display:none;"></textarea-->
 	<p>
 		<input type="" onclick="pasteHTML();" value="본문에 내용 넣기" />
@@ -43,7 +44,7 @@ nhn.husky.EZCreator.createInIFrame({
 	htParams : {
 		bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
 		bUseVerticalResizer : true,		// 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
-		bUseModeChanger : true,			// 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
+		bUseModeChanger : false,			// 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
 		//bSkipXssFilter : true,		// client-side xss filter 무시 여부 (true:사용하지 않음 / 그외:사용)
 		//aAdditionalFontList : aAdditionalFontSet,		// 추가 글꼴 목록
 		fOnBeforeUnload : function(){
