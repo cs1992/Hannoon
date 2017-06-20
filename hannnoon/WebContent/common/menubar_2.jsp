@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-	
-<%@ include file="/common/public.jsp" %>
+
+<%@ include file="/common/public.jsp"%>
 <!-- #### MENU_BAR #### -->
 <!-- Sidebar -->
+<script>
+
+</script>
 <div id="sidebar">
 	<div class="inner">
 
@@ -20,8 +23,19 @@
 				<h2>Menu</h2>
 			</header>
 			<ul>
-				<li><a href="index.jsp">Homepage</a></li>
-				<li><a href="<%=publicRoot%>/generic.jsp">Generic</a></li>
+				<li><a href="index.jsp">공지사항</a></li>
+				<li><span class="opener">내한눈방</span></li>
+				<ul>
+					<form name="menu" method="get">
+						<li><a href="<%=publicRoot%>/StudyController?act=menu"> 새글 작성
+								<img src="<%=publicRoot%>/study/img/hyundong/plus.png"
+								width="10" >
+						</a></li>
+
+						<li><a> 내한눈방</a></li>
+
+					</form>
+				</ul>
 				<li><a href="elements.html">Elements</a></li>
 				<li><span class="opener">Submenu</span>
 					<ul>

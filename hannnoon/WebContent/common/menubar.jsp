@@ -20,10 +20,10 @@
 				<h2>Menu</h2>
 			</header>
 			<ul>
-				<li><a href="index.jsp">Homepage</a></li>
-				<li><a href="generic.html">Generic</a></li>
-				<li><a href="elements.html">Elements</a></li>
-				<li><span class="opener">Submenu</span>
+				<li><a href="index.jsp">공지사항</a></li>
+				<li><span href="generic.html">내한눈방</span></li>
+					<li><a href="elements.html">정공인</a></li>
+					<li><span class="opener">한눈인</span>
 					<ul>
 						<li><a href="#">Lorem Dolor</a></li>
 						<li><a href="#">Ipsum Adipiscing</a></li>
