@@ -9,15 +9,16 @@
 
 	<!-- Table -->
 
+
 	<h2>공지사항</h2>
+
 	<div class="table-wrapper">
 		<table>
 			<thead>
-				<tr>
-					<th>번호</th>
-					<th>내용</th>
-					<th>작성자</th>
-					<th>날짜</th>
+				<th width="10">번호</th>
+				<th width="150">내용</th>
+				<th width="30">작성자</th>
+				<th width="30">날짜</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -57,18 +58,21 @@
 					<td></td>
 					<td></td>
 				</tr>
-			</tbody>
-			<tfoot>
 				<tr>
 					<td></td>
 					<td></td>
 					<td></td>
 					<td></td>
 				</tr>
-			</tfoot>
+			</tbody>
 		</table>
+		<div>
+						<ul class="actions small">
+							<li><a href="#" class="button special small">글쓰기</a></li>
+							<li><a href="#" class="button special small">삭제</a></li>
+						</ul>
 	</div>
-
+	</div>
 </center>
 
 <!--  메인패널 끝 -->

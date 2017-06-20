@@ -24,7 +24,7 @@ String root = request.getContextPath();
 			<!-- #### HEAD #### -->
 			<center>
 				
-				<header id="header" class="icons"><a href="index.jsp" class="logo"><img src="./template/images/hannoonlogo.png" width="200" hight="60">
+				<header id="header" class="icons"><a href="index.jsp" class="logo"><img src="<%=root%>/template/images/hannoonlogo.png" width="200" hight="60">
 				</a></a> 
 				
 				<!-- Search --> 
@@ -38,7 +38,7 @@ String root = request.getContextPath();
 				</section>
 				
 				<ul class="icons">
-				<li><span class="label"><img src="./template/images/notice.png" width="30" height="30"></span></li>
+				<li><span class="label"><img src="<%=root%>/template/images/notice.png" width="30" height="30"></span></li>
 				</ul>
 				<%--			
 	<ul class="icons">
