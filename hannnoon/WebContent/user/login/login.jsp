@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
 <%--<%@ include file="/common/public.jsp" %> --%>
 <%@ include file="/common/header.jsp"%>
@@ -31,20 +32,19 @@ html{
 	padding: 1em;
 }
 </style>
-<center>
 
-	<div class="container">
-	<div class="outer">
-	<div class="inner">
-	<div class="centered">
-	
-	<!-- Form -->
-	<h1>Login</h1>
-	
+<center>
+<div class="container">
+<div class="outer">
+<div class="inner">
+<div class="centered">
+<!-- 폼 시작 -->
+	<h1>LOGIN</h1>
 	<form name="loginform" method="post" action="#">
 	
+	<div style="float:right;">
 	<input type="checkbox" name="idsv"> 
-	<label>아이디 저장</label>
+	<label>아이디 저장</label></div>
 	
 	<table>
 	<tr>
@@ -64,20 +64,18 @@ html{
 			</div>
 		</td>
 	</tr>
-	<tr>
 	</table>
-	
-	<ul class="actions fit">
-		<a href="" class="button special fit">로그인하기</a>
-		<a href="" class="button fit">한눈인되기</a>
-	</ul>
-	
+	<button type="button" class="button special fit">로그인</button>
+	<button type="button" class="button fit" data-dismiss="modal">나가기</button>
+	<div style="float:right;"><a href="" align="right">아직 한눈인이 아니세요?</a></div>
 	</form>
-	</div>
-	</div>
-	</div>
-	</div>
+	<!-- 폼 끝 -->
+</div>
+</div>
+</div>
+</div>
 </center>
+
 <!--  메인패널 끝 -->
 </div>
 
@@ -86,3 +84,4 @@ html{
 </div>
 
 </body>
+</html>
