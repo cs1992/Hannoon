@@ -38,7 +38,7 @@ String root = request.getContextPath();
 				</section>
 				
 				<ul class="icons">
-				<li><span class="label"><a href="javascript:search();"><img src="./template/images/notice.png" width="30" height="30"></a></span></li>
+				<li><span class="label"><img src="./template/images/notice.png" width="30" height="30"></span></li>
 				</ul>
 				<%--			
 	<ul class="icons">
