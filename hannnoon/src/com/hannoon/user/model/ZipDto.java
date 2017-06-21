@@ -8,6 +8,8 @@ public class ZipDto {
 	private String dong;
 	private String bunji;
 	
+	
+	
 	public String getZip1() {
 		return zip1;
 	}
