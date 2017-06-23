@@ -3,7 +3,12 @@ package com.hannoon.search.service;
 import java.util.List;
 import java.util.Vector;
 
+import com.hannoon.search.SearchEngine;
+import com.hannoon.search.SearchServiceThreadPool;
 import com.hannoon.search.model.*;
+import com.hannoon.util.Encoding;
+import com.hannoon.util.Log;
+import com.hannoon.util.SearchConstance;
 
 public class SearchHannoonServiceImpl implements SearchHannoonService {
 	private static SearchHannoonService searchHannoonService;
@@ -18,8 +23,6 @@ public class SearchHannoonServiceImpl implements SearchHannoonService {
 
 	private SearchHannoonServiceImpl() {
 	}
-	
-
 
 	@Override
 	public List searchHannoon(String keyword) {
@@ -72,7 +75,27 @@ public class SearchHannoonServiceImpl implements SearchHannoonService {
 	@Override
 	public String search(String keyword) {
 		StringBuilder result = new StringBuilder();
+		Log.log("search service : " + keyword);
+		SearchResultListDto listDto = new SearchResultListDto();
 		
+		new SearchServiceThreadPool(keyword, listDto).startSearch();
+		
+		
+//		Thread blogSearch = new Thread(){
+//			@Override
+//			public void run() {
+//				super.run();
+//				SearchResultListDto listDto = new SearchResultListDto();
+//				System.out.println(new SearchServiceThreadPool(keyword, listDto).startSearch());
+////				System.out.println(new SearchEngine(keyword, SearchConstance.Engine.NAVER, SearchConstance.SearchName.BLOG).getResult().toString());
+//			}
+//		};
+//		blogSearch.start();
+//		try {
+//			blogSearch.join();
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
 		
 		return result.toString();
 	}

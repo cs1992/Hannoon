@@ -1,17 +1,17 @@
 package com.hannoon.search.model;
 
+import org.json.simple.JSONObject;
+
+import com.hannoon.util.SearchConstance;
+import com.hannoon.util.SearchConstance.Engine;
+
 public class SearchResultImageDto extends SearchResultDto {
-	private String image;
 	private String thumbNail;
 
-	public String getImage() {
-		return image;
+	public SearchResultImageDto(Engine engineType) {
+		super(engineType);
 	}
-
-	public void setImage(String image) {
-		this.image = image;
-	}
-
+	
 	public String getThumbNail() {
 		return thumbNail;
 	}
@@ -20,4 +20,20 @@ public class SearchResultImageDto extends SearchResultDto {
 		this.thumbNail = thumbNail;
 	}
 
+	@Override
+	public void setField(JSONObject item) {
+		super.setField(item);
+		
+		thumbNail = (String) item.get(SearchConstance.NaverResult.THUMB_NAIL);
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder toString = new StringBuilder(super.toString());
+		
+		toString.append("thumbNail : " + thumbNail + "\n");
+		toString.append("------------------------------------------\n");
+		
+		return toString.toString();
+	}
 }
