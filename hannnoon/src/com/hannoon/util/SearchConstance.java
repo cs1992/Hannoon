@@ -7,6 +7,7 @@ public class SearchConstance {
 
 	public final static String HANNOON = "hannoon";
 	public final static String KEYWROD = "keyword";
+	public final static String SEARCH_RESULT_LIST = "searchResultList";
 	
 	public final static String DAUM_API_KEY = "e1abe1edf7880a35d933a0fae69548f9";
 	public final static String NAVER_API_ID ="eSez1gcGAZUzO3T_T4MR";
@@ -37,6 +38,15 @@ public class SearchConstance {
 		}
 		
 		
+	}
+	
+	public static enum SearchType{
+		WEB(0), BLOG(1), CAFE(2), DIC(3), IMAGE(4), IN_TIP(5), NEWS(6), PROF(7), ALL(8), HANGLE(9), HANNOON_IN(10);
+		public int value;	
+		
+		SearchType(int value){
+			this.value = value;
+		}
 	}
 	
 //	public final static String[] ENGINE = {"NAVER", "DAUM"};

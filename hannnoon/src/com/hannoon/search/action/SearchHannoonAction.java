@@ -10,6 +10,7 @@ import javax.swing.plaf.synth.SynthSpinnerUI;
 
 import com.hannoon.action.Action;
 import com.hannoon.search.model.SearchResultDto;
+import com.hannoon.search.model.SearchResultListDto;
 import com.hannoon.search.service.SearchHannoonService;
 import com.hannoon.search.service.SearchHannoonServiceImpl;
 import com.hannoon.util.Encoding;
@@ -22,10 +23,11 @@ public class SearchHannoonAction implements Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String keyword = Encoding.isoToEuc(request.getParameter(SearchConstance.KEYWROD));
-//		String keyword = request.getParameter(SearchConstance.KEYWROD);
 		Log.log("search action keyworkd : " + keyword);
-//		List<SearchResultDto> result = SearchHannoonServiceImpl.getSearchHannoonService().search(keyword);
-		SearchHannoonServiceImpl.getSearchHannoonService().search(keyword);
+		SearchResultListDto listDto = SearchHannoonServiceImpl.getSearchHannoonService().searchHannoon(keyword);
+		
+		request.setAttribute(SearchConstance.SEARCH_RESULT_LIST, listDto);
+		
 		return SearchConstance.SEARCH_RESULT_PATH;
 	}
 

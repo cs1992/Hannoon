@@ -29,7 +29,7 @@ String headerRoot = request.getContextPath();
 			<!-- #### HEAD #### -->
 			
 				
-				<header id="header" class="icons"><a href="index.jsp" class="logo"><img src="<%=headerRoot%>/template/images/hannoonlogo.png" width="200" hight="60">
+				<header id="header" class="icons" ><a href="index.jsp" class="logo"><img src="<%=headerRoot%>/template/images/hannoonlogo.png" width="200" hight="60">
 				</a></a> 
 				
 				<!-- Search --> 
