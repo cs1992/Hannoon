@@ -1,28 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-<<<<<<< HEAD
 <%--<%@ include file="/search/testpublic.jsp"%> --%>
 <%
 String menubarRoot = request.getContextPath();
 %>
-
-=======
-
-<%@ include file="/common/public.jsp"%>
->>>>>>> refs/remotes/origin/master
 <script>
 function modiftTitle(seq){
 	$("#nameForm" + seq).css('display', 'block');
 }
 
 function test() {
-	
 	$('#aaa').append('<a href="<%=menubarRoot%>/StudyController?act=menu">내한눈방</a> ');
 }
 </script>
-<!-- #### MENU_BAR #### -->
-<!-- Sidebar -->
+</div>
+</div>
 
+<!-- Sidebar -->
 <div id="sidebar">
 	<div class="inner">
 
@@ -33,11 +27,11 @@ function test() {
 			</form>
 		</section>
 
-		<!-- Menu -->
+	<!-- Menu -->
 		<nav id="menu">
 			<header class="major">
 				<h2>Menu</h2>
-			</header>
+			</header>	
 			<ul>
 				<li><a href="index.jsp">공지사항</a></li>
 
@@ -54,13 +48,13 @@ function test() {
 
  						<form name="menu" method="post" id="aaa">
  							<input type="text" value="">
-							<!--<a href="<%=publicRoot%>/StudyController?act=menu&isNew=true"
+							<!--<a href="<%=menubarRoot%>/StudyController?act=menu&isNew=true"
 								onclick="javascript:click();"> 새글 작성 <img
-								src="<%=publicRoot%>/study/img/hyundong/plus.png" width="10"></a>
+								src="<%=menubarRoot%>/study/img/hyundong/plus.png" width="10"></a>
 							<a>내 한눈글</a>-->
 						</form>
 
-						<a href="<%=publicRoot%>/StudyController?act=menu"	onclick="test()"> 새글 작성</a> 
+						<a href="<%=menubarRoot%>/StudyController?act=menu"	onclick="test()"> 새글 작성</a> 
 						<a onclick="test()"> 새글 작성</a>
 					</ul>
 				<li><a href="elements.html">Elements</a></li>
@@ -94,38 +88,38 @@ function test() {
 				<li><a href="#">Amet Lacinia</a></li>
 			</ul>
 		</nav>
-
-
-		<%--
-			<!-- Section -->
-			<section> <header class="major">
-			<h2>Ante interdum</h2>
+<%--
+		<!-- Section -->
+		<section>
+			<header class="major">
+				<h2>Ante interdum</h2>
 			</header>
 			<div class="mini-posts">
-				<article> <a href="#" class="image"><img
-					src="images/pic07.jpg" alt="" /></a>
-				<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
-					dolore aliquam.</p>
+				<article>
+					<a href="#" class="image"><img src="/template/images/pic07.jpg" alt="" /></a>
+					<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
+						dolore aliquam.</p>
 				</article>
-				<article> <a href="#" class="image"><img
-					src="images/pic08.jpg" alt="" /></a>
-				<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
-					dolore aliquam.</p>
+				<article>
+					<a href="#" class="image"><img src="/templateimages/pic08.jpg" alt="" /></a>
+					<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
+						dolore aliquam.</p>
 				</article>
-				<article> <a href="#" class="image"><img
-					src="images/pic09.jpg" alt="" /></a>
-				<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
-					dolore aliquam.</p>
+				<article>
+					<a href="#" class="image"><img src="/templateimages/pic09.jpg" alt="" /></a>
+					<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
+						dolore aliquam.</p>
 				</article>
 			</div>
 			<ul class="actions">
 				<li><a href="#" class="button">More</a></li>
 			</ul>
-			</section>
+		</section>
 
-			<!-- Section -->
-			<section> <header class="major">
-			<h2>Get in touch</h2>
+		<!-- Section -->
+		<section>
+			<header class="major">
+				<h2>Get in touch</h2>
 			</header>
 			<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare
 				velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed
@@ -138,9 +132,8 @@ function test() {
 					TN 00000-0000
 				</li>
 			</ul>
-			</section>
- --%>
-
+		</section>
+  --%>
 		<!-- Footer -->
 		<footer id="footer">
 			<p class="copyright">
@@ -152,3 +145,18 @@ function test() {
 
 	</div>
 </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="<%=menubarRoot%>/template/assets/js/jquery.min.js"></script>
+<script src="<%=menubarRoot%>/template/assets/js/skel.min.js"></script>
+<script src="<%=menubarRoot%>/template/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="<%=menubarRoot%>/template/assets/js/main.js"></script>
+
+<script src="<%=menubarRoot%>/js/search.js"></script>
+
+
+</body>
+</html>

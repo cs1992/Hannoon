@@ -5,7 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 
-<%@ include file="/common/header.jsp"%>
+<%@ include file="/search/testheader.jsp"%>
 <%
 	SearchResultListDto listDto = (SearchResultListDto) request
 			.getAttribute(SearchConstance.SEARCH_RESULT_LIST);
@@ -248,4 +248,4 @@
 	</div>
 </section>
 
-<%@ include file="/common/menubar_2.jsp"%>
+<%@ include file="/search/testmenubar.jsp"%>
