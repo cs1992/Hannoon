@@ -13,12 +13,12 @@ html{
 .container {
 	width: 100%;
 	height: 100%;
-	margin: 1% auto;
+	margin: 5% auto;
 }
 .outer {
 	display: table;
-	width: 100%;
-	height: 100%;
+	width: 70%;
+	height: 50%;
 }
 .inner {
 	display: table-cell;
@@ -31,17 +31,30 @@ html{
 	width: 50%;
 	padding: 1em;
 }
+.closeButton{
+	width: 50px;
+	height: 50px;
+	font-size: 35px;
+}
 </style>
 
-<center>
 
 <div class="container">
-<div class="outer">
-<div class="inner">
-<div class="centered">
 
+	<button type="button" class="button special" data-toggle="modal" data-target="#myModal_l">
+	JOIN
+	</button>
+
+	<div class="modal fade" id="myModal_l" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+		<button type="button" class="close closeButton" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h1 class="modal-title" id="myModalLabel">Join</h1>
+	      </div>
+	      <div class="modal-body">
 <!-- 폼 시작 -->
-	<h1>JOIN</h1>
+
 	<form name ="joinform" method="post" action="">
 	<input type="hidden" name="act" value="register">
 	 <table>
@@ -69,7 +82,9 @@ html{
 	<table>
 			<tr>
 			 	<td>이름
-			 	<input type="text" name="name" id="name" value="" size="12"></td>
+			 		<input type="text" name="name" id="name" value="" size="12" onkeyDown="nameValidate()">
+			 		<div id="nameValidateData"></div>	
+			 	</td>
 			</tr>
 			
 			<tr>
@@ -184,18 +199,35 @@ for(int m=1; m<=12; m++) {
 	         </td>
 	   		</tr>
    </table>
+   <center>
              <input type="button" class="special" value="회원가입" onclick="javascript:join();">
 	         <input type="reset" value="취소">
+   </center>
    </form>
-   
-	<!-- 폼 끝 -->
 	
-</div>
-</div>
-</div>
-</div>
-</center>
+<!-- 폼 끝 -->
+	      </div>
+	    </div>
+	  </div>
+	</div>
 
+</div>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://googledrive.com/host/0B-QKv6rUoIcGREtrRTljTlQ3OTg"></script><!-- ie10-viewport-bug-workaround.js -->
+<script src="http://googledrive.com/host/0B-QKv6rUoIcGeHd6VV9JczlHUjg"></script><!-- holder.js -->
+<script>
+	function nameValidate() {
+		var value = $('#name').val();
+		var len = value.length;
+		var msg = '';
+		if (len < 4) {
+			msg = '이름은 4글자 이상이여야합니다';
+		}
+		$('#nameValidateData').text(msg);
+	}
+</script>
 <!--  메인패널 끝 -->
 </div>
 

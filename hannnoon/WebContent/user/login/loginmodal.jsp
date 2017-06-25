@@ -31,15 +31,31 @@ html{
 	width: 50%;
 	padding: 1em;
 }
+.closeButton{
+	width: 50px;
+	height: 50px;
+	font-size: 35px;
+}
 </style>
 
-<center>
+
 <div class="container">
-<div class="outer">
-<div class="inner">
-<div class="centered">
+
+	<button type="button" class="button special" data-toggle="modal" data-target="#myModal_s">
+	LOGIN
+	</button>
+
+	<div class="modal fade" id="myModal_s" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-sm">
+	    <div class="modal-content">
+	      <div class="modal-header">
+		<button type="button" class="close closeButton" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h1 class="modal-title" id="myModalLabel">Login</h1>
+	      </div>
+	      <div class="modal-body">
 <!-- 폼 시작 -->
-	<h1>LOGIN</h1>
+
+	
 	<form name="loginform" method="post" action="#">
 	
 	<div style="float:right;">
@@ -65,16 +81,24 @@ html{
 		</td>
 	</tr>
 	</table>
+	
 	<button type="button" class="button special fit">로그인</button>
 	<button type="button" class="button fit" data-dismiss="modal">나가기</button>
-	<div style="float:right;"><a href="" align="right">아직 한눈인이 아니세요?</a></div>
+	<div style="float:right;"><a href="javascript:;" data-toggle="modal" data-target="#myModal_s">아직 한눈인이 아니세요?</a></div>
+	<%@ include file="/user/join/modal_join.jsp" %>
 	</form>
 	<!-- 폼 끝 -->
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
 </div>
-</div>
-</div>
-</div>
-</center>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="http://googledrive.com/host/0B-QKv6rUoIcGREtrRTljTlQ3OTg"></script><!-- ie10-viewport-bug-workaround.js -->
+<script src="http://googledrive.com/host/0B-QKv6rUoIcGeHd6VV9JczlHUjg"></script><!-- holder.js -->
 
 <!--  메인패널 끝 -->
 </div>

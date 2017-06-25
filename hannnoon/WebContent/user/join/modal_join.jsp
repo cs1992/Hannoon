@@ -1,48 +1,51 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    pageEncoding="EUC-KR"%>
+<script type="text/javascript">
+function join(){
+	if(document.getElementById("id").value == "") {
+		alert("아이디 입력!");
+		return;
+	} else if(document.getElementById("name").value == "") {
+		alert("이름 입력!");
+		return;
+	} else if(document.getElementById("pass").value  == "") {
+		alert("비밀번호 입력!");
+		return;
+	} else if(document.getElementById("pass").value != document.getElementById("passcheck").value) {
+		alert("비밀번호 확인!");
+		return;
+	} else {
+		document.joinform.action = "hannoon/user";
+		document.joinform.submit();
+	}
+}
 
-<%--<%@ include file="/common/public.jsp" %> --%>
-<%@ include file="/common/header.jsp"%>
-<!--  우리가 꾸밀 곳 여기 메인패널 -->
+function openzip(){
+	window.open("hannoon/user?act=mvzip","zip","top=200, left=300, width=400, height=300, menubar=no, status=no, toolbar=no, location=no, scrollbars=yes");
+}
+
+function openidcheck(){
+	window.open("hannoon/user?act=mvidck","idck","top=200, left=300, width=400, height=180, menubar=no, status=no, toolbar=no, location=no, scrollbars=no");
+}
+</script>
+
 <style>
-html{
-	width: 100%;
-	height: 100%;
-}
-.container {
-	width: 100%;
-	height: 100%;
-	margin: 1% auto;
-}
-.outer {
-	display: table;
-	width: 100%;
-	height: 100%;
-}
-.inner {
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-}
-.centered {
-	position: relative;
-	display: inline-block;
-	width: 50%;
-	padding: 1em;
+#modal_join .modal-dialog{
+	width: 45%;
 }
 </style>
 
-<center>
-
-<div class="container">
-<div class="outer">
-<div class="inner">
-<div class="centered">
-
+	<div class="modal fade" id="modal_join" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+	      <div class="modal-header">
+		<button type="button" class="close closeButton" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+		<h1 class="modal-title" id="myModalLabel">Join</h1>
+	      </div>
+	      <div class="modal-body">
 <!-- 폼 시작 -->
-	<h1>JOIN</h1>
-	<form name ="joinform" method="post" action="">
+
+<form name ="joinform" method="post" action="">
 	<input type="hidden" name="act" value="register">
 	 <table>
 			<tr>
@@ -69,7 +72,9 @@ html{
 	<table>
 			<tr>
 			 	<td>이름
-			 	<input type="text" name="name" id="name" value="" size="12"></td>
+			 		<input type="text" name="name" id="name" value="" size="12" onkeyDown="nameValidate()">
+			 		<div id="nameValidateData"></div>	
+			 	</td>
 			</tr>
 			
 			<tr>
@@ -184,24 +189,26 @@ for(int m=1; m<=12; m++) {
 	         </td>
 	   		</tr>
    </table>
+   <center>
              <input type="button" class="special" value="회원가입" onclick="javascript:join();">
 	         <input type="reset" value="취소">
+   </center>
    </form>
-   
-	<!-- 폼 끝 -->
 	
-</div>
-</div>
-</div>
-</div>
-</center>
-
-<!--  메인패널 끝 -->
+<!-- 폼 끝 -->
+      </div>
+    </div>
+  </div>
 </div>
 
-<%@ include file="/common/menubar_2.jsp"%>
-
-</div>
-
-</body>
-</html>
+<script>
+	function nameValidate() {
+		var value = $('#name').val();
+		var len = value.length;
+		var msg = '';
+		if (len < 4) {
+			msg = '이름은 4글자 이상이여야합니다';
+		}
+		$('#nameValidateData').text(msg);
+	}
+</script>	
