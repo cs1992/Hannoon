@@ -8,8 +8,8 @@ function modiftTitle(seq){
 }
 
 function test() {
-	$('#aaa').append('<a href="<%=publicRoot%>/StudyController?act=menu">郴 茄传规</a> ');
 	
+	$('#aaa').append('<a href="<%=menubarRoot%>/StudyController?act=menu">郴茄传规</a> ');
 }
 </script>
 <!-- #### MENU_BAR #### -->

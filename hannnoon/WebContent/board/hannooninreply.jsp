@@ -4,34 +4,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <%--<%@ include file="/common/public.jsp" %> --%>
 <%@ include file="/common/header.jsp"%>
-<script type="text/javascript" src="<%=root%>/se2/js/service/HuskyEZCreator.js" charset="utf-8"></script>
-<!--  우리가 꾸밀 곳 여기 메인패널 -->
-
 <center>
 
+<script type="text/javascript" src="<%=root%>/se2/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+<!--  우리가 꾸밀 곳 여기 메인패널 -->
 	<h3>질문</h3>
-	<div class="box" width="900" height="500">
-		<p></p>
+	<div class="box" style="width:640px; height:420px;">
+		<p>질문내용</p>
 	</div>
-
+	
 	<h3>답변</h3>
-	<div class="box" width="900" height="500">
-		<p>
-		<div>
-		<form action="sample/viewer/index.php" method="post">
-	<textarea name="ir1" id="ir1" rows="10" cols="100" style="width:766px; height:412px; display:none; align:center;"></textarea>
-	<!--textarea name="ir1" id="ir1" rows="10" cols="100" style="width:100%; height:412px; min-width:610px; display:none;"></textarea-->
-	<p>
-		<input type="" onclick="pasteHTML();" value="본문에 내용 넣기" />
-		<input type="" onclick="showHTML();" value="본문 내용 가져오기" />
-		<input type="" onclick="submitContents(this);" value="서버로 내용 전송" />
-		<input type="" onclick="setDefaultFont();"z value="기본 폰트 지정하기 (궁서_24)" />
-	</p>
-</form>
-<div align="center">
-		<script type="text/javascript">
+	<div style="width:640px; height:420px;">
+	<input type="text" name="subject" id="subject" value="제목" width="640">
+	<form action="" method="post" >
+	<textarea name="ir1" id="ir1" rows="10" cols="100" style="width:100%; height:420px; display:inline-block;"></textarea>
+	</form>
+<script type="text/javascript">
 var oEditors = [];
-
 var sLang = "ko_KR";	// 언어 (ko_KR/ en_US/ ja_JP/ zh_CN/ zh_TW), default = ko_KR
 
 // 추가 글꼴 목록
@@ -89,8 +78,7 @@ function setDefaultFont() {
 				<li><a href="#" class="button special small">답변등록</a></li>
 				<li><a href="#" class="button special small">답변취소</a></li>
 			</ul>
-		</div>
-		</p>
+				</div>
 	</div>
 	</div>
 </center>

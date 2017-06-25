@@ -3,20 +3,12 @@
 
 <%--<%@ include file="/common/public.jsp"%> --%>
 <%@ include file="/common/header.jsp"%>
-<!-- Main div Start --> 
+<!-- 우리가 만들 부분 시작!!! -->
 
 	<center>
 		<h1>한눈인 온걸 환영</h1>
 	</center>
 
-	<!-- Main div End -->
-	</div>
 	
-	
-	<%--<%@ include file="/common/menubar.jsp"%> --%>
+<!-- 우리가 만들 부분 끝!!! -->
 <%@ include file="/common/menubar_2.jsp"%>
-	
-<!-- Wrapper div End -->
-</div>
-</body>
-</html>

@@ -1,30 +1,43 @@
 <%@page import="com.hannoon.util.SearchConstance"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
-
+    pageEncoding="EUC-KR"%>
+<%--<%@ include file="/common/public.jsp"%> --%>
 <%
 String root = request.getContextPath();
 %>
+<script src="<%=root%>/js/search.js"></script>
+
+<script type="text/javascript">
+var root = "<%=root%>";
+</script>
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
-<title>Insert title here</title>
+<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+<link rel="stylesheet" href="<%=root%>/template/assets/css/main.css" />
+<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+<title>검색결과</title>
 </head>
 <body>
 
+	<!-- Wrapper -->
 	<div id="wrapper">
 
 		<!-- Main -->
 		<div id="main">
-
+			<div class="inner">
 			
 			<!-- #### HEAD #### -->
-			<center>
+			
 				
-				<header id="header" class="icons"><a href="index.jsp" class="logo"><img src="<%=root%>/template/images/hannoonlogo.png" width="200" hight="60">
+				<header id="header" class="icons" ><a href="index.jsp" class="logo"><img src="<%=root%>/template/images/hannoonlogo.png" width="200" hight="60">
 				</a></a> 
 				
 				<!-- Search --> 
@@ -40,14 +53,16 @@ String root = request.getContextPath();
 				<ul class="icons">
 				<li><span class="label"><img src="<%=root%>/template/images/notice.png" width="30" height="30"></span></li>
 				</ul>
-				<%--			
-	<ul class="icons">
-		<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-		<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-		<li><a href="#" class="icon fa-snapchat-ghost"><span
-				class="label">Snapchat</span></a></li>
-		<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-		<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
-	</ul>
---%> </header>
-			</center>
+				<%--
+					<li><a href="#" class="icon fa-twitter"><span
+							class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-facebook"><span
+							class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon fa-snapchat-ghost"><span
+							class="label">Snapchat</span></a></li>
+					<li><a href="#" class="icon fa-instagram"><span
+							class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
+				</ul>
+				 --%>
+				</header>

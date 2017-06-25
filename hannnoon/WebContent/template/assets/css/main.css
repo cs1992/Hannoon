@@ -9,7 +9,6 @@
 
 /* Reset */
 
-
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
@@ -2306,7 +2305,7 @@
 		font-weight: 600;
 		margin: 0 0 1em 0;
 	}
-	
+
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
@@ -2877,8 +2876,7 @@
 
 	table {
 		margin: 0 0 2em 0;
-		width: 80%;
-		text-align: center;
+		width: 100%;
 	}
 
 		table tbody tr {
@@ -2900,7 +2898,7 @@
 			font-size: 0.9em;
 			font-weight: 600;
 			padding: 0 0.75em 0.75em 0.75em;
-			text-align: center;
+			text-align: left;
 		}
 
 		table thead {
@@ -2917,7 +2915,7 @@
 
 			table.alt tbody tr td {
 				border: solid 1px rgba(210, 215, 217, 0.75);
-				border-left-width: 50;
+				border-left-width: 0;
 				border-top-width: 0;
 			}
 
@@ -3003,7 +3001,7 @@
 		.button.fit {
 			display: block;
 			margin: 0 0 1em 0;
-			width: 80%;
+			width: 100%;
 		}
 
 		input[type="submit"].small,
@@ -3795,7 +3793,7 @@
 		display: -ms-flex;
 		display: flex;
 		border-bottom: solid 5px #f56a6a;
-		padding: 3em 0 1em 0;
+		padding: 6em 0 1em 0;
 		position: relative;
 	}
 
@@ -3811,12 +3809,11 @@
 			border-bottom: 0;
 			color: inherit;
 			font-family: "Roboto Slab", serif;
-			font-size: 1.0em;
+			font-size: 1.125em;
 		}
 
 		#header .icons {
 			text-align: right;
-			padding: 1em 0 1em 0;
 		}
 
 		@media screen and (max-width: 1680px) {
@@ -3830,7 +3827,7 @@
 		@media screen and (max-width: 736px) {
 
 			#header {
-				padding-top: 5.5em;
+				padding-top: 6.5em;
 			}
 
 				#header .logo {

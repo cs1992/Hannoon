@@ -5,7 +5,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 
-<%@ include file="/search/testheader.jsp"%>
+<%@ include file="/common/header.jsp"%>
 <%
 	SearchResultListDto listDto = (SearchResultListDto) request
 			.getAttribute(SearchConstance.SEARCH_RESULT_LIST);
@@ -30,7 +30,7 @@
 		<div class="1u 12u$(samll)">·©Å·.. °ø¹é?</div>
 
 
-		<div class="9u 12$(medium)">
+		<div class="9u 12$(small)">
 			<div class="row"
 				onload="javascript:javascript:selectSearchType('<%=SearchType.ALL.value%>', this);">
 
@@ -60,6 +60,7 @@
 
 				</ul>
 			</div>
+			
 			<ul class="alt">
 
 				<header class="major">
@@ -247,4 +248,4 @@
 	</div>
 </section>
 
-<%@ include file="/search/testmenubar.jsp"%>
+<%@ include file="/common/menubar_2.jsp"%>
