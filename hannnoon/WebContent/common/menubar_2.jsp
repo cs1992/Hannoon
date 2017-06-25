@@ -2,11 +2,18 @@
 	pageEncoding="EUC-KR"%>
 
 <%@ include file="/common/public.jsp"%>
+<script>
+function modiftTitle(seq){
+	$("#nameForm" + seq).css('display', 'block');
+}
+
+function test() {
+	$('#aaa').append('<a>내한눈방</a> ');
+}
+</script>
 <!-- #### MENU_BAR #### -->
 <!-- Sidebar -->
-<script>
 
-</script>
 <div id="sidebar">
 	<div class="inner">
 
@@ -24,18 +31,29 @@
 			</header>
 			<ul>
 				<li><a href="index.jsp">공지사항</a></li>
-				<li><span class="opener">내한눈방</span></li>
-				<ul>
-					<form name="menu" method="get">
-						<li><a href="<%=publicRoot%>/StudyController?act=menu"> 새글 작성
-								<img src="<%=publicRoot%>/study/img/hyundong/plus.png"
-								width="10" >
-						</a></li>
 
-						<li><a> 내한눈방</a></li>
+				<li><span class="opener">내한눈방</span>
+					<ul>
+						<li>
+							<a href="#">asdfasdf</a>
+							<button onclick="modiftTitle(1);">방명수정</button>
+							<form id="nameForm1" name="menu" method="post" style="display:none">
+								<input type="text" value="asdfasdf">
+								<button>저장</button>
+							</form>
+						</li>
 
-					</form>
-				</ul>
+ 						<form name="menu" method="post" id="aaa">
+ 							<input type="text" value="">
+							<!--<a href="<%=publicRoot%>/StudyController?act=menu&isNew=true"
+								onclick="javascript:click();"> 새글 작성 <img
+								src="<%=publicRoot%>/study/img/hyundong/plus.png" width="10"></a>
+							<a>내 한눈글</a>-->
+						</form>
+
+						<a href="<%=publicRoot%>/StudyController?act=menu"	onclick="test()"> 새글 작성</a> 
+						<a onclick="test()"> 새글 작성</a>
+					</ul>
 				<li><a href="elements.html">Elements</a></li>
 				<li><span class="opener">Submenu</span>
 					<ul>
@@ -53,7 +71,7 @@
 						<li><a href="#">a</a></li>
 						<li>b</li>
 					</ul></li>
-				</li>
+		
 				<li><a href="#">Adipiscing</a></li>
 				<li><span class="opener">Another Submenu</span>
 					<ul>

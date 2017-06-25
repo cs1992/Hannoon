@@ -38,7 +38,7 @@ public class DBConnection {
 			Context rootCtx = (Context)ctx.lookup("java:comp/env/");
 			DataSource ds = (DataSource) rootCtx.lookup("jdbc/hannoon");
 			conn = ds.getConnection();
-			System.out.println("연결??");
+//			System.out.println("연결??");
 		} catch (NamingException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
