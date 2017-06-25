@@ -1,10 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%--<%@ include file="/search/testpublic.jsp"%> --%>
-
 <%
 String menubarRoot = request.getContextPath();
 %>
+<script>
+function modiftTitle(seq){
+	$("#nameForm" + seq).css('display', 'block');
+}
+
+function test() {
+	$('#aaa').append('<a href="<%=menubarRoot%>/StudyController?act=menu">내한눈방</a> ');
+}
+</script>
 </div>
 </div>
 
@@ -19,23 +27,54 @@ String menubarRoot = request.getContextPath();
 			</form>
 		</section>
 
-		<!-- Menu -->
+	<!-- Menu -->
 		<nav id="menu">
 			<header class="major">
 				<h2>Menu</h2>
 			</header>
 			<ul>
-				<li><a href="index.html">Homepage</a></li>
-				<li><a href="generic.html">Generic</a></li>
+				<li><a href="index.jsp">공지사항</a></li>
+
+				<li><span class="opener">내한눈방</span>
+					<ul>
+						<li>
+							<a href="#">asdfasdf</a>
+							<button onclick="modiftTitle(1);">방명수정</button>
+							<form id="nameForm1" name="menu" method="post" style="display:none">
+								<input type="text" value="asdfasdf">
+								<button>저장</button>
+							</form>
+						</li>
+
+ 						<form name="menu" method="post" id="aaa">
+ 							<input type="text" value="">
+							<!--<a href="<%=menubarRoot%>/StudyController?act=menu&isNew=true"
+								onclick="javascript:click();"> 새글 작성 <img
+								src="<%=menubarRoot%>/study/img/hyundong/plus.png" width="10"></a>
+							<a>내 한눈글</a>-->
+						</form>
+
+						<a href="<%=menubarRoot%>/StudyController?act=menu"	onclick="test()"> 새글 작성</a> 
+						<a onclick="test()"> 새글 작성</a>
+					</ul>
 				<li><a href="elements.html">Elements</a></li>
 				<li><span class="opener">Submenu</span>
 					<ul>
-						<li><a href="#">Lorem Dolor</a></li>
+						<li><span class="opener">Lorem Dolor</span>
+							<ul>
+								<!-- <li><a href="#">a</a></li> -->
+								<li><a href="#">b</a></li>
+							</ul></li>
 						<li><a href="#">Ipsum Adipiscing</a></li>
 						<li><a href="#">Tempus Magna</a></li>
 						<li><a href="#">Feugiat Veroeros</a></li>
 					</ul></li>
-				<li><a href="#">Etiam Dolore</a></li>
+				<li><span class="opener">Etiam Dolore</span>
+					<ul>
+						<li><a href="#">a</a></li>
+						<li>b</li>
+					</ul></li>
+		
 				<li><a href="#">Adipiscing</a></li>
 				<li><span class="opener">Another Submenu</span>
 					<ul>
@@ -47,12 +86,8 @@ String menubarRoot = request.getContextPath();
 				<li><a href="#">Maximus Erat</a></li>
 				<li><a href="#">Sapien Mauris</a></li>
 				<li><a href="#">Amet Lacinia</a></li>
-				<li><a href="#">Amet Lacinia</a></li>
-				<li><a href="#">Amet Lacinia</a></li>
-				
 			</ul>
 		</nav>
-
 <%--
 		<!-- Section -->
 		<section>
