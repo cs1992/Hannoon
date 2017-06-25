@@ -31,9 +31,7 @@
 					<input type="text" name="query" id="query" placeholder="ÇÑ´«°Ë»ö" onkeypress="javascript:if(event.keyCode == 13){search();}" />
 					<ul class="icons">
 					</ul>
-				<input type="hidden" name="<%=SearchConstance.SEARCH_TYPE_PARAM%>" value="<%=SearchConstance.HANNOON%>">
-				<input type="text" name="<%=SearchConstance.KEYWROD%>" id="<%=SearchConstance.KEYWROD%>" placeholder="ÇÑ´«°Ë»ö" value="" onkeypress="javascript:if(event.keyCode == 13){search();}" />
-				<ul class="icons">
+			<ul class="icons">
 				</ul>
 				</form>
 				</section>
