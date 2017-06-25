@@ -49,8 +49,10 @@ public class SearchResultBlogDto extends SearchResultDto {
 		} else {
 			author = (String) item.get(SearchConstance.DaumResult.AUTHOR);
 			hostLink = (String) item.get(SearchConstance.DaumResult.COMMENT);
-			postDate = (String) item.get(SearchConstance.DaumResult.PUB_DATE);
+			postDate = ((String) item.get(SearchConstance.DaumResult.PUB_DATE)).substring(0, 8);
 		}
+		
+		postDate = postDate.substring(0, 4) + "." + postDate.substring(4, 6) + "." + postDate.substring(6, 8);
 	}
 	
 	@Override

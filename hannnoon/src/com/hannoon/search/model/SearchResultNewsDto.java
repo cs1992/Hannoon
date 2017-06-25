@@ -1,7 +1,9 @@
 package com.hannoon.search.model;
 
+
 import org.json.simple.JSONObject;
 
+import com.hannoon.util.DateFormat;
 import com.hannoon.util.SearchConstance;
 import com.hannoon.util.SearchConstance.Engine;
 
@@ -34,7 +36,10 @@ public class SearchResultNewsDto extends SearchResultDto {
 		super.setField(item);
 		
 		hostLink = (String) item.get(SearchConstance.NaverResult.ORIGINAL_LINK);
-		postDate = (String) item.get(SearchConstance.NaverResult.PUB_DATE);
+//		postDate = (String) item.get(SearchConstance.NaverResult.PUB_DATE);
+		postDate = DateFormat.changeRSSDateFormat((String) item.get(SearchConstance.NaverResult.PUB_DATE));
+		
+		
 	}
 	
 	@Override

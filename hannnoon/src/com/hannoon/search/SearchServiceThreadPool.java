@@ -73,7 +73,7 @@ public class SearchServiceThreadPool {
 				
 				Log.log("Merge Result Size : " + mergeResult.size());
 				Collections.sort(mergeResult);
-				Log.log(mergeResult.toString());
+//				Log.log(mergeResult.toString());
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

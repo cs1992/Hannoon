@@ -2,6 +2,7 @@ package com.hannoon.util;
 
 public class SearchConstance {
 	public final static String SEARCH_TYPE_PARAM = "search_type";
+	public final static String SEARCH_NAME_PARAM = "search_name";
 
 	public final static String SEARCH_RESULT_PATH = "/search/testresult.jsp";
 
@@ -24,6 +25,16 @@ public class SearchConstance {
 		
 		Engine (int value){
 			this.value = value;
+		}
+	}
+	
+	public static enum SearchResultPath{
+		WEB("/search/webresult.jsp"), BLOG("/search/blogresult.jsp"), CAFE("/search/caferesult.jsp"), DIC("/search/dicresult.jsp"), IMAGE("/search/imageresult.jsp"), IN_TIP("/search/intipresult.jsp"), NEWS("/search/newsresult.jsp"), PROF("/search/profresult.jsp"), ALL("/search/testresult.jsp"), HANGLE("/search/hangleresult.jsp"), HANNOON_IN("/search/hannooninresult.jsp");
+		
+		public String path;
+		
+		SearchResultPath(String path){
+			this.path = path;
 		}
 	}
 	

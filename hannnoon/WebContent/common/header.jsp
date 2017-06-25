@@ -5,12 +5,6 @@
 <%
 String root = request.getContextPath();
 %>
-<script src="<%=root%>/js/search.js"></script>
-
-<script type="text/javascript">
-var root = "<%=root%>";
-</script>
-
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -23,9 +17,19 @@ var root = "<%=root%>";
 <link rel="stylesheet" href="<%=root%>/template/assets/css/main.css" />
 <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-<title>°Ë»ö°á°ú</title>
+<title>ÇÑ´«</title>
+
+<script type="text/javascript" src="<%=root%>/js/search.js"></script>
+
+<script type="text/javascript">
+var root = "<%=root%>";
+</script>
+
+
 </head>
 <body>
+
+
 
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -33,17 +37,16 @@ var root = "<%=root%>";
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
-			
-			<!-- #### HEAD #### -->
-			
-				
+
+				<!-- Header -->
 				<header id="header" class="icons" ><a href="index.jsp" class="logo"><img src="<%=root%>/template/images/hannoonlogo.png" width="200" hight="60">
-				</a></a> 
+				</a>
 				
 				<!-- Search --> 
 				<section id="search" class="alt">
 				<form method="get" name="searchForm" action="#">
 				<input type="hidden" name="<%=SearchConstance.SEARCH_TYPE_PARAM%>" value="<%=SearchConstance.HANNOON%>">
+				<input type="hidden" name="<%=SearchConstance.SEARCH_NAME_PARAM%>" id="<%=SearchConstance.SEARCH_NAME_PARAM%>" value="<%=SearchConstance.SearchType.ALL.value%>">
 				<input type="text" name="<%=SearchConstance.KEYWROD%>" id="<%=SearchConstance.KEYWROD%>" placeholder="ÇÑ´«°Ë»ö" value="" onkeypress="javascript:if(event.keyCode == 13){search();}" />
 				<ul class="icons">
 				</ul>
@@ -53,7 +56,10 @@ var root = "<%=root%>";
 				<ul class="icons">
 				<li><span class="label"><img src="<%=root%>/template/images/notice.png" width="30" height="30"></span></li>
 				</ul>
+				
+				
 				<%--
+				<ul class="icons">
 					<li><a href="#" class="icon fa-twitter"><span
 							class="label">Twitter</span></a></li>
 					<li><a href="#" class="icon fa-facebook"><span
@@ -65,4 +71,6 @@ var root = "<%=root%>";
 					<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
 				</ul>
 				 --%>
+				 
+				  
 				</header>

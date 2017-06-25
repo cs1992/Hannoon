@@ -5,6 +5,8 @@
 <%
 String headerRoot = request.getContextPath();
 %>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,9 +17,19 @@ String headerRoot = request.getContextPath();
 <link rel="stylesheet" href="<%=headerRoot%>/template/assets/css/main.css" />
 <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-<title>검색결과</title>
+<title>한눈</title>
+
+<script type="text/javascript" src="<%=headerRoot%>/js/search.js"></script>
+
+<script type="text/javascript">
+var root = "<%=headerRoot%>";
+</script>
+
+
 </head>
 <body>
+
+
 
 	<!-- Wrapper -->
 	<div id="wrapper">
@@ -25,12 +37,10 @@ String headerRoot = request.getContextPath();
 		<!-- Main -->
 		<div id="main">
 			<div class="inner">
-			
-			<!-- #### HEAD #### -->
-			
-				
+
+				<!-- Header -->
 				<header id="header" class="icons" ><a href="index.jsp" class="logo"><img src="<%=headerRoot%>/template/images/hannoonlogo.png" width="200" hight="60">
-				</a></a> 
+				</a>
 				
 				<!-- Search --> 
 				<section id="search" class="alt">
@@ -45,7 +55,10 @@ String headerRoot = request.getContextPath();
 				<ul class="icons">
 				<li><span class="label"><img src="<%=headerRoot%>/template/images/notice.png" width="30" height="30"></span></li>
 				</ul>
+				
+				
 				<%--
+				<ul class="icons">
 					<li><a href="#" class="icon fa-twitter"><span
 							class="label">Twitter</span></a></li>
 					<li><a href="#" class="icon fa-facebook"><span
@@ -57,4 +70,6 @@ String headerRoot = request.getContextPath();
 					<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
 				</ul>
 				 --%>
+				 
+				  
 				</header>

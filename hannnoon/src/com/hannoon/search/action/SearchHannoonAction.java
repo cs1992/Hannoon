@@ -23,12 +23,14 @@ public class SearchHannoonAction implements Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String keyword = Encoding.isoToEuc(request.getParameter(SearchConstance.KEYWROD));
-		Log.log("search action keyworkd : " + keyword);
+		String searchName = request.getParameter(SearchConstance.SEARCH_NAME_PARAM);
+		Log.log("search action keyworkd : " + keyword + ", " + searchName);
 		SearchResultListDto listDto = SearchHannoonServiceImpl.getSearchHannoonService().searchHannoon(keyword);
 		
 		request.setAttribute(SearchConstance.SEARCH_RESULT_LIST, listDto);
-		
-		return SearchConstance.SEARCH_RESULT_PATH;
+		request.setAttribute(SearchConstance.KEYWROD, keyword);
+//		return SearchConstance.SEARCH_RESULT_PATH;
+		return SearchConstance.SearchResultPath.values()[Integer.parseInt(searchName)].path;
 	}
 
 }
