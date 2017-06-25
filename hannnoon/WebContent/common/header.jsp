@@ -1,9 +1,8 @@
 <%@page import="com.hannoon.util.SearchConstance"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-
 <%
-String root = request.getContextPath();
+	String root = request.getContextPath();
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -20,26 +19,26 @@ String root = request.getContextPath();
 		<!-- Main -->
 		<div id="main">
 
-			
+
 			<!-- #### HEAD #### -->
 			<center>
-				
-				<header id="header" class="icons"><a href="index.jsp" class="logo"><img src="<%=root%>/template/images/hannoonlogo.png" width="200" hight="60">
-				</a></a> 
-				
-				<!-- Search --> 
-				<section id="search" class="alt">
+
+				<header id="header" class="icons">
+				<a href="<%=root%>" class="logo"><img src="<%=root%>/template/images/hannoonlogo.png" width="200" hight="60"> </a>
+				</a> <!-- Search --> <section id="search" class="alt">
 				<form method="get" name="searchForm" action="#">
-				<input type="hidden" name="<%=SearchConstance.SEARCH_TYPE_PARAM%>" value="<%=SearchConstance.HANNOON%>">
-				<input type="text" name="query" id="query" placeholder="ÇÑ´«°Ë»ö" onkeypress="javascript:if(event.keyCode == 13){search();}" />
-				<ul class="icons">
-				</ul>
+					<input type="hidden" name="<%=SearchConstance.SEARCH_TYPE_PARAM%>" value="<%=SearchConstance.HANNOON%>"> 
+					<input type="text" name="query" id="query" placeholder="ÇÑ´«°Ë»ö" onkeypress="javascript:if(event.keyCode == 13){search();}" />
+					<ul class="icons">
+					</ul>
 				</form>
 				</section>
-				
+
 				<ul class="icons">
-				<li><span class="label"><img src="<%=root%>/template/images/notice.png" width="30" height="30"></span></li>
+					<li><a href="#" class="icon" name="noticePop" id="noticePop">
+					<img src="<%=root%>/template/images/notice.png" width="30" height="30" onclick=""></a></li>
 				</ul>
+
 				<%--			
 	<ul class="icons">
 		<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
@@ -49,5 +48,9 @@ String root = request.getContextPath();
 		<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
 		<li><a href="#" class="icon fa-medium"><span class="label">Medium</span></a></li>
 	</ul>
---%> </header>
-			</center>
+	
+--%>
+</body>
+</header>
+</center>
+</html>
