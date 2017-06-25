@@ -5,6 +5,7 @@
 <%@ include file="/common/header.jsp"%>
 <!--  우리가 꾸밀 곳 여기 메인패널 -->
 <script type="text/javascript" src="./js/service/HuskyEZCreator.js" charset="utf-8"></script>
+
 <center>
 <form action="sample/viewer/index.php" method="post">
 	<textarea name="ir1" id="ir1" rows="10" cols="100" style="width:766px; height:412px; display:none;"></textarea>
@@ -50,6 +51,7 @@ nhn.husky.EZCreator.createInIFrame({
 function pasteHTML() {
 	var sHTML = "<span style='color:#FF0000;'>이미지도 같은 방식으로 삽입합니다.<\/span>";
 	oEditors.getById["ir1"].exec("PASTE_HTML", [sHTML]);
+	
 }
 
 function showHTML() {
