@@ -87,15 +87,15 @@ public class UserDaoImpl implements UserDao {
 
 			String sql = "";
 			sql += "insert all \n";
-			sql += "	into user_info(id, school_id, part_id, pw, name, tel1, tel2, tel3, email1, email2, zip1, zip2, addr1, addr2, birth1, birth2, birth3, is_manager) \n";
+			sql += "	into user_info(id, school_code, part_code, pw, name, tel1, tel2, tel3, email1, email2, zip1, zip2, addr1, addr2, birth1, birth2, birth3, is_manager) \n";
 			sql += "	values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0) \n";
 			sql += "select * from dual \n";
 			
 			pstmt = conn.prepareStatement(sql);
 			int idx = 0; //그냥 1,2,..로 넣어주면 나중에 순서바뀌거나 빠지면 하나하나 바꿔조야되서 귀차나 
 			pstmt.setString(++idx, userDto.getId());
-			pstmt.setString(++idx, userDto.getSchool_id());
-			pstmt.setString(++idx, userDto.getPart_id());
+			pstmt.setInt(++idx, userDto.getSchoolCode());
+			pstmt.setInt(++idx, userDto.getPartCode());
 			pstmt.setString(++idx, userDto.getPw());
 			pstmt.setString(++idx, userDto.getName());
 			pstmt.setString(++idx, userDto.getTel1());
@@ -146,7 +146,6 @@ public class UserDaoImpl implements UserDao {
 				userDto = new UserDto(); //그래서 일치하는게 있으면 넣으려고 여기서 new함
 				userDto.setId(rs.getString("id"));
 				userDto.setName(rs.getString("name"));
-				userDto.setPart_id(rs.getString("part_id"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

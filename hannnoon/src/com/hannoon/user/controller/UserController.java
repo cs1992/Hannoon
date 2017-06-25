@@ -29,50 +29,56 @@ public class UserController extends HttpServlet {
 		
 		String act = request.getParameter("act");
 		
-		String path = "/index.jsp";
+		String path = "/user/userindex.jsp";
 		boolean flag = false;
 		if("mvjoin".equals(act)) {
-			path =  "/join/user.jsp";
+			path =  "/user/join/user.jsp";
 		} else if("mvlogin".equals(act)) {
-			path =  "/login/login.jsp";		
+			path =  "/user/login/login.jsp";		
 		} else if("mvidck".equals(act)) {
-			path =  "/join/idcheck.jsp";					
+			path =  "/user/join/idcheck.jsp";					
 		} else if("mvzip".equals(act)) {
-			path =  "/join/zipsearch.jsp";								
+			path =  "/user/join/zipsearch.jsp";								
 		} else if("idsearch".equals(act)) {
 			String sid = request.getParameter("id");
 			int count = userService.idcheck(sid);
-			path = "/join/idcheck.jsp?sid=" + sid + "&count=" + count;
+			path = "/user/join/idcheckresult.jsp?sid=" + sid + "&count=" + count;
 		} else if("zipsearch".equals(act)) {
 			String sdong = Encoding.isoToEuc(request.getParameter("dong"));
 			System.out.println("검색동 : " + sdong);
 			List<ZipDto> list = userService.zipSearch(sdong);
 			System.out.println("검색동 갯수 : " + list.size());
-			path = "/join/zipsearch.jsp";
+			path = "/user/join/zipsearch.jsp";
 			request.setAttribute("sdong", sdong);
 			request.setAttribute("zipList", list);
 			flag = true;
 		} else if("register".equals(act)) {
+			System.out.println("usercontroller");
 			UserDto userDto = new UserDto();
 			userDto.setId(request.getParameter("id"));
-			userDto.setName(request.getParameter("name"));
+			userDto.setSchoolCode(Integer.parseInt(request.getParameter("schoolCode")));
+			userDto.setPartCode(Integer.parseInt(request.getParameter("partCode")));
 			userDto.setPw(request.getParameter("pw"));
+			userDto.setName(request.getParameter("name"));
+			userDto.setTel1(request.getParameter("tel1"));
+			userDto.setTel2(request.getParameter("tel2"));
+			userDto.setTel3(request.getParameter("tel3"));
 			userDto.setEmail1(request.getParameter("email1"));
 			userDto.setEmail2(request.getParameter("email2"));
 			userDto.setZip1(request.getParameter("zip1"));
 			userDto.setZip2(request.getParameter("zip2"));
 			userDto.setAddr1(request.getParameter("addr1"));
 			userDto.setAddr2(request.getParameter("addr2"));
-			userDto.setTel1(request.getParameter("tel1"));
-			userDto.setTel2(request.getParameter("tel2"));
-			userDto.setTel3(request.getParameter("tel3"));
+			userDto.setBirth1(request.getParameter("birth1"));
+			userDto.setBirth2(request.getParameter("birth2"));
+			userDto.setBirth3(request.getParameter("birth3"));
 			int cnt = userService.register(userDto);
 			if(cnt != 0) {			
-				path = "/join/registerok.jsp";
+				path = "/user/join/joinok.jsp";
 				request.setAttribute("userInfo", userDto);
 				flag = true;
 			} else {
-				path = "/join/registerfail.jsp";
+				path = "/user/join/joinfail.jsp";
 			}
 		} else if("login".equals(act)) {
 			String id = request.getParameter("id");
@@ -110,11 +116,11 @@ public class UserController extends HttpServlet {
 				session.setAttribute("loginInfo", userDto);
 				//////////////session///////////////
 				
-				path = "/login/loginok.jsp"; //이거 하는 순간
+				path = "/user/login/loginok.jsp"; //이거 하는 순간
 //				request.setAttribute("loginInfo", userDto); //이거 초기화됨 //session해서 안필요함
 				flag = true;
 			} else {
-				path = "/login/loginfail.jsp";				
+				path = "/user/login/loginfail.jsp";				
 			}
 		} else if("logout".equals(act)) {
 			HttpSession session = request.getSession();
@@ -122,9 +128,9 @@ public class UserController extends HttpServlet {
 //			session.removeAttribute("loginInfo"); //특정 속성을 제거할때 사용
 			session.invalidate(); //조심해야되 session에 잇는 모든 정보를 날릴꺼면 (전부 다 지울때 사용)
 			//위 3가지 방법중에 때에 맞는 제거 방법 사용 할것.
-			path = "/login/loginok.jsp";
+			path = "/user/login/loginok.jsp";
 		} else if("mvmodify".equals(act)) {
-			path = "/join/modify.jsp";
+			path = "/user/join/modify.jsp";
 		} else if("".equals(act)) {
 			
 		} else if("".equals(act)) {
@@ -143,7 +149,7 @@ public class UserController extends HttpServlet {
 		
 		
 		
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
