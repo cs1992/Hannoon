@@ -39,6 +39,7 @@ public class StudyController extends HttpServlet {
 		} else
 			path = "/index.jsp";
 
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
