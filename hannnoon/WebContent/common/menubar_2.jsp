@@ -4,6 +4,7 @@
 <%
 String menubarRoot = request.getContextPath();
 %>
+
 <script>
 function modiftTitle(seq){
 	$("#nameForm" + seq).css('display', 'block');
