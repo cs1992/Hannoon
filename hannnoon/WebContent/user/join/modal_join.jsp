@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%
-String hn = request.getContextPath();
+String hnj = request.getContextPath();
 %>
-<script type="text/javascript" src="<%= hn %>/js/myajax.js"></script>
+<script type="text/javascript" src="<%=hnj%>/js/myajax.js"></script>
 <script type="text/javascript">
 function join(){
 	if(document.joinform.id.value == "") {
@@ -16,11 +16,11 @@ function join(){
 	} else if(document.getElementById("pw").value  == "") {
 		alert("비밀번호 입력!");
 		return;
-	} else if(document.getElementById("pw").value != document.getElementById("passcheck").value) {
+	} else if(document.getElementById("pw").value != document.getElementById("pwcheck").value) {
 		alert("비밀번호 확인!");
 		return;
 	} else {
-		document.joinform.action = "<%= hn %>user";
+		document.joinform.action = "<%= hnj %>/user";
 		document.joinform.submit();
 		
 	}
@@ -32,12 +32,12 @@ var flag = false;
 function idcheck(){
 	view = document.getElementById("idresult");
 	var idval = document.joinform.id.value;
-	//alert(idval.length);
+	
 	if(idval.length < 5 || idval.length > 16) {
 		view.innerHTML = "<font folor='orange'>아이디는 5자리이상 16자 이하입니다.</font>"
 	} else {
 		var param = "act=idsearch&id=" + encodeURI(idval);
-		sendRequest("<%= hn %>/user", param, idresult, "GET");
+		sendRequest("<%=hnj%>/user", param, idresult, "GET");
 	}
 }
 
@@ -51,6 +51,19 @@ function idresult() {
 		}
 	}
 }
+
+function passwordcheck(){
+	view = document.getElementById("pwcheckresult");
+	var pw = document.joinform.pw.value;
+	var pwck = document.joinform.pwcheck.value;
+	
+	if(pw != pwck) {
+		view.innerHTML = "<font folor='red'>비밀번호가 일치하지 않습니다.</font>"
+	} else {
+		view.innerHTML = "";
+	}
+}
+
 </script>
 
 <style>
@@ -70,13 +83,12 @@ function idresult() {
 <!-- 폼 시작 -->
 
 <form name ="joinform" method="post" action="">
-	<input type="hidden" name="act" value="register">
+	<input type="hidden" name="act" value="join">
 	 <table>
 			<tr>
 				<td>
 					<input type="text" name="id" id="id" value="" size="12" placeholder="아이디" onkeyup="javascript:idcheck();">
-					<div id="idresult" style="float:left;">
-				</div>
+					<div id="idresult" style="float:left;"></div>
 				</td>
 			</tr>
 
@@ -87,7 +99,9 @@ function idresult() {
 
 			<tr>
 	        	<td>
-	         	<input type="password" name="passcheck" id="passcheck" size="12" maxlength="12" placeholder="비밀번호 재확인"></td>
+	         		<input type="password" name="pwcheck" id="pwcheck" size="12" maxlength="12" placeholder="비밀번호 재확인" onkeyup="javascript:passwordcheck();">
+	         		<div id="pwcheckresult" style="float:left;"></div>
+	         	</td>
 			</tr>
 	</table>
 	<table>
@@ -211,25 +225,24 @@ for(int m=1; m<=12; m++) {
 					</select></div>
 	         </td>
 	   		</tr>
-   </table>
-             <input type="button" class="special" value="회원가입" onclick="javascript:join();">
-	         <input type="reset" value="취소">
-   </form>
+	</table>
+    	<input type="button" class="special" value="회원가입" onclick="javascript:join();">
+		<input type="reset" value="취소">
+	</form>
 
 <!-- 폼 끝 -->
       </div>
     </div>
   </div>
 </div>
-
 <script>
-	function nameValidate() {
-		var value = $('#name').val();
-		var len = value.length;
-		var msg = '';
-		if (len < 4) {
-			msg = '이름은 4글자 이상이여야합니다';
-		}
-		$('#nameValidateData').text(msg);
+function nameValidate() {
+	var value = $('#name').val();
+	var len = value.length;
+	var msg = '';
+	if (len < 4) {
+		msg = '이름은 4글자 이상이여야합니다';
 	}
+	$('#nameValidateData').text(msg);
+}
 </script>	

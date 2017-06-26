@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%
+String hnl = request.getContextPath();
+
 Cookie cookie[] = request.getCookies();
 String saveid = "";
 String idck = "";
@@ -17,19 +19,19 @@ if(cookie != null){ //항상 null체크 할것!
 %>
 <script type="text/javascript">
 function logincheck(){
-	if(document.getElementById("id").value  == "") {
+	if(document.loginform.id.value == "") {
 		alert("아이디 입력!");
 		return;
-	} else if(document.getElementById("pass").value == "") {
+	} else if(document.loginform.id.value == "") {
 		alert("비밀번호 입력!");
 		return;
 	} else {
-		document.loginform.action = "hannoon/user";
+		document.loginform.action = "<%=hnl%>/user";
 		document.loginform.submit();
 	}
 }
 function joinmove(){
-	document.loginform.action = "hannoon/user?act=mvjoin";
+	document.loginform.action = "<%=hnl%>/user?act=mvjoin";
 }
 </script>
 
@@ -53,15 +55,15 @@ function joinmove(){
 <input type="hidden" name="act" value="login">
 
 	<div style="float:right;">
-	<input type="checkbox" name="idsv" value="idsave" <%=idck%>> 
-	<label>아이디 저장</label></div>
+		<input type="checkbox" name="idsv" value="idsave" <%=idck%> id="idsv"> 
+		<label for="idsv">아이디 저장</label>
+	</div>
 	
 	<table>
 	<tr>
 		<td>
 			<div class="">
-				<input type="text" name="id" id="id" value="<%=saveid%>"
-					placeholder="Username" />
+				<input type="text" name="id" id="id" value="<%=saveid%>" placeholder="Username" />
 			</div>
 		</td>
 		
@@ -69,8 +71,7 @@ function joinmove(){
 	<tr>
 		<td>
 			<div class="">
-				<input type="password" name="pass" id="pass" value="" 
-				placeholder="Password" />
+				<input type="password" name="pw" id="pw" value="" placeholder="Password" />
 			</div>
 		</td>
 	</tr>

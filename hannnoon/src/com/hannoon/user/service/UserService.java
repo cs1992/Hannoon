@@ -9,7 +9,7 @@ public interface UserService {
 
 	int idcheck(String id);
 	List<ZipDto> zipSearch(String dong);
-	int register(UserDto userDto); //insert
+	int join(UserDto userDto); //insert
 	
 	UserDto login(String id, String pass);
 	

@@ -2876,7 +2876,7 @@
 
 	table {
 		margin: 0 0 2em 0;
-		width: 80%;
+		width: 100%;
 		text-align: center;
 	}
 
@@ -3002,7 +3002,7 @@
 		.button.fit {
 			display: block;
 			margin: 0 0 1em 0;
-			width: 80%;
+			width: 100%;
 		}
 
 		input[type="submit"].small,

@@ -9,25 +9,31 @@ import com.hannoon.user.model.ZipDto;
 
 public class UserServiceImpl implements UserService {
 	
-	private UserDao userDao;
+	private static UserService userService;
+
+	static {
+		userService = new UserServiceImpl();
+	}
 	
-	public UserServiceImpl() {
-		userDao = new UserDaoImpl();
+	public UserServiceImpl() {}
+	
+	public static UserService getUserService() {
+		return userService;
 	}
 
 	@Override
 	public int idcheck(String id) {
-		return userDao.idcheck(id);
+		return UserDaoImpl.getUserDao().idcheck(id);
 	}
 
 	@Override
 	public List<ZipDto> zipSearch(String dong) {
-		return userDao.zipSearch(dong);
+		return UserDaoImpl.getUserDao().zipSearch(dong);
 	}
 
 	@Override
-	public int register(UserDto userDto) {
-		return userDao.register(userDto);
+	public int join(UserDto userDto) {
+		return UserDaoImpl.getUserDao().register(userDto);
 	}
 
 	@Override
@@ -37,7 +43,7 @@ public class UserServiceImpl implements UserService {
 		map.put("userid", id);
 		map.put("userpass", pass);
 		//""안에 id, pass 로 해도 되는데 일부러 ueser붙여서 다르게 해봄
-		return userDao.login(map);
+		return UserDaoImpl.getUserDao().login(map);
 	}
 
 	@Override
