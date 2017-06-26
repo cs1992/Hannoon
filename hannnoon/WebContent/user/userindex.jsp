@@ -20,11 +20,6 @@ html{
 	width: 70%;
 	height: 50%;
 }
-.inner {
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-}
 .centered {
 	position: relative;
 	display: inline-block;
@@ -65,11 +60,8 @@ HUjg"></script><!-- holder.js -->
 
 
 <!--  메인패널 끝 -->
-</div>
-
 <%@ include file="/common/menubar_2.jsp"%>
 
-</div>
 <script>
 function modal_login_close() {
 	$('#modal_login .closeButton').click();
@@ -77,5 +69,3 @@ function modal_login_close() {
 }
 </script>
   
-</body>
-</html>
