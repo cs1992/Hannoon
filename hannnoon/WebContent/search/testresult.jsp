@@ -13,6 +13,7 @@
 
 <%@ include file="/common/header.jsp"%>
 <%
+final int resultCount = 5;
 	SearchResultListDto listDto = (SearchResultListDto) request
 			.getAttribute(SearchConstance.SEARCH_RESULT_LIST);
 String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
@@ -66,7 +67,7 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 				
 					int blogSize = listDto.getBlogList().size();
 					SearchResultBlogDto blogDto;
-					for (int i = 0; i < blogSize; i++) {
+					for (int i = 0; i < resultCount; i++) {
 						blogDto = listDto.getBlogList().get(i);
 				%>
 				<li>
@@ -94,6 +95,9 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 				<%
 					}
 				%>
+				<li>
+				<div class="row"><div class="10u 12u$(small)"> &nbsp;</div><div class="2u 12u$(small)"><b><a href="javascript:selectMoreSearchType('<%=SearchType.BLOG.value%>', '<%=keyword%>');">더보기</a></b></div></div>
+				</li>
 
 				<header class="major">
 					<h3>카페</h3>
@@ -101,7 +105,7 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 				<%
 					int cafeSize = listDto.getCafeList().size();
 					SearchResultCafeDto cafeDto;
-					for (int i = 0; i < cafeSize; i++) {
+					for (int i = 0; i < resultCount; i++) {
 						cafeDto = listDto.getCafeList().get(i);
 				%>
 				<li>
@@ -128,14 +132,16 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 				<%
 					}
 				%>
-				
+				<li>
+				<div class="row"><div class="10u 12u$(small)"> &nbsp;</div><div class="2u 12u$(small)"><b><a href="javascript:selectMoreSearchType('<%=SearchType.CAFE.value%>', '<%=keyword%>');">더보기</a></b></div></div>
+				</li>
 					<header class="major">
 					<h3>이미지</h3>
 				</header>
 				<%
 					int imageSize = listDto.getImageList().size();
 					SearchResultImageDto imageDto;
-					for (int i = 0; i < imageSize; i++) {
+					for (int i = 0; i < resultCount; i++) {
 						imageDto = listDto.getImageList().get(i);
 				%>
 				<li>
@@ -157,14 +163,16 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 				<%
 					}
 				%>
-				
+				<li>
+				<div class="row"><div class="10u 12u$(small)"> &nbsp;</div><div class="2u 12u$(small)"><b><a href="javascript:selectMoreSearchType('<%=SearchType.IMAGE.value%>', '<%=keyword%>');">더보기</a></b></div></div>
+				</li>
 						<header class="major">
 					<h3>지식인</h3>
 				</header>
 				<%
 					int inTipSize = listDto.getInTipList().size();
 					SearchResultInTipDto inTipDto;
-					for (int i = 0; i < inTipSize; i++) {
+					for (int i = 0; i < resultCount; i++) {
 						inTipDto = listDto.getInTipList().get(i);
 				%>
 				<li>
@@ -186,7 +194,9 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 				<%
 					}
 				%>
-				
+				<li>
+				<div class="row"><div class="10u 12u$(small)"> &nbsp;</div><div class="2u 12u$(small)"><b><a href="javascript:selectMoreSearchType('<%=SearchType.IN_TIP.value%>', '<%=keyword%>');">더보기</a></b></div></div>
+				</li>
 					
 						<header class="major">
 					<h3>사전</h3>
@@ -194,7 +204,7 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 				<%
 					int dicSize = listDto.getDicList().size();
 					SearchResultDicDto dicDto;
-					for (int i = 0; i < dicSize; i++) {
+					for (int i = 0; i < resultCount; i++) {
 						dicDto = listDto.getDicList().get(i);
 				%>
 				<li>
@@ -217,7 +227,9 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 				<%
 					}
 				%>
-				
+				<li>
+				<div class="row"><div class="10u 12u$(small)"> &nbsp;</div><div class="2u 12u$(small)"><b><a href="javascript:selectMoreSearchType('<%=SearchType.DIC.value%>', '<%=keyword%>');">더보기</a></b></div></div>
+				</li>
 				
 							<header class="major">
 					<h3>전문자료</h3>
@@ -225,7 +237,7 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 				<%
 					int profSize = listDto.getProfList().size();
 					SearchResultProfDto profDto;
-					for (int i = 0; i < profSize; i++) {
+					for (int i = 0; i < resultCount; i++) {
 						profDto = listDto.getProfList().get(i);
 				%>
 				<li>
@@ -247,7 +259,9 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 				<%
 					}
 				%>
-				
+				<li>
+				<div class="row"><div class="10u 12u$(small)"> &nbsp;</div><div class="2u 12u$(small)"><b><a href="javascript:selectMoreSearchType('<%=SearchType.PROF.value%>', '<%=keyword%>');">더보기</a></b></div></div>
+				</li>
 				
 					<header class="major">
 					<h3>뉴스</h3>
@@ -257,7 +271,7 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 				
 					int newsSize = listDto.getNewsList().size();
 					SearchResultNewsDto newsDto;
-					for (int i = 0; i < newsSize; i++) {
+					for (int i = 0; i < resultCount; i++) {
 						newsDto = listDto.getNewsList().get(i);
 				%>
 				<li>
@@ -283,14 +297,16 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 				<%
 					}
 				%>
-				
+				<li>
+				<div class="row"><div class="10u 12u$(small)"> &nbsp;</div><div class="2u 12u$(small)"><b><a href="javascript:selectMoreSearchType('<%=SearchType.NEWS.value%>', '<%=keyword%>');">더보기</a></b></div></div>
+				</li>
 							<header class="major">
 					<h3>웹</h3>
 				</header>
 				<%
 					int webSize = listDto.getWebList().size();
 					SearchResultWebDto webDto;
-					for (int i = 0; i < webSize; i++) {
+					for (int i = 0; i < resultCount; i++) {
 						webDto = listDto.getWebList().get(i);
 				%>
 				<li>
@@ -312,7 +328,9 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 				<%
 					}
 				%>
-				
+				<li>
+				<div class="row"><div class="10u 12u$(small)"> &nbsp;</div><div class="2u 12u$(small)"><b><a href="javascript:selectMoreSearchType('<%=SearchType.WEB.value%>', '<%=keyword%>');">더보기</a></b></div></div>
+				</li>
 				<!-- 
 				<li>
 

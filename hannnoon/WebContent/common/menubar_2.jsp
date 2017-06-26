@@ -5,8 +5,6 @@
 <%
 String menubarRoot = request.getContextPath();
 %>
-<script src="http://code.jquery.com/jquery-latest.min.js"
-	type="text/javascript"></script>
 <script>
 	function modiftTitle(seq) {
 		$("#nameForm" + seq).css('display', 'block');
@@ -14,8 +12,27 @@ String menubarRoot = request.getContextPath();
 
 	function test() {
 		$('#study').append('<li><a href="<%=menubarRoot%>/StudyController?act=menu">내한눈방</a></li>');
+	
 	}
+	
 </script>
+
+<script type="text/javascript">
+function test2(){
+	alert("한눈방 만드는 모달창 띄우기고 한눈방 추기하기");
+	$('#study').append('<li><a href="<%=menubarRoot%>/StudyController?act=menu">내한눈방</a></li>');
+	
+	//document.menubarForm.action = "<%=menubarRoot%>/search";
+	//document.menubarForm.act.value = "mvStudyRoom";
+	//document.menubarForm.submit();
+}
+</script>
+
+
+<form name="menubarForm" method="get" action="">
+<input type="hidden" name="act" value="">
+
+</form>
 
 						</div>
 					</div>
@@ -42,9 +59,10 @@ String menubarRoot = request.getContextPath();
 										<li><a href="generic.html">Generic</a></li>
 										<li><a href="elements.html">Elements</a></li>
 										<li>
-											<span class="opener">내한눈방</span>
+											<span class="opener">내한눈방</span> 
 											<ul id="study">
-												<li><a onclick="test()">+ 한눈방</a></li>
+												<!-- <li><a onclick="test()">+ 한눈방</a></li>  --><!-- 이걸 누르면 모달창 -->
+												<li><a onclick="test2()">+ 한눈방</a></li> <!-- 이걸 누르면 모달창 -->
 											</ul>
 										</li>
 										<li><a href="#">Etiam Dolore</a></li>

@@ -29,11 +29,14 @@ public class SearchController extends HttpServlet {
 		Log.log("SearchController::doGet");
 		String searchType = request.getParameter(SearchConstance.SEARCH_TYPE_PARAM);
 		Log.log(searchType);
+		
 		String path = "/index.jsp";
 		
 		if(SearchConstance.HANNOON.equals(searchType)){
 			path = SearchActionFactory.getSearchHannoonAction().execute(request, response);
 			PageMove.forward(path, request, response);
+		} else if("".equals("")){
+			
 		}
 		
 	}

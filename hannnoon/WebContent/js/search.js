@@ -20,3 +20,17 @@ function selectSearchType(type, el, keyword) {
 		
 	}
 }
+function selectMoreSearchType(type, keyword) {
+		//alert("더보기");
+		//isSelected[type] = true;
+		//#f56a6a
+		//el.style.backgroundColor = "#f56a6a";
+		//location.reload();
+		
+		document.searchForm.search_name.value = type;
+		document.searchForm.keyword.value = keyword;
+		document.searchForm.action = root + "/search";
+		document.searchForm.submit();
+		
+	
+}
