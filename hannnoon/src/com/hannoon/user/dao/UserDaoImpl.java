@@ -9,6 +9,18 @@ import com.hannoon.util.db.DBClose;
 import com.hannoon.util.db.DBConnection;
 
 public class UserDaoImpl implements UserDao {
+	
+	private static UserDao userDao;
+
+	static {
+		userDao = new UserDaoImpl();
+	}
+	
+	private UserDaoImpl() {}
+	
+	public static UserDao getUserDao() {
+		return userDao;
+	}
 
 	@Override
 	public int idcheck(String id) {
@@ -19,11 +31,12 @@ public class UserDaoImpl implements UserDao {
 		
 		try {
 			conn = DBConnection.getConnection();
-			String sql = "select count(id) \n";
-			sql += "from user_info \n";
-			sql += "where id=?";
+			StringBuffer sql = new StringBuffer();
+			sql.append("select count(id) \n");
+			sql.append("from user_info \n");
+			sql.append("where id=?");
 			
-			pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sql.toString());
 			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
 			
@@ -78,24 +91,24 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public int register(UserDto userDto) {
+		
 		int cnt = 0; //정상적인 경로가 아닌 이상 다 안되는걸로 나오게! 부정적인거!
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		try
 		{
 			conn = DBConnection.getConnection();
-
-			String sql = "";
-			sql += "insert all \n";
-			sql += "	into user_info(id, school_id, part_id, pw, name, tel1, tel2, tel3, email1, email2, zip1, zip2, addr1, addr2, birth1, birth2, birth3, is_manager) \n";
-			sql += "	values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0) \n";
-			sql += "select * from dual \n";
+			StringBuffer sql = new StringBuffer();
+			sql.append("insert all \n");
+			sql.append("	into user_info(id, school_code, part_code, pw, name, tel1, tel2, tel3, email1, email2, zip1, zip2, addr1, addr2, birth1, birth2, birth3, is_manager) \n");
+			sql.append("	values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0) \n");
+			sql.append("select * from dual \n");
 			
-			pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sql.toString());
 			int idx = 0; //그냥 1,2,..로 넣어주면 나중에 순서바뀌거나 빠지면 하나하나 바꿔조야되서 귀차나 
 			pstmt.setString(++idx, userDto.getId());
-			pstmt.setString(++idx, userDto.getSchool_id());
-			pstmt.setString(++idx, userDto.getPart_id());
+			pstmt.setInt(++idx, userDto.getSchoolCode());
+			pstmt.setInt(++idx, userDto.getPartCode());
 			pstmt.setString(++idx, userDto.getPw());
 			pstmt.setString(++idx, userDto.getName());
 			pstmt.setString(++idx, userDto.getTel1());
@@ -132,12 +145,12 @@ public class UserDaoImpl implements UserDao {
 		try {
 			conn = DBConnection.getConnection();
 			
-			String sql = "";
-			sql += "select id, name, part_id \n";
-			sql += "from user_info \n";
-			sql += "where id=? and pw=? \n";
+			StringBuffer sql = new StringBuffer();
+			sql.append("select id, name \n");
+			sql.append("from user_info \n");
+			sql.append("where id=? and pw=? \n");
 			
-			pstmt = conn.prepareStatement(sql);
+			pstmt = conn.prepareStatement(sql.toString());
 			pstmt.setString(1, map.get("userid"));
 			pstmt.setString(2, map.get("userpass"));
 			rs = pstmt.executeQuery();
@@ -146,7 +159,6 @@ public class UserDaoImpl implements UserDao {
 				userDto = new UserDto(); //그래서 일치하는게 있으면 넣으려고 여기서 new함
 				userDto.setId(rs.getString("id"));
 				userDto.setName(rs.getString("name"));
-				userDto.setPart_id(rs.getString("part_id"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

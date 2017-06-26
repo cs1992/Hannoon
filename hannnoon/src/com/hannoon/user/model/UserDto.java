@@ -3,8 +3,8 @@ package com.hannoon.user.model;
 public class UserDto {
 
 	private String id;
-	private String school_id;
-	private String part_id;
+	private int schoolCode;
+	private int partCode;
 	private String pw;
 	private String name;
 	private String tel1;
@@ -26,20 +26,35 @@ public class UserDto {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getSchool_id() {
-		return school_id;
-	}
-	public void setSchool_id(String school_id) {
-		this.school_id = school_id;
-	}
-	public String getPart_id() {
-		return part_id;
-	}
-	public void setPart_id(String part_id) {
-		this.part_id = part_id;
-	}
+//	public String getSchoolCode() {
+//		return schoolCode;
+//	}
+//	public void setSchoolCode(String schoolCode) {
+//		this.schoolCode = schoolCode;
+//	}
+//	public String getPartCode() {
+//		return partCode;
+//	}
+//	public void setPartCode(String partCode) {
+//		this.partCode = partCode;
+//	}
+	
+	
+	
 	public String getPw() {
 		return pw;
+	}
+	public int getSchoolCode() {
+		return schoolCode;
+	}
+	public void setSchoolCode(int schoolCode) {
+		this.schoolCode = schoolCode;
+	}
+	public int getPartCode() {
+		return partCode;
+	}
+	public void setPartCode(int partCode) {
+		this.partCode = partCode;
 	}
 	public void setPw(String pw) {
 		this.pw = pw;
