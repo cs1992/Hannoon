@@ -18,6 +18,7 @@ import com.hannoon.util.SearchConstance.Engine;
 import com.hannoon.util.SearchConstance.SearchName;
 
 public class SearchEngine implements Callable<List> {
+	
 	private String query;
 	private Engine engineType;
 	private SearchName searchName;
