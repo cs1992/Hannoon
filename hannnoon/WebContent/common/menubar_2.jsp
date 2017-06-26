@@ -1,127 +1,88 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
+<%--<%@ include file="/search/testpublic.jsp"%> --%>
 
-<%@ include file="/common/public.jsp"%>
-<!-- #### MENU_BAR #### -->
-<!-- Sidebar -->
+<%
+String menubarRoot = request.getContextPath();
+%>
+<script src="http://code.jquery.com/jquery-latest.min.js"
+	type="text/javascript"></script>
 <script>
+	function modiftTitle(seq) {
+		$("#nameForm" + seq).css('display', 'block');
+	}
 
+	function test() {
+		$('#study').append('<li><a href="<%=menubarRoot%>/StudyController?act=menu">郴茄传规</a></li>');
+	}
 </script>
-<div id="sidebar">
-	<div class="inner">
 
-		<!-- Search -->
-		<section id="search" class="alt">
-			<form method="post" action="#">
-				<input type="text" name="query" id="query" placeholder="Search" />
-			</form>
-		</section>
+						</div>
+					</div>
 
-		<!-- Menu -->
-		<nav id="menu">
-			<header class="major">
-				<h2>Menu</h2>
-			</header>
-			<ul>
-				<li><a href="index.jsp">傍瘤荤亲</a></li>
-				<li><span class="opener">郴茄传规</span></li>
-				<ul>
-					<form name="menu" method="get">
-						<li><a href="<%=publicRoot%>/StudyController?act=menu"> 货臂 累己
-								<img src="<%=publicRoot%>/study/img/hyundong/plus.png"
-								width="10" >
-						</a></li>
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
 
-						<li><a> 郴茄传规</a></li>
-
-					</form>
-				</ul>
-				<li><a href="elements.html">Elements</a></li>
-				<li><span class="opener">Submenu</span>
-					<ul>
-						<li><span class="opener">Lorem Dolor</span>
-							<ul>
-								<!-- <li><a href="#">a</a></li> -->
-								<li><a href="#">b</a></li>
-							</ul></li>
-						<li><a href="#">Ipsum Adipiscing</a></li>
-						<li><a href="#">Tempus Magna</a></li>
-						<li><a href="#">Feugiat Veroeros</a></li>
-					</ul></li>
-				<li><span class="opener">Etiam Dolore</span>
-					<ul>
-						<li><a href="#">a</a></li>
-						<li>b</li>
-					</ul></li>
-				</li>
-				<li><a href="#">Adipiscing</a></li>
-				<li><span class="opener">Another Submenu</span>
-					<ul>
-						<li><a href="#">Lorem Dolor</a></li>
-						<li><a href="#">Ipsum Adipiscing</a></li>
-						<li><a href="#">Tempus Magna</a></li>
-						<li><a href="#">Feugiat Veroeros</a></li>
-					</ul></li>
-				<li><a href="#">Maximus Erat</a></li>
-				<li><a href="#">Sapien Mauris</a></li>
-				<li><a href="#">Amet Lacinia</a></li>
-			</ul>
-		</nav>
+							<!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
 
 
-		<%--
-			<!-- Section -->
-			<section> <header class="major">
-			<h2>Ante interdum</h2>
-			</header>
-			<div class="mini-posts">
-				<article> <a href="#" class="image"><img
-					src="images/pic07.jpg" alt="" /></a>
-				<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
-					dolore aliquam.</p>
-				</article>
-				<article> <a href="#" class="image"><img
-					src="images/pic08.jpg" alt="" /></a>
-				<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
-					dolore aliquam.</p>
-				</article>
-				<article> <a href="#" class="image"><img
-					src="images/pic09.jpg" alt="" /></a>
-				<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper
-					dolore aliquam.</p>
-				</article>
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="generic.html">Generic</a></li>
+										<li><a href="elements.html">Elements</a></li>
+										<li>
+											<span class="opener">郴茄传规</span>
+											<ul id="study">
+												<li><a onclick="test()">+ 茄传规</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Etiam Dolore</a></li>
+										<li><a href="#">Adipiscing</a></li>
+										<li>
+											<span class="opener">Another Submenu</span>
+											<ul>
+												<li><a href="#">Lorem Dolor</a></li>
+												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Maximus Erat</a></li>
+										<li><a href="#">Sapien Mauris</a></li>
+										<li><a href="#">Amet Lacinia</a></li>
+									</ul>
+								</nav>
+
+							
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
 			</div>
-			<ul class="actions">
-				<li><a href="#" class="button">More</a></li>
-			</ul>
-			</section>
 
-			<!-- Section -->
-			<section> <header class="major">
-			<h2>Get in touch</h2>
-			</header>
-			<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare
-				velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed
-				aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus
-				aliquam.</p>
-			<ul class="contact">
-				<li class="fa-envelope-o"><a href="#">information@untitled.tld</a></li>
-				<li class="fa-phone">(000) 000-0000</li>
-				<li class="fa-home">1234 Somewhere Road #8254<br /> Nashville,
-					TN 00000-0000
-				</li>
-			</ul>
-			</section>
- --%>
+	<!-- Scripts -->
+<script src="<%=menubarRoot%>/template/assets/js/jquery.min.js"></script>
+<script src="<%=menubarRoot%>/template/assets/js/skel.min.js"></script>
+<script src="<%=menubarRoot%>/template/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="<%=menubarRoot%>/template/assets/js/main.js"></script>
 
-		<!-- Footer -->
-		<footer id="footer">
-			<p class="copyright">
-				&copy; Untitled. All rights reserved. Demo Images: <a
-					href="https://unsplash.com">Unsplash</a>. Design: <a
-					href="https://html5up.net">HTML5 UP</a>.
-			</p>
-		</footer>
-
-	</div>
-</div>
+<script src="<%=menubarRoot%>/js/search.js"></script>
+	</body>
+</html>

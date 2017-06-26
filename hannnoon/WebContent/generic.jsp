@@ -191,12 +191,5 @@
 
 </center>
 
-<!--  메인패널 끝 -->
-</div>
 
 <%@ include file="/common/menubar_2.jsp"%>
-
-</div>
-
-</body>
-</html>

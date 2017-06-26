@@ -12,7 +12,7 @@
 		medium: '(max-width: 980px)',
 		small: '(max-width: 736px)',
 		xsmall: '(max-width: 480px)',
-		'xlarge-to-max': '(min-width: 1681px)',
+		'xlarge-to-max': '(min-width: 2000px)',
 		'small-to-xlarge': '(min-width: 481px) and (max-width: 1680px)'
 	});
 
@@ -232,11 +232,11 @@
 								}
 								else {
 
-									if (y > 0)
-										$sidebar_inner
-											.data('locked', 1)
-											.css('position', 'fixed')
-											.css('top', -1 * x);
+//									if (y > 0)
+//										$sidebar_inner
+//											.data('locked', 1)
+//											.css('position', 'fixed')
+//											.css('top', -1 * x);
 
 								}
 
@@ -255,7 +255,7 @@
 
 					});
 
-		// Menu. // ###### 서브메뉴 밑으로 나오게하는 함수 ######
+		// Menu.
 			var $menu = $('#menu'),
 				$menu_openers = $menu.children('ul').find('.opener');
 

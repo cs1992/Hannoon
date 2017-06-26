@@ -30,13 +30,13 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 				onload="javascript:javascript:selectSearchType('<%=SearchType.ALL%>', this, '<%=keyword%>');">
 
 				<ul class="actions">
-					<div class="button special small" id="<%=SearchType.ALL%>"
+					<div class="button small" id="<%=SearchType.ALL%>"
 						onclick="javascript:selectSearchType('<%=SearchType.ALL.value%>', this, '<%=keyword%>');">전체</div>
 					<div class="button small" id="<%=SearchType.BLOG%>"
 						onclick="javascript:selectSearchType('<%=SearchType.BLOG.value%>', this, '<%=keyword%>');">블로그</div>
 					<div class="button small" id="<%=SearchType.CAFE%>"
 						onclick="javascript:selectSearchType('<%=SearchType.CAFE.value%>', this, '<%=keyword%>');">카페</div>
-					<div class="button small" id="<%=SearchType.IMAGE%>"
+					<div class="button special small" id="<%=SearchType.IMAGE%>"
 						onclick="javascript:selectSearchType('<%=SearchType.IMAGE.value%>', this, '<%=keyword%>');">이미지</div>
 					<div class="button small" id="<%=SearchType.IN_TIP%>"
 						onclick="javascript:selectSearchType('<%=SearchType.IN_TIP.value%>', this, '<%=keyword%>');">지식인</div>
@@ -58,76 +58,7 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 			
 			<ul class="alt">
 
-				<header class="major">
-					<h3>블로그</h3>
-				</header>
-
-				<%
-				
-					int blogSize = listDto.getBlogList().size();
-					SearchResultBlogDto blogDto;
-					for (int i = 0; i < blogSize; i++) {
-						blogDto = listDto.getBlogList().get(i);
-				%>
-				<li>
-
-					<div class="row">
-						<div class="12u 12u$(small)">
-							<div class="row">
-								<div class="10u 12u$(small)">
-									<a href="<%=blogDto.getOriginLink()%>"><%=blogDto.getTitle()%></a>
-								</div>
-								<div class="2u 12u$(small)"><%=blogDto.getPostDate()%></div>
-							</div>
-							<div class="row"><div class="12u 12i$(small)"><%=blogDto.getDescription()%></div></div>
-							<div class="row">
-								<div class="4u 12$(small)">
-									<a href="<%=blogDto.getHostLink()%>"><%=blogDto.getAuthor()%></a>
-								</div>
-								<div class="8u 12$(small)">
-									<a href="<%=blogDto.getOriginLink()%>"><%=blogDto.getOriginLink()%></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<%
-					}
-				%>
-
-				<header class="major">
-					<h3>카페</h3>
-				</header>
-				<%
-					int cafeSize = listDto.getCafeList().size();
-					SearchResultCafeDto cafeDto;
-					for (int i = 0; i < cafeSize; i++) {
-						cafeDto = listDto.getCafeList().get(i);
-				%>
-				<li>
-
-					<div class="row">
-						<div class="12u 12u$(small)">
-							<div class="row">
-								<div class="12u 12u$(small)">
-									<a href="<%=cafeDto.getOriginLink()%>"><%=cafeDto.getTitle()%></a>
-								</div>
-							</div>
-							<div class="row"><div class="12u 12i$(small)"><%=cafeDto.getDescription()%></div></div>
-							<div class="row">
-								<div class="5u 12$(small)">
-									<a href="<%=cafeDto.getHostLink()%>"><%=cafeDto.getHostName()%></a>
-								</div>
-								<div class="7u 12$(small)">
-									<a href="<%=cafeDto.getOriginLink()%>"><%=cafeDto.getOriginLink()%></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<%
-					}
-				%>
+		
 				
 					<header class="major">
 					<h3>이미지</h3>
@@ -158,160 +89,7 @@ String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
 					}
 				%>
 				
-						<header class="major">
-					<h3>지식인</h3>
-				</header>
-				<%
-					int inTipSize = listDto.getInTipList().size();
-					SearchResultInTipDto inTipDto;
-					for (int i = 0; i < inTipSize; i++) {
-						inTipDto = listDto.getInTipList().get(i);
-				%>
-				<li>
-
-					<div class="row">
-						<div class="12u 12u$(small)">
-							<div class="row">
-								<div class="12u 12u$(small)">
-									<a href="<%=inTipDto.getOriginLink()%>"><%=inTipDto.getTitle()%></a>
-								</div>
-							</div>
-							<div class="row"><div class="12u 12i$(small)"><%=inTipDto.getDescription()%></div></div>
-							<div class="row">
-							
-							</div>
-						</div>
-					</div>
-				</li>
-				<%
-					}
-				%>
-				
-					
-						<header class="major">
-					<h3>사전</h3>
-				</header>
-				<%
-					int dicSize = listDto.getDicList().size();
-					SearchResultDicDto dicDto;
-					for (int i = 0; i < dicSize; i++) {
-						dicDto = listDto.getDicList().get(i);
-				%>
-				<li>
-
-					<div class="row">
-						<div class="4u 12u$(small)"><img src="<%=dicDto.getThumbNail()%>"></div>
-						<div class="8u 12u$(small)">
-							<div class="row">
-								<div class="9u 12u$(small)">
-									<a href="<%=dicDto.getOriginLink()%>"><%=dicDto.getTitle()%></a>
-								</div>
-							</div>
-							<div class="row"><div class="12u 12i$(small)"><%=dicDto.getDescription()%></div></div>
-							<div class="row">
-							
-							</div>
-						</div>
-					</div>
-				</li>
-				<%
-					}
-				%>
-				
-				
-							<header class="major">
-					<h3>전문자료</h3>
-				</header>
-				<%
-					int profSize = listDto.getProfList().size();
-					SearchResultProfDto profDto;
-					for (int i = 0; i < profSize; i++) {
-						profDto = listDto.getProfList().get(i);
-				%>
-				<li>
-
-					<div class="row">
-						<div class="12u 12u$(small)">
-							<div class="row">
-								<div class="12u 12u$(small)">
-									<a href="<%=profDto.getOriginLink()%>"><%=profDto.getTitle()%></a>
-								</div>
-							</div>
-							<div class="row"><div class="12u 12i$(small)"><%=profDto.getDescription()%></div></div>
-							<div class="row">
-							
-							</div>
-						</div>
-					</div>
-				</li>
-				<%
-					}
-				%>
-				
-				
-					<header class="major">
-					<h3>뉴스</h3>
-				</header>
-
-				<%
-				
-					int newsSize = listDto.getNewsList().size();
-					SearchResultNewsDto newsDto;
-					for (int i = 0; i < newsSize; i++) {
-						newsDto = listDto.getNewsList().get(i);
-				%>
-				<li>
-
-					<div class="row">
-						<div class="12u 12u$(small)">
-							<div class="row">
-								<div class="9u 12u$(small)">
-									<a href="<%=newsDto.getOriginLink()%>"><%=newsDto.getTitle()%></a>
-								</div>
-								<div class="3u 12u$(small)"><%=newsDto.getPostDate()%></div>
-							</div>
-							<div class="row"><div class="12u 12i$(small)"><%=newsDto.getDescription()%></div></div>
-							<div class="row">
-								
-								<div class="12u 12$(small)">
-									<a href="<%=newsDto.getOriginLink()%>"><%=newsDto.getOriginLink()%></a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</li>
-				<%
-					}
-				%>
-				
-							<header class="major">
-					<h3>웹</h3>
-				</header>
-				<%
-					int webSize = listDto.getWebList().size();
-					SearchResultWebDto webDto;
-					for (int i = 0; i < webSize; i++) {
-						webDto = listDto.getWebList().get(i);
-				%>
-				<li>
-
-					<div class="row">
-						<div class="12u 12u$(small)">
-							<div class="row">
-								<div class="12u 12u$(small)">
-									<a href="<%=webDto.getOriginLink()%>"><%=webDto.getTitle()%></a>
-								</div>
-							</div>
-							<div class="row"><div class="12u 12i$(small)"><%=webDto.getDescription()%></div></div>
-							<div class="row">
-							
-							</div>
-						</div>
-					</div>
-				</li>
-				<%
-					}
-				%>
+			
 				
 				<!-- 
 				<li>
