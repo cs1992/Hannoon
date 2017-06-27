@@ -22,7 +22,7 @@ function logincheck(){
 	if(document.loginform.id.value == "") {
 		alert("아이디 입력!");
 		return;
-	} else if(document.loginform.id.value == "") {
+	} else if(document.loginform.pw.value == "") {
 		alert("비밀번호 입력!");
 		return;
 	} else {
