@@ -64,7 +64,7 @@ function addGroupRoom(){
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">공지사항</a></li>
+										<li><a href="<%=menubarRoot%>/board/notice/list.jsp">공지사항</a></li>
 										<li>
 											<span class="opener">내한눈방</span> 
 											<ul id="study">
@@ -88,7 +88,7 @@ function addGroupRoom(){
 												<li><a href="">경제</a></li>
 											</ul>
 										</li>
-										<li><a href="generic.html">한눈인</a></li>
+										<li><a href="<%=menubarRoot%>/hannoonin/hannooninmain.jsp">한눈인</a></li>
 										<li><a href="elements.html">스터디카페</a></li>
 										
 										<li><a href="#">마이페이지</a></li>
