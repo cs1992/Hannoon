@@ -13,6 +13,7 @@ window.onload=function(){
 	
 }
 
+
 $(document).ready(function(){
     
 	//$("#myModal2").find('.data-backdrop').val('static');
