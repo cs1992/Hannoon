@@ -20,7 +20,14 @@ String root = request.getContextPath();
 <title>ÇÑ´«</title>
 
 <script type="text/javascript" src="<%=root%>/js/search.js"></script>
+	<!-- Scripts -->
+<script src="<%=root%>/template/assets/js/jquery.min.js"></script>
+<script src="<%=root%>/template/assets/js/skel.min.js"></script>
+<script src="<%=root%>/template/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="<%=root%>/template/assets/js/main.js"></script>
 
+<%--<script src="<%=root%>/js/search.js"></script> --%>
 <script type="text/javascript">
 var root = "<%=root%>";
 </script>
