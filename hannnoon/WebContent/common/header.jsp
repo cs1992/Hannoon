@@ -60,8 +60,8 @@ var root = "<%=root%>";
 				</form>
 				</section>
 				
-				<ul class="icons">
-				<li><span class="label"><img src="<%=root%>/template/images/notice.png" width="30" height="30"></span></li>
+				<ul class="icons" name="popUp" id="popUp" action="#">
+				<li><a href="#" onmouseover="javascript:popup();"><img src="<%=root%>/template/images/notice.png" width="30" height="30" ></a></li>
 				</ul>
 				
 				
