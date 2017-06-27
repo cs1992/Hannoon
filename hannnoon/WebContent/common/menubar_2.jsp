@@ -18,9 +18,18 @@ String menubarRoot = request.getContextPath();
 </script>
 
 <script type="text/javascript">
-function test2(){
-	alert("한눈방 만드는 모달창 띄우기고 한눈방 추기하기");
-	$('#study').append('<li><a href="<%=menubarRoot%>/StudyController?act=menu">내한눈방</a></li>');
+function addStudyRoom(){
+	//alert("한눈방 만드는 모달창 띄우기고 한눈방 추기하기");
+	$('#study').append('<li><a href="<%=menubarRoot%>/StudyController?act=menu">한눈방이름</a></li>');
+	
+	//document.menubarForm.action = "<%=menubarRoot%>/search";
+	//document.menubarForm.act.value = "mvStudyRoom";
+	//document.menubarForm.submit();
+}
+
+function addGroupRoom(){
+	alert("그룹방 만드는 모달창 띄우기고 그룹방 추기하기");
+	$('#group').append('<li><a href="<%=menubarRoot%>/">그룹방이름</a></li>');
 	
 	//document.menubarForm.action = "<%=menubarRoot%>/search";
 	//document.menubarForm.act.value = "mvStudyRoom";
@@ -55,30 +64,35 @@ function test2(){
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="index.html">Homepage</a></li>
-										<li><a href="generic.html">Generic</a></li>
-										<li><a href="elements.html">Elements</a></li>
+										<li><a href="<%=menubarRoot%>/board/notice/list.jsp">공지사항</a></li>
 										<li>
 											<span class="opener">내한눈방</span> 
 											<ul id="study">
-												<!-- <li><a onclick="test()">+ 한눈방</a></li>  --><!-- 이걸 누르면 모달창 -->
-												<li><a onclick="test2()">+ 한눈방</a></li> <!-- 이걸 누르면 모달창 -->
+												<!-- <li><a onclick="addStudyRoom()">+ 한눈방</a></li>  --><!-- 이걸 누르면 모달창 -->
+												<li><a onclick="addStudyRoom()">+ 한눈방</a></li> <!-- 이걸 누르면 모달창 -->
 											</ul>
 										</li>
-										<li><a href="#">Etiam Dolore</a></li>
-										<li><a href="#">Adipiscing</a></li>
 										<li>
-											<span class="opener">Another Submenu</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
+											<span class="opener">내그룹방</span>
+											<ul id="group">
+												<li><a onclick="addGroupRoom()">+ 그룹방</a></li> <!-- 이걸 누르면 모달창 -->
+												
 											</ul>
 										</li>
-										<li><a href="#">Maximus Erat</a></li>
-										<li><a href="#">Sapien Mauris</a></li>
-										<li><a href="#">Amet Lacinia</a></li>
+										
+										<li>
+											<span class="opener">전공인</span>
+											<ul id="">
+												<li><a href="">컴퓨터</a></li>
+												<li><a href="">소프트웨어</a></li>
+												<li><a href="">경제</a></li>
+											</ul>
+										</li>
+										<li><a href="<%=menubarRoot%>/hannoonin/hannooninmain.jsp">한눈인</a></li>
+										<li><a href="elements.html">스터디카페</a></li>
+										
+										<li><a href="#">마이페이지</a></li>
+									
 									</ul>
 								</nav>
 
@@ -94,13 +108,6 @@ function test2(){
 
 			</div>
 
-	<!-- Scripts -->
-<script src="<%=menubarRoot%>/template/assets/js/jquery.min.js"></script>
-<script src="<%=menubarRoot%>/template/assets/js/skel.min.js"></script>
-<script src="<%=menubarRoot%>/template/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="<%=menubarRoot%>/template/assets/js/main.js"></script>
 
-<script src="<%=menubarRoot%>/js/search.js"></script>
 	</body>
 </html>

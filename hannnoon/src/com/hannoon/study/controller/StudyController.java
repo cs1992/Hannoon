@@ -29,7 +29,7 @@ public class StudyController extends HttpServlet {
 
 		String path = "/index.jsp";
 		if ("menu".equals(act)) {
-			path = "/study/studyroom.jsp";
+			path = "/study/gle.jsp";
 			response.setContentType("text/plain;charset=EUC-KR");
 			StudyService sb = new StudyServiceImpl();
 //			sb.writeArticle();
