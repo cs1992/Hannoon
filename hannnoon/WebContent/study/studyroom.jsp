@@ -8,24 +8,25 @@
 
 <center>
 <div class="row">
-<div class="9u 12$(medium)">
+
 
 
 <form action="sample/viewer/index.php" method="post">
-	<textarea name="ir1" id="ir1" rows="10" cols="100" style="width:766px; height:412px; display:none;"></textarea>
-	<!--textarea name="ir1" id="ir1" rows="10" cols="100" style="width:100%; height:412px; min-width:610px; display:none;"></textarea-->
-	<div class="3u 12$(medium)">
+	<input type="text" name="subject"  style="width:766px;">
+	<!--<textarea name="ir1" id="ir1" rows="10" cols="100" style="width:766px; height:412px; display:none;"></textarea>-->
+	<textarea name="ir1" id="ir1" rows="10" cols="100" style="width:100%; height:412px; min-width:610px; display:none;"></textarea>
+	
 	<p>
 		<input type="button" onclick="pasteHTML();" value="저장" />
-		<!--<input type="button" onclick="showHTML();" value="본문 내용 가져오기" />
-		<input type="button" onclick="submitContents(this);" value="서버로 내용 전송" />
-		<input type="button" onclick="setDefaultFont();" value="기본 폰트 지정하기 (궁서_24)" />-->
+		<!-- <input type="button" onclick="showHTML();" value="본문 내용 가져오기" />-->
+		 <input type="button" onclick="submitContents(this);" value="서버로 내용 전송" />
+			<!--<input type="button" onclick="setDefaultFont();" value="기본 폰트 지정하기 (궁서_24)" />-->
 	</p>
-	</div>
+
 
 </form>
 
-</div>
+
 </div>
 
 <script type="text/javascript">
@@ -74,7 +75,9 @@ function submitContents(elClickedObj) {
 	
 	// 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("ir1").value를 이용해서 처리하면 됩니다.
 	
+	
 	try {
+		document.getElementById("ir1").value.Action = "<%=root%>/StudyController";
 		elClickedObj.form.submit();
 	} catch(e) {}
 }
@@ -87,11 +90,5 @@ function setDefaultFont() {
 </script>
 </center>
 <!--  메인패널 끝 -->
-</div>
 
 <%@ include file="/common/menubar_2.jsp"%>
-
-</div>
-
-</body>
-</html>

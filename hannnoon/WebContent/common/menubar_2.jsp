@@ -19,7 +19,7 @@ String menubarRoot = request.getContextPath();
 
 <script type="text/javascript">
 function test2(){
-	alert("한눈방 만드는 모달창 띄우기고 한눈방 추기하기");
+	//alert("한눈방 만드는 모달창 띄우기고 한눈방 추기하기");
 	$('#study').append('<li><a href="<%=menubarRoot%>/StudyController?act=menu">내한눈방</a></li>');
 	
 	//document.menubarForm.action = "<%=menubarRoot%>/search";
