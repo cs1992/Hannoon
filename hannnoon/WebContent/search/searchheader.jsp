@@ -5,7 +5,7 @@
     pageEncoding="EUC-KR"%>
     
  <%
-final int allResultCount = 5;
+int allResultCount = 5;
 String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
  SearchResultListDto listDto = (SearchResultListDto) request
 			.getAttribute(SearchConstance.SEARCH_RESULT_LIST);

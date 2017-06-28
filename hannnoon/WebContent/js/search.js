@@ -65,7 +65,7 @@ function getKeyword(){
 	} else {
 		firstKey = "";
 	}
-	
+	checkFirst = false;
 }
 
 function sendKeyword(){
@@ -109,7 +109,7 @@ function displayResult(){
 				
 				for(var i = 0; i < len; i++){
 					viewStr += "<a href=\"javascript:selectKeyword('" + list[i] + "');\">";
-					viewStr += list[i].replace(lastkeyword, "<font color='#ff0000'>" + lastkeyword + "</font>") + "</a><br>";
+					viewStr += list[i].replace(lastKeyword, "<font color='#ff0000'>" + lastKeyword + "</font>") + "</a><br>";
 				}
 				
 				var view = document.getElementById("searchList");
@@ -136,9 +136,12 @@ function show(eid){
 }
 
 function hide(eid){
-	console.log("hide : " + eid);
 	var el = document.getElementById(eid);
-	if(el != null){
-		el.style.display = "none";
+	if(el.style.display == ""){
+		console.log("hide : " + eid);
+		if(el != null){
+			el.style.display = "none";
+		}
 	}
+	
 }

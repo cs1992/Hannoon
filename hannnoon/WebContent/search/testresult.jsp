@@ -49,6 +49,7 @@
 	<%
 		int blogSize = listDto.getBlogList().size();
 		SearchResultBlogDto blogDto;
+		allResultCount = allResultCount > blogSize ? blogSize : allResultCount;
 		for (int i = 0; i < allResultCount; i++) {
 			blogDto = listDto.getBlogList().get(i);
 	%>
@@ -95,6 +96,8 @@
 	<%
 		int cafeSize = listDto.getCafeList().size();
 		SearchResultCafeDto cafeDto;
+
+		allResultCount = allResultCount > cafeSize ? cafeSize : allResultCount;
 		for (int i = 0; i < allResultCount; i++) {
 			cafeDto = listDto.getCafeList().get(i);
 	%>
@@ -139,6 +142,8 @@
 	<%
 		int imageSize = listDto.getImageList().size();
 		SearchResultImageDto imageDto;
+
+		allResultCount = allResultCount > imageSize ? imageSize : allResultCount;
 		for (int i = 0; i < allResultCount; i++) {
 			imageDto = listDto.getImageList().get(i);
 	%>
@@ -178,6 +183,8 @@
 	<%
 		int inTipSize = listDto.getInTipList().size();
 		SearchResultInTipDto inTipDto;
+
+		allResultCount = allResultCount > inTipSize ? inTipSize : allResultCount;
 		for (int i = 0; i < allResultCount; i++) {
 			inTipDto = listDto.getInTipList().get(i);
 	%>
@@ -216,6 +223,8 @@
 	<%
 		int dicSize = listDto.getDicList().size();
 		SearchResultDicDto dicDto;
+
+		allResultCount = allResultCount > dicSize ? dicSize : allResultCount;
 		for (int i = 0; i < allResultCount; i++) {
 			dicDto = listDto.getDicList().get(i);
 	%>
@@ -257,6 +266,8 @@
 	<%
 		int profSize = listDto.getProfList().size();
 		SearchResultProfDto profDto;
+
+		allResultCount = allResultCount > profSize ? profSize : allResultCount;
 		for (int i = 0; i < allResultCount; i++) {
 			profDto = listDto.getProfList().get(i);
 	%>
@@ -296,6 +307,7 @@
 	<%
 		int newsSize = listDto.getNewsList().size();
 		SearchResultNewsDto newsDto;
+		allResultCount = allResultCount > newsSize ? newsSize : allResultCount;
 		for (int i = 0; i < allResultCount; i++) {
 			newsDto = listDto.getNewsList().get(i);
 	%>
@@ -339,6 +351,7 @@
 	<%
 		int webSize = listDto.getWebList().size();
 		SearchResultWebDto webDto;
+		allResultCount = allResultCount > webSize ? webSize : allResultCount;
 		for (int i = 0; i < allResultCount; i++) {
 			webDto = listDto.getWebList().get(i);
 	%>

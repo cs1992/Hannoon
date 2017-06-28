@@ -92,7 +92,13 @@ function addGroupRoom(){
 										<li><a href="elements.html">스터디카페</a></li>
 										
 										<li><a href="#">마이페이지</a></li>
-									
+										<li>
+											<span class="opener">관리</span>
+											<ul id="">
+												<li><a href="<%=menubarRoot%>/admin/manageuser/index.jsp">회원관리</a></li>
+												<li><a href="<%=menubarRoot%>/admin/stat/index.jsp">통계</a></li>
+											</ul>
+										</li>
 									</ul>
 								</nav>
 

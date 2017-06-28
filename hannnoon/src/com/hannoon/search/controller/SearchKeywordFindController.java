@@ -42,7 +42,7 @@ public class SearchKeywordFindController extends HttpServlet {
 		String first = Encoding.isoToUtf(request.getParameter("first"));
 		String keyword = Encoding.isoToUtf(request.getParameter("keyword"));
 //		System.out.println(keyword + ", " + first);
-		Log.log("keyword : " + keyword);
+		Log.log("keyword : " + keyword + ", first : " + first);
 		String result = "";
 		if("first".equals(first)){
 //			System.out.println("db얻어와라!!!!!!!");
@@ -79,6 +79,7 @@ public class SearchKeywordFindController extends HttpServlet {
 				}
 			}
 		}
+		Log.log(result);
 		
 		response.setContentType("text/plain;charset=UTF-8");
 		PrintWriter out = response.getWriter();

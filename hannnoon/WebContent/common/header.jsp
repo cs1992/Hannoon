@@ -57,7 +57,7 @@ var keywordName = "<%=SearchConstance.KEYWROD%>";
 				<input type="hidden" name="<%=SearchConstance.SEARCH_TYPE_PARAM%>" value="<%=SearchConstance.HANNOON%>">
 				<input type="hidden" name="<%=SearchConstance.SEARCH_NAME_PARAM%>" id="<%=SearchConstance.SEARCH_NAME_PARAM%>" value="<%=SearchConstance.SearchType.ALL.value%>">
 				<input type="text" name="<%=SearchConstance.KEYWROD%>" id="<%=SearchConstance.KEYWROD%>" placeholder="ÇÑ´«°Ë»ö" value="" onkeypress="javascript:if(event.keyCode == 13){search();}" onkeydown="javascript:getKeyword();" />
-				<div id="searchKeyword" style="display: none; border: #939699 1px solid;">
+				<div id="searchKeyword" style="display: none; border: #939699 1px solid; position: absolute;">
 				<div id="searchList"></div>
 				<ul class="icons">
 				</ul>
