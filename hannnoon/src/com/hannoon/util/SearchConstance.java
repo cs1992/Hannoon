@@ -14,6 +14,9 @@ public class SearchConstance {
 	public final static String NAVER_API_ID ="eSez1gcGAZUzO3T_T4MR";
 	public final static String NAVER_API_SECRET = "kEYHr3ZNAd";
 	
+	public final static String USER_INFO = "userInfo";
+	public final static String USER_ID = "id";
+	
 
 	public final static int DISPLAY_COUNT = 20;
 	public final static int SEARCH_NAME_MAX = 8;

@@ -50,15 +50,15 @@ function activeModal(){
 	       <div class="1u 12u$(small)"><center>#</center></div>
 	      <div class="10u 12u$(small)">
 	      <div class="modal-body">
+	      ...공<br>
+	      ...부<br>
+	      ...하<br>
+	      ...자<br>
 	      ...<br>
-	      ...<br>
-	      ...<br>
-	      ...<br>
-	      ...<br>
-	      ...<br>
-	      ...<br>
-	      ...<br>
-	      ...<br>
+	      ...검<br>
+	      ...색<br>
+	      ...해<br>
+	      ...서<br>
 	      ...<br>
 	      ...<br>
 	      </div>

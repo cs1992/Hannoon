@@ -19,6 +19,7 @@ String root = request.getContextPath();
 <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 <title>ÇÑ´«</title>
 
+<script type="text/javascript" src="<%=root %>/js/myajax.js"></script>
 <script type="text/javascript" src="<%=root%>/js/search.js"></script>
 	<!-- Scripts -->
 <script src="<%=root%>/template/assets/js/jquery.min.js"></script>
@@ -30,6 +31,7 @@ String root = request.getContextPath();
 <%--<script src="<%=root%>/js/search.js"></script> --%>
 <script type="text/javascript">
 var root = "<%=root%>";
+var keywordName = "<%=SearchConstance.KEYWROD%>";
 </script>
 
 
@@ -54,15 +56,18 @@ var root = "<%=root%>";
 				<form method="get" name="searchForm" action="#">
 				<input type="hidden" name="<%=SearchConstance.SEARCH_TYPE_PARAM%>" value="<%=SearchConstance.HANNOON%>">
 				<input type="hidden" name="<%=SearchConstance.SEARCH_NAME_PARAM%>" id="<%=SearchConstance.SEARCH_NAME_PARAM%>" value="<%=SearchConstance.SearchType.ALL.value%>">
-				<input type="text" name="<%=SearchConstance.KEYWROD%>" id="<%=SearchConstance.KEYWROD%>" placeholder="ÇÑ´«°Ë»ö" value="" onkeypress="javascript:if(event.keyCode == 13){search();}" />
+				<input type="text" name="<%=SearchConstance.KEYWROD%>" id="<%=SearchConstance.KEYWROD%>" placeholder="ÇÑ´«°Ë»ö" value="" onkeypress="javascript:if(event.keyCode == 13){search();}" onkeydown="javascript:getKeyword();" />
+				<div id="searchKeyword" style="display: none; border: #939699 1px solid;">
+				<div id="searchList"></div>
 				<ul class="icons">
 				</ul>
 				</form>
 				</section>
 				
-				<ul class="icons">
-				<li><span class="label"><img src="<%=root%>/template/images/notice.png" width="30" height="30"></span></li>
-				</ul>
+				<ul class="icons" name="popUp" id="popUp" action="#"> 
+ 				<li><a href="#" onmouseover="javascript:popup();"><img src="<%=root%>/template/images/notice.png" width="30" height="30" ></a></li> 
+ 				</ul> 
+
 				
 				
 				<%--

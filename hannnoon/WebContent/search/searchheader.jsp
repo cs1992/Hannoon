@@ -9,7 +9,12 @@ final int allResultCount = 5;
 String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
  SearchResultListDto listDto = (SearchResultListDto) request
 			.getAttribute(SearchConstance.SEARCH_RESULT_LIST);
+String keywordName = SearchConstance.KEYWROD;
  %>
+<script type="text/javascript">
+document.searchForm.keyword.value = "<%=keyword%>";
+</script>
+
 <div class="row">&nbsp;</div>
 
 	<div class="row">

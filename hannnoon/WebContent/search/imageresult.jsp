@@ -12,23 +12,7 @@
 	pageEncoding="EUC-KR"%>
 
 <%@ include file="/common/header.jsp"%>
-<%
-	SearchResultListDto listDto = (SearchResultListDto) request
-			.getAttribute(SearchConstance.SEARCH_RESULT_LIST);
-String keyword = (String)request.getAttribute(SearchConstance.KEYWROD);
-
-%>
-<section>
-
-
-	<div class="row">
-		<div class="1u 12u$(samll)">랭킹.. 공백?</div>
-
-
-		<div class="9u 12$(small)">
-			<div class="row"
-				onload="javascript:javascript:selectSearchType('<%=SearchType.ALL%>', this, '<%=keyword%>');">
-
+<%@ include file="/search/searchheader.jsp"%>
 				<ul class="actions">
 					<div class="button small" id="<%=SearchType.ALL%>"
 						onclick="javascript:selectSearchType('<%=SearchType.ALL.value%>', this, '<%=keyword%>');">전체</div>
