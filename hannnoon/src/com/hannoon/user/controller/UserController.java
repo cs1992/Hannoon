@@ -24,7 +24,7 @@ public class UserController extends HttpServlet {
 		String root = request.getContextPath();
 		
 		String act = request.getParameter("act");
-		System.out.println("act ===== " + act);
+//		System.out.println("act ===== " + act);
 		
 		String path = "/user/userindex.jsp";
 		boolean flag = false;

@@ -32,7 +32,7 @@ public class SearchServiceThreadPool {
 			e.printStackTrace();
 		}
 		this.executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-		System.out.println(Runtime.getRuntime().availableProcessors());
+//		System.out.println(Runtime.getRuntime().availableProcessors());
 	}
 	
 	public SearchResultListDto startSearch(){
@@ -42,9 +42,9 @@ public class SearchServiceThreadPool {
 		ArrayList<SearchResultDto> mergeResult = null;
 		try {
 			for(SearchName searchName : SearchName.values()){
-				System.out.println(searchName);
+//				System.out.println(searchName);
 				for(Engine engineType : Engine.values()){
-					System.out.println(engineType);
+//					System.out.println(engineType);
 					engine = new SearchEngine(query, engineType, searchName);
 					if(engineType == Engine.NAVER){
 						naverResult = new ArrayList<>();

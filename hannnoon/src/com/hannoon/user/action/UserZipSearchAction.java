@@ -20,9 +20,9 @@ public class UserZipSearchAction implements Action {
 		String path = "";
 		
 		String sdong = Encoding.isoToEuc(request.getParameter("dong"));
-		System.out.println("검색동 : " + sdong);
+//		System.out.println("검색동 : " + sdong);
 		List<ZipDto> list = UserServiceImpl.getUserService().zipSearch(sdong);
-		System.out.println("검색동 갯수 : " + list.size());
+//		System.out.println("검색동 갯수 : " + list.size());
 		path = "/user/join/zipsearch.jsp";
 		request.setAttribute("sdong", sdong);
 		request.setAttribute("zipList", list);

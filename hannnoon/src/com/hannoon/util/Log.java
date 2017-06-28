@@ -5,7 +5,7 @@ public class Log {
 
 	public static void log(String str){
 		if(isLog){
-			System.out.println(str);
+//			System.out.println(str);
 		}
 	}
 }

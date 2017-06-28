@@ -32,14 +32,25 @@ public class StudyController extends HttpServlet {
 			path = "/study/gle.jsp";
 			response.setContentType("text/plain;charset=EUC-KR");
 			StudyService sb = new StudyServiceImpl();
-//			sb.writeArticle();
-			
+			// sb.writeArticle();
 
 			PageMove.redirect(path, request, response);
-		} else
-			path = "/index.jsp";
+		} else if ("qweqw".equals(act)) {
+			path = "/gle.jsp";
+			StudyService sb = new StudyServiceImpl();
+			String StudyRoomname = request.getParameter("");
+//			sb.modifyArticle(studyDto);
+		} else if ("StudyRoom".equals(act)) {
+			String a = request.getParameter("studyname");
+			System.out.println(a);
+		path = "menubar_2.jsp";
+		String studyname = request.getParameter("studyname");
+		int count = StudyServiceImpl.getStudyServiceImpl().StudyRoomName(studyname);
+		PageMove.redirect(path, request, response);
+		} else {
 
-		
+		}
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

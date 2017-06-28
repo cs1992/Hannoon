@@ -26,7 +26,7 @@ public class UserLoginAction implements Action {
 			String idsv = request.getParameter("idsv");
 			//////////////cookie///////////////
 			if("idsave".equals(idsv)){//아이디저장 체크
-				System.out.println("아디저장해");
+//				System.out.println("아디저장해");
 				Cookie cookie = new Cookie("kid_sid", id);//앞에""가 쿠기를 가르킬 수 있는 이름이야.
 				cookie.setMaxAge(60*60*24*365);
 				cookie.setPath(root);
