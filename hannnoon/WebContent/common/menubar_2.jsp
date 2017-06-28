@@ -4,7 +4,6 @@
 
 <%
 String menubarRoot = request.getContextPath();
-String StudyName= request.getParameter("studyname");
 %>
 <script>
 	function modiftTitle(seq) {
@@ -93,6 +92,51 @@ String StudyName= request.getParameter("studyname");
 			</ul>
 		</nav>
 
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="<%=menubarRoot%>/board/notice/list.jsp">공지사항</a></li>
+										<li>
+											<span class="opener">내한눈방</span> 
+											<ul id="study">
+												<!-- <li><a onclick="addStudyRoom()">+ 한눈방</a></li>  --><!-- 이걸 누르면 모달창 -->
+												<li><a onclick="addStudyRoom()">+ 한눈방</a></li> <!-- 이걸 누르면 모달창 -->
+											</ul>
+										</li>
+										<li>
+											<span class="opener">내그룹방</span>
+											<ul id="group">
+												<li><a onclick="addGroupRoom()">+ 그룹방</a></li> <!-- 이걸 누르면 모달창 -->
+												
+											</ul>
+										</li>
+										
+										
+										<li>
+											<span class="opener">전공인</span>
+											<ul id="">
+												<li><a href="">컴퓨터</a></li>
+												<li><a href="">소프트웨어</a></li>
+												<li><a href="">경제</a></li>
+											</ul>
+										</li>
+										<li><a href="<%=menubarRoot%>/hannoonin/hannooninmain.jsp">한눈인</a></li>
+										<li><a href="elements.html">스터디카페</a></li>
+										
+										<li><a href="#">마이페이지</a></li>
+										<li>
+											<span class="opener">관리</span>
+											<ul id="">
+												<li><a href="<%=menubarRoot%>/admin/manageuser/index.jsp">회원관리</a></li>
+												<li><a href="<%=menubarRoot%>/admin/stat/index.jsp">통계</a></li>
+											</ul>
+										</li>
+									</ul>
+								</nav>
 
 
 		<!-- Footer -->

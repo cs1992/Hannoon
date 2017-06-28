@@ -5,7 +5,6 @@ import java.util.*;
 import com.hannoon.user.dao.UserDao;
 import com.hannoon.user.dao.UserDaoImpl;
 import com.hannoon.user.model.UserDto;
-import com.hannoon.user.model.ZipDto;
 
 public class UserServiceImpl implements UserService {
 	
@@ -24,11 +23,6 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public int idcheck(String id) {
 		return UserDaoImpl.getUserDao().idcheck(id);
-	}
-
-	@Override
-	public List<ZipDto> zipSearch(String dong) {
-		return UserDaoImpl.getUserDao().zipSearch(dong);
 	}
 
 	@Override

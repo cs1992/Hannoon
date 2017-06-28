@@ -13,7 +13,6 @@ public class UserActionFactory {
 		userLoginAction = new UserLoginAction();
 		userJoinAction = new UserJoinAction();	
 		userIdSearchAction = new UserIdSearchAction();
-		userZipSearchAction = new UserZipSearchAction();
 	}
 	
 	public static Action getUserLoginAction() {
