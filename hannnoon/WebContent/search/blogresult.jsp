@@ -40,6 +40,7 @@
 </ul>
 </div>
 <ul class="alt">
+
 	<header class="major">
 		<h3>ºí·Î±×</h3>
 	</header>

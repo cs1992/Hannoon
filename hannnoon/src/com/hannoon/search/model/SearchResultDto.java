@@ -51,9 +51,16 @@ public class SearchResultDto implements Comparable<SearchResultDto> {
 	}
 	
 	public void setField(JSONObject item){
-		title = (String) item.get(SearchConstance.Result.TITLE);
+		title = ((String) item.get(SearchConstance.Result.TITLE)).replaceAll("&lt;b&gt;", "<b>");
+		title = title.replaceAll("&lt;/b&gt;", "</b>");
 		originLink = (String) item.get(SearchConstance.Result.LINK);
-		description = (String) item.get(SearchConstance.Result.DESCRIPTION);
+		String temp = (String) item.get(SearchConstance.Result.DESCRIPTION);
+		
+		if(temp != null){
+			description = temp.replaceAll("&lt;b&gt;", "<b>");
+			description = description.replaceAll("&lt;/b&gt;", "</b>");
+			
+		}
 	}
 	
 	@Override
