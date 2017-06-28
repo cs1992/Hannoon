@@ -64,10 +64,9 @@ var keywordName = "<%=SearchConstance.KEYWROD%>";
 				</form>
 				</section>
 				
-				<ul class="icons" name="popUp" id="popUp" action="#"> 
- 				<li><a href="#" onmouseover="javascript:popup();"><img src="<%=root%>/template/images/notice.png" width="30" height="30" ></a></li> 
- 				</ul> 
-
+				<ul class="icons" name="popUp" id="popUp" action="#">
+				<li><a href="#" onmouseover="javascript:popup();"><img src="<%=root%>/template/images/notice.png" width="30" height="30" ></a></li>
+				</ul>
 				
 				
 				<%--

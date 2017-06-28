@@ -218,6 +218,7 @@ for(int m=1; m<=12; m++) {
 					<!--<option value="naver.com">직접입력</option>-->
 		            <option value="@naver.com">@naver.com</option>
 					<option value="@hanmail.net">@hanmail.net</option>
+					<option value="@gmail.com">@gmail.com</option>
 					</select></div>
 			</div>
 			<div id="emailck" style="float:left;"></div>	
@@ -241,6 +242,8 @@ for(int m=1; m<=12; m++) {
 		            <option value="1">서울대학교</option>
 					<option value="2">연세대학교</option>
 					<option value="3">고려대학교</option>
+					<option value="4">성균관대학교</option>
+					<option value="5">한양대학교</option>
 					</select></div>
 	         </td>
 	         <td style="width:50%"><div style="float:left;">전공</div>
@@ -248,9 +251,11 @@ for(int m=1; m<=12; m++) {
 	         	<select name="partCode">
 					<!--<option value="">직접입력</option>-->
 		            <option value="0">선택안함</option>
-		            <option value="1">컴퓨터공학과</option>
-					<option value="2">정보통신공학과</option>
-					<option value="3">정보보호학과</option>
+		            <option value="1">경영학과</option>
+					<option value="2">교육학과</option>
+					<option value="3">수학통계학과</option>
+					<option value="4">컴퓨터공학과</option>
+					<option value="5">화학공학과</option>
 					</select></div>
 	         </td>
 	   		</tr>
