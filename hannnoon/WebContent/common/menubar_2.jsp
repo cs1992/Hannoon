@@ -4,6 +4,7 @@
 
 <%
 String menubarRoot = request.getContextPath();
+String StudyName = request.getParameter("studyname");
 %>
 <script>
 	function modiftTitle(seq) {
