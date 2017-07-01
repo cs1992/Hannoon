@@ -20,14 +20,12 @@ public class UserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String root = request.getContextPath();
-		
+				
 		String act = request.getParameter("act");
-		System.out.println("act ===== " + act);
+//		System.out.println("act ===== " + act);
 		
 		String path = "/user/userindex.jsp";
-		boolean flag = false;
+
 		if("mvjoin".equals(act)) {
 			path =  "/user/join/user.jsp";
 			PageMove.redirect(path, request, response);

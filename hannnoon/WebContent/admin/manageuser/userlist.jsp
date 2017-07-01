@@ -1,8 +1,10 @@
+<%@page import="com.hannoon.user.model.UserDto"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR" import="java.util.List"%>
-
-<%--<%@ include file="/common/public.jsp" %> --%>
 <%@ include file="/common/header.jsp"%>
+<%
+List<UserDto> list = (List<UserDto>) request.getAttribute("userList");
+%>
 <!--  우리가 꾸밀 곳 여기 메인패널 -->
 
 <center>
@@ -15,55 +17,56 @@
 	<div class="table-wrapper">
 		<table>
 			<thead>
-				<th width="10">번호</th>
-				<th width="150">내용</th>
-				<th width="30">작성자</th>
-				<th width="30">날짜</th>
+				<th width="10">아이디</th>
+				<th width="1">|</th>
+				<th width="10">이름</th>
+				<th width="1">|</th>
+				<th width="15">학교</th>
+				<th width="1">|</th>
+				<th width="15">학과</th>
+				<th width="1">|</th>
+				<th width="20">전화번호</th>
+				<th width="1">|</th>
+				<th width="20">이메일</th>
+				<th width="1">|</th>
+				<th width="10">생년</th>
 				</tr>
 			</thead>
 			<tbody>
+<%
+int size = list.size();
+if(size != 0) {
+	for(UserDto userDto : list) {
+%>
 				<tr>
+					<td><%= userDto.getId() %></td>
 					<td></td>
+					<td><%= userDto.getName() %></td>
 					<td></td>
+					<td><%= userDto.getSchoolName() %></td>
 					<td></td>
+					<td><%= userDto.getPartName() %></td>
 					<td></td>
+					<td><%= userDto.getTel1() %> <%= userDto.getTel2() %> <%= userDto.getTel3() %></td>
+					<td></td>
+					<td><%= userDto.getEmail1() %> @ <%= userDto.getEmail2() %></td>
+					<td></td>
+					<td><%= userDto.getBirth1() %></td>
 				</tr>
+<%
+	}
+} else {
+%>
 				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
+					<td align="center" class="text_gray" colspan="10">
+					<br>
+					회원이 존재하지 않습니다.
+					<br>
+					</td>
 				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>
-					<td></td>
-					<td></td>
-				</tr>
+<% 
+}
+%>
 			</tbody>
 		</table>
 		<div>

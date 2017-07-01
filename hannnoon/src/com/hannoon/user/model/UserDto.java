@@ -20,29 +20,27 @@ public class UserDto {
 	private String birth2;
 	private String birth3;
 	
+	private String schoolName;
+	private String partName;
+	
+	public String getSchoolName() {
+		return schoolName;
+	}
+	public void setSchoolName(String schoolName) {
+		this.schoolName = schoolName;
+	}
+	public String getPartName() {
+		return partName;
+	}
+	public void setPartName(String partName) {
+		this.partName = partName;
+	}
+	
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
-	}
-//	public String getSchoolCode() {
-//		return schoolCode;
-//	}
-//	public void setSchoolCode(String schoolCode) {
-//		this.schoolCode = schoolCode;
-//	}
-//	public String getPartCode() {
-//		return partCode;
-//	}
-//	public void setPartCode(String partCode) {
-//		this.partCode = partCode;
-//	}
-	
-	
-	
-	public String getPw() {
-		return pw;
 	}
 	public int getSchoolCode() {
 		return schoolCode;
@@ -55,6 +53,9 @@ public class UserDto {
 	}
 	public void setPartCode(int partCode) {
 		this.partCode = partCode;
+	}
+	public String getPw() {
+		return pw;
 	}
 	public void setPw(String pw) {
 		this.pw = pw;
