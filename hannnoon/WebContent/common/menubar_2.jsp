@@ -96,7 +96,7 @@ function addGroupRoom(){
 										<li>
 											<span class="opener">包府</span>
 											<ul id="">
-												<li><a href="<%=menubarRoot%>/admin/manageuser/index.jsp">雀盔包府</a></li>
+												<li><a href="<%=menubarRoot%>/admin?act=list">雀盔包府</a></li>
 												<li><a href="<%=menubarRoot%>/admin/stat/index.jsp">烹拌</a></li>
 											</ul>
 										</li>

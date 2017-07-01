@@ -31,6 +31,7 @@ public class SearchKeywordFindController extends HttpServlet {
 	@Override
 	public void init() throws ServletException {
 		super.init();
+		list = new ArrayList<>();
 	}
        
     public SearchKeywordFindController() {

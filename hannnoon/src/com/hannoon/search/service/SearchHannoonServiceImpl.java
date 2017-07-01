@@ -29,9 +29,8 @@ public class SearchHannoonServiceImpl implements SearchHannoonService {
 
 	@Override
 	public SearchResultListDto searchHannoon(String keyword) {
-		StringBuilder result = new StringBuilder();
 		Log.log("search service : " + keyword);
-		SearchResultListDto listDto = new SearchResultListDto();
+		SearchResultListDto listDto = new SearchResultListDto(); // 전체 검색 결과를 넣을 DTO
 		new SearchServiceThreadPool(keyword, listDto).startSearch();
 		
 		Log.log("Final Result : " + listDto.getBlogList().size());
@@ -51,6 +50,11 @@ public class SearchHannoonServiceImpl implements SearchHannoonService {
 	@Override
 	public List<SearchLogDto> searchKeyword(String keyword) {
 		return SearchDaoImpl.getSearchDao().searchKeyword(keyword);
+	}
+
+	@Override
+	public List<SearchLogDto> getKeywordRank() {
+		return SearchDaoImpl.getSearchDao().getKeywordRank();
 	}
 
 
