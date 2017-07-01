@@ -3,15 +3,17 @@ package com.hannoon.search.model;
 import java.util.ArrayList;
 
 public class SearchResultListDto {
-	private ArrayList<SearchResultBlogDto> blogList;
-	private ArrayList<SearchResultCafeDto> cafeList;
-	private ArrayList<SearchResultDicDto> dicList;
-	private ArrayList<SearchResultImageDto> imageList;
-	private ArrayList<SearchResultInTipDto> inTipList;
-	private ArrayList<SearchResultNewsDto> newsList;
-	private ArrayList<SearchResultProfDto> profList;
-	private ArrayList<SearchResultWebDto> webList;
-	private ArrayList<SearchResultDto> defaultList;
+	private ArrayList<SearchResultBlogDto> blogList; // 블로그
+	private ArrayList<SearchResultCafeDto> cafeList; // 카페
+	private ArrayList<SearchResultDicDto> dicList; // 사전
+	private ArrayList<SearchResultImageDto> imageList; // 이미지
+	private ArrayList<SearchResultInTipDto> inTipList; // 네이버 : 지식인, 다음 : 팁
+	private ArrayList<SearchResultNewsDto> newsList; // 뉴스
+	private ArrayList<SearchResultProfDto> profList; // 전문자료
+	private ArrayList<SearchResultWebDto> webList; // 웹
+	private ArrayList<SearchResultDto> defaultList; // 디폴트
+	// private ArrayList<HangleDto> hangleList;
+	// private ArrayList<HannoonDto> hannoonList;
 
 	public SearchResultListDto() {
 		blogList = new ArrayList<>();

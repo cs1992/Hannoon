@@ -25,19 +25,27 @@ public class SearchHannoonAction implements Action {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String keyword = Encoding.isoToEuc(request.getParameter(SearchConstance.KEYWROD));
-		String searchName = request.getParameter(SearchConstance.SEARCH_NAME_PARAM);
+		String keyword = Encoding.isoToEuc(request.getParameter(SearchConstance.KEYWROD)); // 검색어
+		String searchName = request.getParameter(SearchConstance.SEARCH_NAME_PARAM); // 검색 유형
+		
 		HttpSession session = request.getSession();
 		UserDto userInfo = (UserDto)session.getAttribute(SearchConstance.USER_INFO);
 		
-		SearchHannoonServiceImpl.getSearchHannoonService().updateHit(keyword, userInfo.getId());
+		SearchHannoonServiceImpl.getSearchHannoonService().updateHit(keyword, userInfo.getId()); // 검색 횟수 증가
 		Log.log("search action keyworkd : " + keyword + ", " + searchName);
 
-		SearchResultListDto listDto = SearchHannoonServiceImpl.getSearchHannoonService().searchHannoon(keyword);
-
-		request.setAttribute(SearchConstance.SEARCH_RESULT_LIST, listDto);
-		request.setAttribute(SearchConstance.KEYWROD, keyword);
-		// return SearchConstance.SEARCH_RESULT_PATH;
+		SearchResultListDto listDto = SearchHannoonServiceImpl.getSearchHannoonService().searchHannoon(keyword); // 실제 검색 (네이버, 다음)
+		//listDto.setHangle(SearchHangleServiceImpl.getSEar...search(keyword));
+		//listDto.setHannoon(SearchHaoonSer...getSEarch....search(keyword));
+		
+		/*
+		 * title : 키워드가 있느냐, 앞에 있느냐, 몇번있느냐
+		 * description : 키워그있느냐, 앞에 있느냐, 몇번있느냐
+		 */
+		
+		
+		session.setAttribute(SearchConstance.SEARCH_RESULT_LIST, listDto);
+		session.setAttribute(SearchConstance.KEYWROD, keyword);
 
 		return SearchConstance.SearchResultPath.values()[Integer.parseInt(searchName)].path;
 	}

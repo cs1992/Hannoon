@@ -11,8 +11,8 @@ public class SearchResultDto implements Comparable<SearchResultDto> {
 	protected String title;
 	protected String originLink;
 	protected String description;
-	protected int priority;
-	protected Engine engineType;
+	protected int priority; // 우선순위
+	protected Engine engineType; // 네이버냐 다음냐
 	
 	public SearchResultDto(Engine engineType){
 		this.engineType = engineType;
@@ -75,7 +75,7 @@ public class SearchResultDto implements Comparable<SearchResultDto> {
 
 	@Override
 	public int compareTo(SearchResultDto o) {
-		return Integer.compare(o.priority, priority);
+		return Integer.compare(o.priority, priority); // 0, 1, -1
 	}
 
 }

@@ -32,6 +32,7 @@ String root = request.getContextPath();
 <script type="text/javascript">
 var root = "<%=root%>";
 var keywordName = "<%=SearchConstance.KEYWROD%>";
+var keywordRank = "<%=SearchConstance.KEYWORD_RANK%>";
 </script>
 
 
@@ -48,7 +49,7 @@ var keywordName = "<%=SearchConstance.KEYWROD%>";
 			<div class="inner">
 
 				<!-- Header -->
-				<header id="header" class="icons" ><a href="index.jsp" class="logo"><img src="<%=root%>/template/images/hannoonlogo.png" width="200" hight="60">
+				<header id="header" class="icons" ><a href="<%=root %>/index.jsp" class="logo"><img src="<%=root%>/template/images/hannoonlogo.png" width="200" hight="60">
 				</a>
 				
 				<!-- Search --> 
@@ -57,8 +58,9 @@ var keywordName = "<%=SearchConstance.KEYWROD%>";
 				<input type="hidden" name="<%=SearchConstance.SEARCH_TYPE_PARAM%>" value="<%=SearchConstance.HANNOON%>">
 				<input type="hidden" name="<%=SearchConstance.SEARCH_NAME_PARAM%>" id="<%=SearchConstance.SEARCH_NAME_PARAM%>" value="<%=SearchConstance.SearchType.ALL.value%>">
 				<input type="text" name="<%=SearchConstance.KEYWROD%>" id="<%=SearchConstance.KEYWROD%>" placeholder="ÇÑ´«°Ë»ö" value="" onkeypress="javascript:if(event.keyCode == 13){search();}" onkeydown="javascript:getKeyword();" />
-				<div id="searchKeyword" style="display: none; border: #939699 1px solid; position: absolute;">
+				<div id="searchKeyword" style="display: none; border: 1px solid; position: absolute; background: #ffffff;">
 				<div id="searchList"></div>
+				</div>
 				<ul class="icons">
 				</ul>
 				</form>

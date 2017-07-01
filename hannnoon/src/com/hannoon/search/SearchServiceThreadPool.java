@@ -44,16 +44,16 @@ public class SearchServiceThreadPool {
 			for(SearchName searchName : SearchName.values()){
 				System.out.println(searchName);
 				for(Engine engineType : Engine.values()){
-					System.out.println(engineType);
+					Log.log(engineType + "");
 					engine = new SearchEngine(query, engineType, searchName);
-					if(engineType == Engine.NAVER){
+					if(engineType == Engine.NAVER){ // 네이버 검색
 						naverResult = new ArrayList<>();
 						naverResult = executor.submit(engine).get();
 						if(naverResult != null){
 //							Log.log(naverResult.toString());
 							
 						}
-					} else {
+					} else { // 다음검색
 						daumResult = new ArrayList<>();
 						daumResult = executor.submit(engine).get();
 						if(daumResult != null){

@@ -17,19 +17,19 @@ import com.hannoon.util.db.DBConnection;
 public class SearchDaoImpl implements SearchDao {
 
 	private static SearchDao searchDao;
-	
+
 	static {
 		searchDao = new SearchDaoImpl();
 	}
-	
-	private SearchDaoImpl(){
-		
+
+	private SearchDaoImpl() {
+
 	}
-	
+
 	public static SearchDao getSearchDao() {
 		return searchDao;
 	}
-	
+
 	@Override
 	public int updateHit(Map<String, String> map) {
 		int count = 0;
@@ -38,7 +38,7 @@ public class SearchDaoImpl implements SearchDao {
 		PreparedStatement pstmt = null;
 		try {
 			conn = DBConnection.getConnection();
-			StringBuffer sb = new StringBuffer();			
+			StringBuffer sb = new StringBuffer();
 			sb.append("merge into search_log \n");
 			sb.append("using dual \n");
 			sb.append("on (keyword = ?) \n");
@@ -52,24 +52,25 @@ public class SearchDaoImpl implements SearchDao {
 			pstmt.setString(2, SearchConstance.USER_ID);
 			pstmt.setString(3, map.get(SearchConstance.KEYWROD));
 
-			Log.log(sb.toString() + "\n" + map.get(SearchConstance.KEYWROD) + ", " + map.get(SearchConstance.USER_ID) + ", " + map.get(SearchConstance.KEYWROD));
+			Log.log(sb.toString() + "\n" + map.get(SearchConstance.KEYWROD) + ", " + map.get(SearchConstance.USER_ID)
+					+ ", " + map.get(SearchConstance.KEYWROD));
 			count = pstmt.executeUpdate();
 			Log.log("searchdao count : " + count);
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} catch (Exception e){
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DBClose.close(conn, pstmt);
 		}
-		
+
 		return count;
 	}
 
 	@Override
 	public List<SearchLogDto> searchKeyword(String keyword) {
 		List<SearchLogDto> list = new ArrayList<>();
-		
+
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -116,6 +117,52 @@ public class SearchDaoImpl implements SearchDao {
 			DBClose.close(conn, pstmt, rs);
 		}
 
+		return list;
+	}
+
+	@Override
+	public List<SearchLogDto> getKeywordRank() {
+		List<SearchLogDto> list = new ArrayList<>();
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+			conn = DBConnection.getConnection();
+			StringBuffer sb = new StringBuffer();
+			// sb.append("select rownum rank, a.keyword, a.hit a.seq \n");
+			// sb.append("from ( \n");
+			// sb.append(" select seq keyword, hit \n");
+			// sb.append(" from naver \n");
+			// sb.append(" order by hit desc \n");
+			// sb.append(" ) a \n");
+			// sb.append("where rownum < 11 \n");
+			sb.append("select rownum rank, a.keyword keyword, a.hit hit\n");
+			sb.append("from ( \n");
+			sb.append("		select keyword, hit \n");
+			sb.append("		from search_log \n");
+			sb.append("		order by hit desc \n");
+			sb.append("		) a \n");
+			sb.append("where rownum < 11 \n");
+
+			pstmt = conn.prepareStatement(sb.toString());
+
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				SearchLogDto searchLogDto = new SearchLogDto();
+				searchLogDto.setHit(rs.getInt("hit"));
+				searchLogDto.setKeyword(rs.getString("keyword"));
+
+				list.add(searchLogDto);
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			DBClose.close(conn, pstmt, rs);
+		}
 		return list;
 	}
 

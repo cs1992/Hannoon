@@ -1,3 +1,4 @@
+<%@page import="com.hannoon.util.SearchConstance"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 		</ul>
@@ -7,7 +8,10 @@
 
 		<div class="2u 12u$(small)">
 			<div class="row">
-				인기검색<br>1. 자바<br>2. 자바 변수<br>3. C++<br>4. C<br>.....
+				<div class="row"><b>인기검색어</b></div>
+				<ul class="alt" id="<%=SearchConstance.KEYWORD_RANK%>"></ul>
+				<div class="row" id="<%=SearchConstance.KEYWORD_RANK%>"></div>
+				<!-- 인기검색<br>1. 자바<br>2. 자바 변수<br>3. C++<br>4. C<br>..... -->
 			</div>
 			<br>
 			<div class="row">

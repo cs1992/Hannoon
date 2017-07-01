@@ -49,7 +49,7 @@
 	<%
 		int blogSize = listDto.getBlogList().size();
 		SearchResultBlogDto blogDto;
-		allResultCount = allResultCount > blogSize ? blogSize : allResultCount;
+		allResultCount = MAX_COUNT > blogSize ? blogSize : MAX_COUNT;
 		for (int i = 0; i < allResultCount; i++) {
 			blogDto = listDto.getBlogList().get(i);
 	%>
@@ -58,10 +58,11 @@
 		<div class="row">
 			<div class="12u 12u$(small)">
 				<div class="row">
-					<div class="10u 12u$(small)">
+					<div class="9u 12u$(small)">
 						<a href="<%=blogDto.getOriginLink()%>"><%=blogDto.getTitle()%></a>
 					</div>
 					<div class="2u 12u$(small)"><%=blogDto.getPostDate()%></div>
+					<div class="1u 12u$(small)"><img src="<%=root%>/template/images/<%=SearchConstance.ADD_ARTICLE_IMG %>" width="<%=ADD_ARTICLE_IMG_SIZE%>" onclick="javascript:displayAddArticle(<%=i%>, this);"/></div>
 				</div>
 				<div class="row">
 					<div class="12u 12i$(small)"><%=blogDto.getDescription()%></div>
@@ -79,6 +80,7 @@
 	</li>
 	<%
 		}
+		if(blogSize > MAX_COUNT){
 	%>
 	<li>
 		<div class="row">
@@ -89,15 +91,20 @@
 			</div>
 		</div>
 	</li>
+	
+	<%
+		}
+	%>
 
 	<header class="major">
 		<h3>카페</h3>
 	</header>
 	<%
+	
 		int cafeSize = listDto.getCafeList().size();
 		SearchResultCafeDto cafeDto;
 
-		allResultCount = allResultCount > cafeSize ? cafeSize : allResultCount;
+		allResultCount = MAX_COUNT > cafeSize ? cafeSize : MAX_COUNT;
 		for (int i = 0; i < allResultCount; i++) {
 			cafeDto = listDto.getCafeList().get(i);
 	%>
@@ -106,9 +113,11 @@
 		<div class="row">
 			<div class="12u 12u$(small)">
 				<div class="row">
-					<div class="12u 12u$(small)">
+					<div class="11u 12u$(small)">
 						<a href="<%=cafeDto.getOriginLink()%>"><%=cafeDto.getTitle()%></a>
 					</div>
+					<div class="1u 12u$(small)"><img src="<%=root%>/template/images/<%=SearchConstance.ADD_ARTICLE_IMG %>" width="<%=ADD_ARTICLE_IMG_SIZE%>" onclick="javascript:displayAddArticle(<%=i%>, this);"/></div>
+			
 				</div>
 				<div class="row">
 					<div class="12u 12i$(small)"><%=cafeDto.getDescription()%></div>
@@ -126,6 +135,7 @@
 	</li>
 	<%
 		}
+		if(cafeSize > MAX_COUNT){
 	%>
 	<li>
 		<div class="row">
@@ -136,14 +146,19 @@
 			</div>
 		</div>
 	</li>
+	
+	<%
+		}
+	%>
 	<header class="major">
 		<h3>이미지</h3>
 	</header>
 	<%
+		
 		int imageSize = listDto.getImageList().size();
 		SearchResultImageDto imageDto;
 
-		allResultCount = allResultCount > imageSize ? imageSize : allResultCount;
+		allResultCount = MAX_COUNT > imageSize ? imageSize : MAX_COUNT;
 		for (int i = 0; i < allResultCount; i++) {
 			imageDto = listDto.getImageList().get(i);
 	%>
@@ -152,9 +167,11 @@
 		<div class="row">
 			<div class="12u 12u$(small)">
 				<div class="row">
-					<div class="12u 12u$(small)">
+					<div class="11u 12u$(small)">
 						<a href="<%=imageDto.getOriginLink()%>"><%=imageDto.getTitle()%></a>
 					</div>
+					<div class="1u 12u$(small)"><img src="<%=root%>/template/images/<%=SearchConstance.ADD_ARTICLE_IMG %>" width="<%=ADD_ARTICLE_IMG_SIZE%>" onclick="javascript:displayAddArticle(<%=i%>, this);"/></div>
+			
 				</div>
 				<div class="row">
 					<div class="12u 12i$(small)">
@@ -167,6 +184,7 @@
 	</li>
 	<%
 		}
+		if(imageSize > MAX_COUNT){
 	%>
 	<li>
 		<div class="row">
@@ -177,14 +195,19 @@
 			</div>
 		</div>
 	</li>
+	
+	<%
+		}
+	%>
 	<header class="major">
 		<h3>지식인</h3>
 	</header>
 	<%
+		
 		int inTipSize = listDto.getInTipList().size();
 		SearchResultInTipDto inTipDto;
 
-		allResultCount = allResultCount > inTipSize ? inTipSize : allResultCount;
+		allResultCount = MAX_COUNT > inTipSize ? inTipSize : MAX_COUNT;
 		for (int i = 0; i < allResultCount; i++) {
 			inTipDto = listDto.getInTipList().get(i);
 	%>
@@ -193,9 +216,11 @@
 		<div class="row">
 			<div class="12u 12u$(small)">
 				<div class="row">
-					<div class="12u 12u$(small)">
+					<div class="11u 12u$(small)">
 						<a href="<%=inTipDto.getOriginLink()%>"><%=inTipDto.getTitle()%></a>
 					</div>
+					<div class="1u 12u$(small)"><img src="<%=root%>/template/images/<%=SearchConstance.ADD_ARTICLE_IMG %>" width="<%=ADD_ARTICLE_IMG_SIZE%>" onclick="javascript:displayAddArticle(<%=i%>, this);"/></div>
+			
 				</div>
 				<div class="row">
 					<div class="12u 12i$(small)"><%=inTipDto.getDescription()%></div>
@@ -206,6 +231,7 @@
 	</li>
 	<%
 		}
+		if(inTipSize > MAX_COUNT){
 	%>
 	<li>
 		<div class="row">
@@ -216,6 +242,9 @@
 			</div>
 		</div>
 	</li>
+	<%
+		}
+	%>
 
 	<header class="major">
 		<h3>사전</h3>
@@ -224,7 +253,7 @@
 		int dicSize = listDto.getDicList().size();
 		SearchResultDicDto dicDto;
 
-		allResultCount = allResultCount > dicSize ? dicSize : allResultCount;
+		allResultCount = MAX_COUNT > dicSize ? dicSize : MAX_COUNT;
 		for (int i = 0; i < allResultCount; i++) {
 			dicDto = listDto.getDicList().get(i);
 	%>
@@ -239,6 +268,8 @@
 					<div class="9u 12u$(small)">
 						<a href="<%=dicDto.getOriginLink()%>"><%=dicDto.getTitle()%></a>
 					</div>
+					<div class="1u 12u$(small)"><img src="<%=root%>/template/images/<%=SearchConstance.ADD_ARTICLE_IMG %>" width="<%=ADD_ARTICLE_IMG_SIZE%>" onclick="javascript:displayAddArticle(<%=i%>, this);"/></div>
+			
 				</div>
 				<div class="row">
 					<div class="12u 12i$(small)"><%=dicDto.getDescription()%></div>
@@ -249,6 +280,7 @@
 	</li>
 	<%
 		}
+		if(dicSize > MAX_COUNT){
 	%>
 	<li>
 		<div class="row">
@@ -259,6 +291,9 @@
 			</div>
 		</div>
 	</li>
+	<%
+		}
+	%>
 
 	<header class="major">
 		<h3>전문자료</h3>
@@ -267,7 +302,7 @@
 		int profSize = listDto.getProfList().size();
 		SearchResultProfDto profDto;
 
-		allResultCount = allResultCount > profSize ? profSize : allResultCount;
+		allResultCount = MAX_COUNT > profSize ? profSize : MAX_COUNT;
 		for (int i = 0; i < allResultCount; i++) {
 			profDto = listDto.getProfList().get(i);
 	%>
@@ -276,9 +311,11 @@
 		<div class="row">
 			<div class="12u 12u$(small)">
 				<div class="row">
-					<div class="12u 12u$(small)">
+					<div class="11u 12u$(small)">
 						<a href="<%=profDto.getOriginLink()%>"><%=profDto.getTitle()%></a>
 					</div>
+				<div class="1u 12u$(small)"><img src="<%=root%>/template/images/<%=SearchConstance.ADD_ARTICLE_IMG %>" width="<%=ADD_ARTICLE_IMG_SIZE%>" onclick="javascript:displayAddArticle(<%=i%>, this);"/></div>
+			
 				</div>
 				<div class="row">
 					<div class="12u 12i$(small)"><%=profDto.getDescription()%></div>
@@ -289,6 +326,8 @@
 	</li>
 	<%
 		}
+		
+		if(profSize > MAX_COUNT){
 	%>
 	<li>
 		<div class="row">
@@ -299,6 +338,10 @@
 			</div>
 		</div>
 	</li>
+	
+	<%
+		}
+	%>
 
 	<header class="major">
 		<h3>뉴스</h3>
@@ -307,7 +350,7 @@
 	<%
 		int newsSize = listDto.getNewsList().size();
 		SearchResultNewsDto newsDto;
-		allResultCount = allResultCount > newsSize ? newsSize : allResultCount;
+		allResultCount = MAX_COUNT > newsSize ? newsSize : MAX_COUNT;
 		for (int i = 0; i < allResultCount; i++) {
 			newsDto = listDto.getNewsList().get(i);
 	%>
@@ -319,7 +362,9 @@
 					<div class="9u 12u$(small)">
 						<a href="<%=newsDto.getOriginLink()%>"><%=newsDto.getTitle()%></a>
 					</div>
-					<div class="3u 12u$(small)"><%=newsDto.getPostDate()%></div>
+					<div class="2u 12u$(small)"><%=newsDto.getPostDate()%></div>
+					<div class="1u 12u$(small)"><img src="<%=root%>/template/images/<%=SearchConstance.ADD_ARTICLE_IMG %>" width="<%=ADD_ARTICLE_IMG_SIZE%>" onclick="javascript:displayAddArticle(<%=i%>, this);" onclick="javascript:displayAddArticle(<%=i%>, this);"/></div>
+			
 				</div>
 				<div class="row">
 					<div class="12u 12i$(small)"><%=newsDto.getDescription()%></div>
@@ -335,6 +380,7 @@
 	</li>
 	<%
 		}
+		if(newsSize > MAX_COUNT){
 	%>
 	<li>
 		<div class="row">
@@ -345,13 +391,17 @@
 			</div>
 		</div>
 	</li>
+	
+	<%
+		}
+	%>
 	<header class="major">
 		<h3>웹</h3>
 	</header>
 	<%
 		int webSize = listDto.getWebList().size();
 		SearchResultWebDto webDto;
-		allResultCount = allResultCount > webSize ? webSize : allResultCount;
+		allResultCount = MAX_COUNT > webSize ? webSize : MAX_COUNT;
 		for (int i = 0; i < allResultCount; i++) {
 			webDto = listDto.getWebList().get(i);
 	%>
@@ -360,9 +410,11 @@
 		<div class="row">
 			<div class="12u 12u$(small)">
 				<div class="row">
-					<div class="12u 12u$(small)">
+					<div class="11u 12u$(small)">
 						<a href="<%=webDto.getOriginLink()%>"><%=webDto.getTitle()%></a>
 					</div>
+					<div class="1u 12u$(small)"><img src="<%=root%>/template/images/<%=SearchConstance.ADD_ARTICLE_IMG %>" width="<%=ADD_ARTICLE_IMG_SIZE%>" onclick="javascript:displayAddArticle(<%=i%>, this);"/></div>
+			
 				</div>
 				<div class="row">
 					<div class="12u 12i$(small)"><%=webDto.getDescription()%></div>
@@ -373,6 +425,8 @@
 	</li>
 	<%
 		}
+		
+		if(webSize > MAX_COUNT){
 	%>
 	<li>
 		<div class="row">
@@ -383,6 +437,10 @@
 			</div>
 		</div>
 	</li>
+	
+	<%
+		}
+	%>
 
 	<%@ include file="/search/searchrank.jsp"%>
 
