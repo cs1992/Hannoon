@@ -53,6 +53,7 @@ if(size != 0) {
 					<td></td>
 					<td><%= userDto.getBirth1() %></td>
 				</tr>
+				
 <%
 	}
 } else {
