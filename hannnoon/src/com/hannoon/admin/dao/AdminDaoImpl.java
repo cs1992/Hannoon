@@ -33,13 +33,14 @@ public class AdminDaoImpl implements AdminDao {
 			conn = DBConnection.getConnection();
 			StringBuffer sql = new StringBuffer();
 			sql.append("");
-			sql.append("select id, name, sn.school_name, sp.part_name, tel1, tel2, tel3, email1, email2, birth1 \n");
+			sql.append("select id, name, sn.school_name, sp.part_name, tel1, tel2, tel3, email1, email2, birth1, birth2, birth3 \n");
 			sql.append("from user_info ui, school_name sn, school_part sp \n");
 			sql.append("where ui.school_code = sn.school_code \n");
 			sql.append("and ui.part_code = sp.part_code \n");
-			sql.append("and is_manager = 0; \n");
-			sql.append("order by name; \n");
+			sql.append("and is_manager = 0 \n");
+			sql.append("order by name \n");
 			pstmt = conn.prepareStatement(sql.toString());
+			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
 				UserDto userDto = new UserDto();
@@ -53,6 +54,8 @@ public class AdminDaoImpl implements AdminDao {
 				userDto.setEmail1(rs.getString("email1"));
 				userDto.setEmail2(rs.getString("email2"));
 				userDto.setBirth1(rs.getString("birth1"));
+				userDto.setBirth2(rs.getString("birth2"));
+				userDto.setBirth3(rs.getString("birth3"));
 				
 				list.add(userDto);
 			}

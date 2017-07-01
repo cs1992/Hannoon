@@ -29,7 +29,7 @@ List<UserDto> list = (List<UserDto>) request.getAttribute("userList");
 				<th width="1">|</th>
 				<th width="20">捞皋老</th>
 				<th width="1">|</th>
-				<th width="10">积斥</th>
+				<th width="10">积老</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -49,9 +49,9 @@ if(size != 0) {
 					<td></td>
 					<td><%= userDto.getTel1() %> <%= userDto.getTel2() %> <%= userDto.getTel3() %></td>
 					<td></td>
-					<td><%= userDto.getEmail1() %> @ <%= userDto.getEmail2() %></td>
+					<td><%= userDto.getEmail1() %><%= userDto.getEmail2() %></td>
 					<td></td>
-					<td><%= userDto.getBirth1() %></td>
+					<td><%= userDto.getBirth1() %>.<%= userDto.getBirth2() %>.<%= userDto.getBirth3() %></td>
 				</tr>
 				
 <%
