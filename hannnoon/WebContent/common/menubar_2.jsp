@@ -16,6 +16,7 @@ System.out.println(StudyName);
 	
 </script>
 
+
 <script type="text/javascript">
 
 	function addStudyRoom() {
