@@ -13,6 +13,7 @@
 		document.StudyRoom.submit();
 	}
 </script>
+
 <center>
 	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
@@ -29,7 +30,7 @@
 
 					<form name="StudyRoom" method="Get" style="margin: 0px">
 						<h2 type="hidden" id="subject" name="subject">
-						<input type="text" name="studyname" value="내 한눈방">
+						<input type="text" name="studyname" value="내 한눈방" placeholder="방 이름">
 						<input type="hidden" name="act" value="">
 							<input class="button special small" type="button"
 								value="수 정" onclick="javascript:modify();"> 

@@ -29,24 +29,16 @@ public class StudyController extends HttpServlet {
 
 		String path = "/index.jsp";
 		if ("menu".equals(act)) {
-			path = "/study/gle.jsp";
+			path = "/study/roomself.jsp";
 			response.setContentType("text/plain;charset=EUC-KR");
-			StudyService sb = new StudyServiceImpl();
-			// sb.writeArticle();
-
 			PageMove.redirect(path, request, response);
-		} else if ("qweqw".equals(act)) {
-			path = "/gle.jsp";
-			StudyService sb = new StudyServiceImpl();
-			String StudyRoomname = request.getParameter("");
-//			sb.modifyArticle(studyDto);
 		} else if ("StudyRoom".equals(act)) {
 			String a = request.getParameter("studyname");
 			System.out.println(a);
-		path = "menubar_2.jsp";
-		String studyname = request.getParameter("studyname");
-		int count = StudyServiceImpl.getStudyServiceImpl().StudyRoomName(studyname);
-		PageMove.redirect(path, request, response);
+			path = "/study/gle.jsp";
+			String studyname = request.getParameter("studyname");
+			int count = StudyServiceImpl.getStudyServiceImpl().StudyRoomName(studyname);
+			PageMove.redirect(path, request, response);
 		} else {
 
 		}

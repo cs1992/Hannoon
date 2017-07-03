@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="EUC-KR" import="com.hannoon.study.model.StudyRoomDto" %>
 <%--<%@ include file="/search/testpublic.jsp"%> --%>
 
 <%
 String menubarRoot = request.getContextPath();
-String StudyName = request.getParameter("studyname");
+StudyRoomDto SRD = new  StudyRoomDto();
+String StudyName= SRD.getStudy_name();
+System.out.println(StudyName);
 %>
 <script>
 	function modiftTitle(seq) {
@@ -15,6 +17,7 @@ String StudyName = request.getParameter("studyname");
 </script>
 
 <script type="text/javascript">
+
 	function addStudyRoom() {
 		//alert("한눈방 만드는 모달창 띄우기고 한눈방 추기하기");
 		$('#study').append('<li><a href="<%=menubarRoot%>/StudyController?act=menu"><%=StudyName%></a></li>');
@@ -32,6 +35,7 @@ String StudyName = request.getParameter("studyname");
 	//document.menubarForm.act.value = "mvStudyRoom";
 	//document.menubarForm.submit();
 	}
+
 </script>
 
 
@@ -55,21 +59,20 @@ String StudyName = request.getParameter("studyname");
 		</section>
 
 
+
 		<!-- Menu -->
 		<nav id="menu">
 			<header class="major">
 				<h2>Menu</h2>
 			</header>
 			<ul>
-
 				<li><a href="<%=menubarRoot%>/board/notice/list.jsp">공지사항</a></li>
 				<li><span class="opener">내한눈방</span>
 					<ul id="study">
 						<!-- <li><a onclick="addStudyRoom()">+ 한눈방</a></li>  -->
 						<!-- 이걸 누르면 모달창 -->
-						<li><a class="btn btn-primary btn-lg"
-							onclick="addStudyRoom()" data-toggle="modal"
-							data-target="#myModal2"> + 한눈방</a></li>
+						<li><a onclick="addStudyRoom()" data-toggle="modal"
+							data-target="#myModal2">+ 한눈방</a></li>
 						<!-- 이걸 누르면 모달창 -->
 					</ul></li>
 				<li><span class="opener">내그룹방</span>
@@ -78,6 +81,7 @@ String StudyName = request.getParameter("studyname");
 						<!-- 이걸 누르면 모달창 -->
 
 					</ul></li>
+
 
 				<li><span class="opener">전공인</span>
 					<ul id="">
@@ -89,55 +93,17 @@ String StudyName = request.getParameter("studyname");
 				<li><a href="elements.html">스터디카페</a></li>
 
 				<li><a href="#">마이페이지</a></li>
-
+				<li><span class="opener">관리</span>
+					<ul id="">
+						<li><a href="<%=menubarRoot%>/admin/manageuser/index.jsp">회원관리</a></li>
+						<li><a href="<%=menubarRoot%>/admin/stat/index.jsp">통계</a></li>
+					</ul></li>
 			</ul>
 		</nav>
 
+		</ul>
+		</nav>
 
-							<!-- Menu -->
-								<nav id="menu">
-									<header class="major">
-										<h2>Menu</h2>
-									</header>
-									<ul>
-										<li><a href="<%=menubarRoot%>/board/notice/list.jsp">공지사항</a></li>
-										<li>
-											<span class="opener">내한눈방</span> 
-											<ul id="study">
-												<!-- <li><a onclick="addStudyRoom()">+ 한눈방</a></li>  --><!-- 이걸 누르면 모달창 -->
-												<li><a onclick="addStudyRoom()">+ 한눈방</a></li> <!-- 이걸 누르면 모달창 -->
-											</ul>
-										</li>
-										<li>
-											<span class="opener">내그룹방</span>
-											<ul id="group">
-												<li><a onclick="addGroupRoom()">+ 그룹방</a></li> <!-- 이걸 누르면 모달창 -->
-												
-											</ul>
-										</li>
-										
-										
-										<li>
-											<span class="opener">전공인</span>
-											<ul id="">
-												<li><a href="">컴퓨터</a></li>
-												<li><a href="">소프트웨어</a></li>
-												<li><a href="">경제</a></li>
-											</ul>
-										</li>
-										<li><a href="<%=menubarRoot%>/hannoonin/hannooninmain.jsp">한눈인</a></li>
-										<li><a href="elements.html">스터디카페</a></li>
-										
-										<li><a href="#">마이페이지</a></li>
-										<li>
-											<span class="opener">관리</span>
-											<ul id="">
-												<li><a href="<%=menubarRoot%>/admin/manageuser/index.jsp">회원관리</a></li>
-												<li><a href="<%=menubarRoot%>/admin/stat/index.jsp">통계</a></li>
-											</ul>
-										</li>
-									</ul>
-								</nav>
 
 
 		<!-- Footer -->
