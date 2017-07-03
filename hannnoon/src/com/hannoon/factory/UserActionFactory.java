@@ -7,7 +7,6 @@ public class UserActionFactory {
 	private static Action userLoginAction;
 	private static Action userJoinAction;
 	private static Action userIdSearchAction;
-	private static Action userZipSearchAction;
 
 	static {
 		userLoginAction = new UserLoginAction();
@@ -26,9 +25,5 @@ public class UserActionFactory {
 	public static Action getUserIdSearchAction() {
 		return userIdSearchAction;
 	}
-	
-	public static Action getUserZipSearchAction() {
-		return userZipSearchAction;
-	}
-	
+
 }

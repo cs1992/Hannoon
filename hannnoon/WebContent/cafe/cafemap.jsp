@@ -7,8 +7,8 @@
 <!-- <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=JdIav5mhXZUUMi9uZdcC"></script>	
  -->
  
-<script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=<%=SearchConstance.DAUM_API_KEY %>&libraries=services"></script>
-
+<%-- <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=<%=SearchConstance.DAUM_API_KEY %>&libraries=services"></script>
+ --%>
     <style>
 .map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
@@ -102,7 +102,8 @@
 
 
 
-<script>var markers = [];
+<script>
+var markers = [];
 
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {

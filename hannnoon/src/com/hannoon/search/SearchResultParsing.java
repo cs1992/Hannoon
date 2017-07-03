@@ -63,7 +63,7 @@ public class SearchResultParsing {
 			break;
 		default:
 			resultDto = new SearchResultDto(engineType);
-			System.out.println("SearchResultParsing default Type");
+//			System.out.println("SearchResultParsing default Type");
 			break;
 		}
 	}
@@ -96,7 +96,7 @@ public class SearchResultParsing {
 			break;
 		default:
 			list = new ArrayList<SearchResultDto>();
-			System.out.println("SearchResultParsing default Type");
+//			System.out.println("SearchResultParsing default Type");
 		}
 
 	}

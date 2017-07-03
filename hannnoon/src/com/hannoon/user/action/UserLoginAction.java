@@ -26,7 +26,7 @@ public class UserLoginAction implements Action {
 			String idsv = request.getParameter("idsv");
 			//////////////cookie///////////////
 			if("idsave".equals(idsv)){//아이디저장 체크
-				System.out.println("아디저장해");
+//				System.out.println("아디저장해");
 				Cookie cookie = new Cookie("kid_sid", id);//앞에""가 쿠기를 가르킬 수 있는 이름이야.
 				cookie.setMaxAge(60*60*24*365);
 				cookie.setPath(root);
@@ -53,7 +53,7 @@ public class UserLoginAction implements Action {
 			session.setAttribute("loginInfo", userDto);
 			//////////////session///////////////
 			
-			path = "/user/login/loginok.jsp"; //이거 하는 순간
+			path = "/index.jsp"; //이거 하는 순간
 //			request.setAttribute("loginInfo", userDto); //이거 초기화됨 //session해서 안필요함
 		} else {
 			path = "/user/login/loginfail.jsp";				
