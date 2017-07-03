@@ -90,7 +90,7 @@ function addGroupRoom(){
 											</ul>
 										</li>
 										<li><a href="<%=menubarRoot%>/hannoonin/hannooninmain.jsp">한눈인</a></li>
-										<li><a href="elements.html">스터디카페</a></li>
+										<li><a href="<%=menubarRoot%>/cafe/cafemap.jsp">스터디카페</a></li>
 										
 										<li><a href="#">마이페이지</a></li>
 										<li>
