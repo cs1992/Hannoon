@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR" import="com.hannoon.study.model.StudyRoomDto" %>
+	pageEncoding="EUC-KR" import="com.hannoon.study.model.StudyRoomDto"%>
 <%--<%@ include file="/search/testpublic.jsp"%> --%>
 
 <%
@@ -21,7 +21,21 @@ System.out.println(StudyName);
 
 	function addStudyRoom() {
 		//alert("한눈방 만드는 모달창 띄우기고 한눈방 추기하기");
-		$('#study').append('<li><a href="<%=menubarRoot%>/StudyController?act=menu"><%=StudyName%></a></li>');
+		var li = document.createElement('li'); // DIV 객체 생성
+		var idx = 0;
+		li.setAttribute('study', 'li' + idx);
+		li.innerHTML = document.getElementById("study").value;
+		document.getElementById('study').appendChild(li);
+		idx++;
+
+	
+	
+		document.location.href= "<%=menubarRoot%>/StudyController?act=menu";
+		document.study.submit();
+		
+		
+
+		//$('#study').append('<li><a href="<%=menubarRoot%>/StudyController?act=menu"><%=StudyName%></a></li>');
 
 	//document.menubarForm.action = "<%=menubarRoot%>/search";
 	//document.menubarForm.act.value = "mvStudyRoom";
@@ -36,7 +50,6 @@ System.out.println(StudyName);
 	//document.menubarForm.act.value = "mvStudyRoom";
 	//document.menubarForm.submit();
 	}
-
 </script>
 
 

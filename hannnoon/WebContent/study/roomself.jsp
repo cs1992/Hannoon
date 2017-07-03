@@ -1,4 +1,5 @@
-<%@page import="com.sun.org.apache.bcel.internal.classfile.Attribute"%>
+<%@page import="com.hannoon.user.model.UserDto"%>
+
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 
@@ -8,8 +9,12 @@
 <!--  우리가 꾸밀 곳 여기 메인패널 -->
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<% 
 	
+	UserDto SR = (UserDto) session.getAttribute("loginInfo");
+	%>
 <script type="text/javascript">
+
 	$(function() {
 		$('#part_name').on('click', function() {
 			var addOptionTag = "<option value='1'>1</option>";
@@ -29,7 +34,9 @@
 		document.StudyRoom.act.value = "StudyRoom";
 		document.StudyRoom.submit();
 	}
-
+window.onload=function(){
+	$('#myModal2').modal("show");
+}
 </script>
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
@@ -51,19 +58,19 @@
 				size="12"><input type="hidden" name="act"   value=""></td>
 		</tr>
 		<tr>
-			<td class="td2">아이디(ID)<font color="red">*</font></td>
+			<td class="td2">아이디(ID)<font color="red"></font></td>
 			<td class="td4">
 				<%--세션의 아이디 --%>
 				<input type="hidden" name="id" id="userid" value="" size="12"
 				onkeyup="javascript:idcheck();">
-				<div id="idresult"><%=session.getId()%></div>
+				<div id="idresult"><%=SR.getId()%></div>
 			</td>
 		</tr>
 		<tr>
 			<td class="td1">공유방 대상<font color="red">*</font></td>
 			<td class="td3">한 눈분류&nbsp;&nbsp; <select name="part_name"
 				id="part_name">
-					<option value=""><%-- 파트넘버 --%></option>
+					<option value="" onclick="javascript:part_code();"><%-- 파트넘버 --%></option>
 
 			</select>
 			</td>

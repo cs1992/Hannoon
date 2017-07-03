@@ -32,7 +32,7 @@ public class StudyServiceImpl implements StudyService {
 	}
 
 	@Override
-	public List<StudyGleDto> listArticle(int bcode, int pg, String key, String word) {
+	public List<StudyGleDto> listArticle(String id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -56,9 +56,9 @@ public class StudyServiceImpl implements StudyService {
 	}
 
 	@Override
-	public int StudyRoomName(String studyName) {
+	public int StudyRoomName(String studyName, String id) {
 		// TODO Auto-generated method stub
-		return StudyDao.getStudyDao().StudyRoomName(studyName);
+		return StudyDao.getStudyDao().StudyRoomName(studyName, id);
 	}
 
 }

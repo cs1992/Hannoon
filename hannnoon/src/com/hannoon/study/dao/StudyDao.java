@@ -34,7 +34,7 @@ public class StudyDao implements StudyInterface {
 	}
 
 	@Override
-	public List<StudyRoomDto> listArticle(int bcode, int pg, String key, String word) {
+	public List<StudyRoomDto> listArticle(String id) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		int cnt = 0;
@@ -46,15 +46,18 @@ public class StudyDao implements StudyInterface {
 			StringBuffer sql = new StringBuffer();
 			sql.append("select *  \n");
 			sql.append("from study_room  \n");
-
+			sql.append("where id= "+id+"");
 			pstmt = conn.prepareStatement(sql.toString());
-
+			
 			pstmt.executeUpdate();
 			if (rs.next()) {
 				StudyRoomDto studyRoom = new StudyRoomDto(); // 그래서 일치하는게 있으면
 																// 넣으려고 여기서 new함
 				studyRoom.setId(rs.getString("id"));
 				studyRoom.setStudy_name(rs.getString("name"));
+				studyRoom.setPart_code(rs.getInt("part_code"));
+				studyRoom.setShare_id(rs.getInt("share_code"));
+				
 				list.add(studyRoom);
 				System.out.println(studyRoom.getStudy_name());
 			}
@@ -87,7 +90,7 @@ public class StudyDao implements StudyInterface {
 	}
 
 	@Override
-	public int StudyRoomName(String studyName) {
+	public int StudyRoomName(String studyName, String id) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		int cnt = 0;
@@ -97,7 +100,7 @@ public class StudyDao implements StudyInterface {
 			conn = DBConnection.getConnection();
 			StringBuffer sql = new StringBuffer();
 			sql.append("insert into study_room(part_code, id, study_code, study_name)  \n");
-			sql.append("values (0, 'admin', 1, ?)  \n");
+			sql.append("values (study_code_add, '"+id +"', study_code_add, ?)  \n");
 
 			pstmt = conn.prepareStatement(sql.toString());
 			pstmt.setString(1, studyName);
