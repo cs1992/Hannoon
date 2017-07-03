@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.hannoon.factory.AdminActionFactory;
 import com.hannoon.util.PageMove;
+import com.hannoon.util.Encoding;
+import com.hannoon.util.NumberCheck;
 
 
 @WebServlet("/admin")
@@ -19,9 +21,17 @@ public class AdminContorller extends HttpServlet {
 
 		String act = request.getParameter("act");
 		
+		String id = Encoding.isoToEuc(request.getParameter("id"));
+		int pg = NumberCheck.nullToOne(request.getParameter("pg")); //페이지번호가 0이 나올수가 없음
+		String key = Encoding.nullToBlank(request.getParameter("key"));
+		String word = Encoding.isoToEuc(request.getParameter("word"));
+		
+		String queryString = "?id=" + id + "&pg=" + pg + "&key=" + key + "&word=" + Encoding.urlFormat(word); 
+		
 		String path = "/admin/manageuser/index";
 		if("list".equals(act)) {
 			path = AdminActionFactory.getAdminUserListAction().execute(request, response);
+			path += queryString;
 			PageMove.forward(path, request, response);
 		} else if("".equals(act)) {
 			

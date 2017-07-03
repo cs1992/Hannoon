@@ -45,7 +45,7 @@ function joinmove(){
 	  <div class="modal-dialog modal-sm">
 	    <div class="modal-content">
 	      <div class="modal-header">
-		<button type="button" class="close closeButton" data-dismiss="modal"><span aria-hidden="true">¡¿</span><span class="sr-only">Close</span></button>
+		<button type="button" class="close closeButton" data-dismiss="modal" aria-labe="Close"><span aria-hidden="true">¡¿</span><span class="sr-only">Close</span></button>
 		<h1 class="modal-title" id="myModalLabel">Login</h1>
 	      </div>
 	      <div class="modal-body">
