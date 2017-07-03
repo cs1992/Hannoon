@@ -56,9 +56,9 @@ html{
  	<div class="12u 12u$(small)" >
 	<img src="<%=rootTip%>/template/images/mainstart.jpg" style="height: 70%;">
 	<div class="button2">
-	<button type="button" class="button" data-toggle="modal" data-target="#modal_login" onclick="">
+	<button type="button" class="button special" data-toggle="modal" data-target="#modal_login" onclick="">
 	&nbsp;로그인&nbsp;</button>
- 	<button type="button" class="button" data-toggle="modal" data-target="#modal_join" onclick="">
+ 	<button type="button" class="button special" data-toggle="modal" data-target="#modal_join" onclick="">
  	회원가입</button>
  	</div>
  	</div>

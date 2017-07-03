@@ -11,6 +11,12 @@ function search(){
 	document.searchForm.submit();
 }
 
+function searchWithKeyword(keyword){
+	document.searchForm.keyword.value = keyword;
+	document.searchForm.action = root + "/search";
+	document.searchForm.submit();
+}
+
 function selectSearchType(type, el, keyword) {
 	selected = type;
 	var past = document.getElementsByClassName("button special small")[0];
@@ -22,11 +28,13 @@ function selectSearchType(type, el, keyword) {
 		el.className = "button special small";
 		//location.reload();
 		
+		/*
 		document.searchForm.search_name.value = type;
 		document.searchForm.keyword.value = keyword;
 		document.searchForm.action = root + "/search";
 		document.searchForm.submit();
-		
+		*/
+		document.location.href=root + resultPath[type];
 	}
 }
 
@@ -145,3 +153,51 @@ function hide(eid){
 	}
 	
 }
+
+
+function selectKeyword(kw){
+	document.getElementById("keyword").value = kw;
+	checkFirst = true;
+	loopSendKeyword = false;
+	lastkeyword = "";
+	hide("searchKeyword");
+}
+
+
+
+
+
+function startRank(){
+	sendRequest(root + "/" + keywordRank, null, displayRank, "GET");
+}
+
+function displayRank(){
+	if(httpRequest.readyState == 4) {
+		if(httpRequest.status == 200) {
+			var txt = httpRequest.responseText;
+			document.getElementById(keywordRank).innerHTML = txt;
+			window.setTimeout("startrank();", 10000);
+		} else {
+			alert("문제발생 : " + httpRequest.status);
+		}
+	}
+}
+
+function selInborder(i){
+	var seltb = document.getElementById(keywordRank + i);
+	//seltb.style.border = "#00cc33 3px solid";
+	seltb.style.fontSize = "13";
+	seltb.style.fontWeight = "bold";
+}
+
+function selOutborder(i){
+	var seltb = document.getElementById(keywordRank + i);
+	//seltb.style.border = "#00cc33 0px solid";
+	seltb.style.fontSize = "12";
+	seltb.style.fontWeight = "";
+}
+
+function displayAddArticle(i, el){
+	console.log("display : " + i);
+}
+

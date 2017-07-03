@@ -151,7 +151,7 @@ function passwordcheck(){
 for(int m=1; m<=12; m++) {
 	if(m<10){
 %>
-								<option value="<%=m%>"><%out.print("0"+m);%></option>
+								<option value="<%="0"+m%>"><%out.print("0"+m);%></option>
 <%
 	} else {
 %>
@@ -174,7 +174,11 @@ for(int m=1; m<=12; m++) {
 			<td><div style="float:left;">전화번호</div>
 				<div class="row">
 					<div class="4u 12u$(small)">
-						<input type="text" name="tel1" id="tel1" value="" size="12" placeholder="010"></div>
+						<select name="tel1">
+			            <option value="010">010</option>
+						<option value="011">011</option>
+						<option value="016">016</option>
+						</select></div>
 					<div class="4u 12u$(small)">
 						<input type="text" name="tel2" id="tel2" value="" size="12" placeholder="0000"></div>
 					<div class="4u 12u$(small)">

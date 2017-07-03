@@ -32,7 +32,7 @@ public class SearchController extends HttpServlet {
 		
 		String path = "/index.jsp";
 		
-		if(SearchConstance.HANNOON.equals(searchType)){
+		if(SearchConstance.HANNOON.equals(searchType)){ // 한눈 검색 했을 때 (네이버, 다음, 한글, 한눈인글)
 			path = SearchActionFactory.getSearchHannoonAction().execute(request, response);
 			PageMove.forward(path, request, response);
 		} else if("".equals("")){

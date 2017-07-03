@@ -106,7 +106,6 @@ System.out.println(StudyName);
 		</nav>
 
 
-
 		<!-- Footer -->
 		<footer id="footer">
 			<p class="copyright">

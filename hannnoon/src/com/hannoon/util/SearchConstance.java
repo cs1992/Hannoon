@@ -5,10 +5,14 @@ public class SearchConstance {
 	public final static String SEARCH_NAME_PARAM = "search_name";
 
 	public final static String SEARCH_RESULT_PATH = "/search/testresult.jsp";
+	public final static String SEARCH_KEYWORD_RANK_PATH = "/search/ranklist.jsp";
+	public final static String ADD_ARTICLE_IMG = "add_article.png";
 
 	public final static String HANNOON = "hannoon";
 	public final static String KEYWROD = "keyword";
 	public final static String SEARCH_RESULT_LIST = "searchResultList";
+	public final static String KEYWORD_RANK = "keywordrank";
+	public final static String ADD_ARTICLE = "addArticle";
 	
 	public final static String DAUM_API_KEY = "e1abe1edf7880a35d933a0fae69548f9";
 	public final static String NAVER_API_ID ="eSez1gcGAZUzO3T_T4MR";
@@ -20,6 +24,11 @@ public class SearchConstance {
 
 	public final static int DISPLAY_COUNT = 20;
 	public final static int SEARCH_NAME_MAX = 8;
+	
+//	public class Constance{
+//		static final int NAVER = 0;
+//		static final int DAUM = 1;
+//	}
 	
 	public static enum Engine {
 		NAVER(0), DAUM(1);

@@ -2,19 +2,19 @@ package com.hannoon.factory;
 
 import com.hannoon.action.Action;
 import com.hannoon.search.action.SearchHannoonAction;
-import com.hannoon.search.action.SearchKeywordFindAction;
+import com.hannoon.search.action.SearchKeywordRankAction;
 
 public class SearchActionFactory {
 	private static Action searchHannoonAction;
-	private static Action searchKeywordFindAction;
+	private static Action searchKeywordRankAction;
 
 	static {
 		searchHannoonAction = new SearchHannoonAction();
-		searchKeywordFindAction = new SearchKeywordFindAction();
+		searchKeywordRankAction = new SearchKeywordRankAction();
 	}
 
-	public static Action getSearchKeywordFindAction() {
-		return searchKeywordFindAction;
+	public static Action getSearchKeywordRankAction() {
+		return searchKeywordRankAction;
 	}
 
 	public static Action getSearchHannoonAction() {

@@ -41,7 +41,7 @@ public class UserJoinAction implements Action {
 		
 		if(cnt != 0) {			
 			request.setAttribute("userInfo", userDto);
-			path = "/user/join/joinok.jsp";
+			path = "/tip/tip.jsp";
 		} else {
 			path = "/user/join/joinfail.jsp";
 		}

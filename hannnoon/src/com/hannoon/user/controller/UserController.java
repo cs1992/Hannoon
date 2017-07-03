@@ -20,29 +20,15 @@ public class UserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		String root = request.getContextPath();
-		
+				
 		String act = request.getParameter("act");
 //		System.out.println("act ===== " + act);
 		
 		String path = "/user/userindex.jsp";
-		boolean flag = false;
-		if("mvjoin".equals(act)) {
-			path =  "/user/join/user.jsp";
-			PageMove.redirect(path, request, response);
-		} else if("mvlogin".equals(act)) {
-			path =  "/user/login/login.jsp";		
-			PageMove.redirect(path, request, response);
-		} else if("idsearch".equals(act)) {
+
+		if("idsearch".equals(act)) {
 			path = UserActionFactory.getUserIdSearchAction().execute(request, response);
 			PageMove.redirect(path, request, response);
-		} else if("mvzip".equals(act)) {
-			path =  "/user/join/zipsearch.jsp";								
-			PageMove.redirect(path, request, response);
-		} else if("zipsearch".equals(act)) {
-			path = UserActionFactory.getUserZipSearchAction().execute(request, response);
-			PageMove.forward(path, request, response);
 		} else if("join".equals(act)) {
 			path = UserActionFactory.getUserJoinAction().execute(request, response);
 			PageMove.forward(path, request, response);

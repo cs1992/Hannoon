@@ -53,7 +53,7 @@ public class UserLoginAction implements Action {
 			session.setAttribute("loginInfo", userDto);
 			//////////////session///////////////
 			
-			path = "/user/login/loginok.jsp"; //이거 하는 순간
+			path = "/index.jsp"; //이거 하는 순간
 //			request.setAttribute("loginInfo", userDto); //이거 초기화됨 //session해서 안필요함
 		} else {
 			path = "/user/login/loginfail.jsp";				

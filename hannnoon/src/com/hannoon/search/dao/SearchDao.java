@@ -9,4 +9,7 @@ public interface SearchDao {
 	int updateHit(Map<String, String> map);
 	
 	List<SearchLogDto> searchKeyword(String keyword);
+	
+
+	List<SearchLogDto> getKeywordRank();
 }
