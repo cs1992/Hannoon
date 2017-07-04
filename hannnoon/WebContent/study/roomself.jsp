@@ -9,10 +9,7 @@
 <!--  우리가 꾸밀 곳 여기 메인패널 -->
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<% 
 	
-	UserDto SR = (UserDto) session.getAttribute("loginInfo");
-	%>
 <script type="text/javascript">
 
 	$(function() {
@@ -63,7 +60,7 @@ window.onload=function(){
 				<%--세션의 아이디 --%>
 				<input type="hidden" name="id" id="userid" value="" size="12"
 				onkeyup="javascript:idcheck();">
-				<div id="idresult"><%=SR.getId()%></div>
+				<div id="idresult"><%=userDto.getId()%></div>
 			</td>
 		</tr>
 		<tr>
