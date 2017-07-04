@@ -107,7 +107,8 @@ String StudyName= SRD.getStudy_name();
 
 				<li><a href="#">마이페이지</a></li>
 <%
-if(userDto.getIsManager().equals("1")) {
+if(userDto != null)	{
+	if(userDto.getIsManager().equals("1")) {
 %>				
 				<li><span class="opener">관리</span>
 					<ul id="">
@@ -116,6 +117,7 @@ if(userDto.getIsManager().equals("1")) {
 					</ul>
 				</li>
 <%
+	}
 }
 %>				
 			</ul>

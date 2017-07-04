@@ -1,4 +1,4 @@
-<%@page import="com.hannoon.util.*, com.hannoon.user.model.UserDto"%>
+<%@page import="com.hannoon.util.*, com.hannoon.user.model.*"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%--<%@ include file="/common/public.jsp"%> --%>
