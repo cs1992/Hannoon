@@ -6,7 +6,6 @@
 String menubarRoot = request.getContextPath();
 StudyRoomDto SRD = new  StudyRoomDto();
 String StudyName= SRD.getStudy_name();
-System.out.println(StudyName);
 %>
 <script>
 	function modiftTitle(seq) {
@@ -107,11 +106,18 @@ System.out.println(StudyName);
 				<li><a href="<%=menubarRoot%>/cafe/cafemap_2.jsp">스터디카페</a></li>
 
 				<li><a href="#">마이페이지</a></li>
+<%
+if(userDto.getIsManager().equals("1")) {
+%>				
 				<li><span class="opener">관리</span>
 					<ul id="">
 						<li><a href="<%=menubarRoot%>/admin?act=list">회원관리</a></li>
 						<li><a href="<%=menubarRoot%>/admin/stat/index.jsp">통계</a></li>
-					</ul></li>
+					</ul>
+				</li>
+<%
+}
+%>				
 			</ul>
 		</nav>
 
