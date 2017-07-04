@@ -7,34 +7,49 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class InController
- */
-@WebServlet("/InController")
+import org.apache.tomcat.jdbc.pool.interceptor.SlowQueryReport.QueryStats;
+
+import com.hannoon.factory.AdminActionFactory;
+import com.hannoon.factory.BoardActionFactory;
+import com.hannoon.util.*;
+
+@WebServlet("/hannoonin")
 public class InController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public InController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String act = request.getParameter("act");
+		
+		int gcode = NumberCheck.nullToZero(request.getParameter("gcode"));
+		int pg = NumberCheck.nullToOne(request.getParameter("pg"));
+		String key = Encoding.nullToBlank(request.getParameter("key"));
+		String word = request.getParameter("word");
+		
+		if(request.getMethod().equals("GET"))
+			word = Encoding.isoToEuc(word);
+		
+		String queryString = "?gcode=" + gcode + "&pg=" + pg + "&key=" + key + "&word=" + Encoding.urlFormat(word);
+		String path = "/index.jsp";
+		
+		if("write".equals(act)){
+			path = "/hannoonin/question.jsp" + queryString;
+			PageMove.redirect(path, request, response);
+		} else if("list".equals(act)){
+			path = BoardActionFactory.getNoticeBoardListAction().execute(request, response);
+			path += queryString;
+			PageMove.forward(path, request, response);
+		} else if("".equals(act)){
+			
+		} else if("".equals(act)){
+			
+		} else if("".equals(act)){
+			
+		}
+		
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		request.setCharacterEncoding(ConstanceValue.DEFAULT_CHAR_SET);
 		doGet(request, response);
 	}
 
