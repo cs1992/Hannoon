@@ -21,6 +21,8 @@ public class AdminContorller extends HttpServlet {
 
 		String act = request.getParameter("act");
 		
+		String bid = request.getParameter("bid"); //블랙리스트 처리 할 id 받음
+		
 		String id = Encoding.isoToEuc(request.getParameter("id"));
 		int pg = NumberCheck.nullToOne(request.getParameter("pg")); //페이지번호가 0이 나올수가 없음
 		String key = Encoding.nullToBlank(request.getParameter("key"));
@@ -33,8 +35,9 @@ public class AdminContorller extends HttpServlet {
 			path = AdminActionFactory.getAdminUserListAction().execute(request, response);
 			path += queryString;
 			PageMove.forward(path, request, response);
-		} else if("".equals(act)) {
-			
+		} else if("blacklist".equals(act)) {
+			path = AdminActionFactory.getAdminBlackListAction().execute(request, response);
+			PageMove.forward(path, request, response);
 		} else if("".equals(act)) {
 			
 		}

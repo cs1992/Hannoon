@@ -60,4 +60,9 @@ public class AdminServiceImpl implements AdminService {
 		return pageNavigation;
 	}
 
+	@Override
+	public int userBlackList(String bid) {
+		return AdminDaoImpl.getAdminDao().userBlackList(bid);
+	}
+
 }

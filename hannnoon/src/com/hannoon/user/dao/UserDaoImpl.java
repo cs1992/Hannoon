@@ -106,7 +106,7 @@ public class UserDaoImpl implements UserDao {
 			conn = DBConnection.getConnection();
 			
 			StringBuffer sql = new StringBuffer();
-			sql.append("select id, name \n");
+			sql.append("select id, name, is_manager \n");
 			sql.append("from user_info \n");
 			sql.append("where id=? and pw=? \n");
 			
@@ -119,6 +119,7 @@ public class UserDaoImpl implements UserDao {
 				userDto = new UserDto(); //그래서 일치하는게 있으면 넣으려고 여기서 new함
 				userDto.setId(rs.getString("id"));
 				userDto.setName(rs.getString("name"));
+				userDto.setIsManager(rs.getString("is_manager"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

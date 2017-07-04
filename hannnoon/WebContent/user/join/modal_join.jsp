@@ -44,7 +44,7 @@ function join(){
 	}
 }
 
-	function idcheck(){
+function idcheck(){
 	idck = document.getElementById("idresult");
 	var idval = document.joinform.id.value;
 	
@@ -267,8 +267,8 @@ for(int m=1; m<=12; m++) {
 		<div class="row">
 		<div class="4u 12u$(small)">&nbsp;</div>
 		<div class="4u 12u$(small)">
-		<input type="button" class="special" value="회원가입" onclick="javascript:join();">
-		<input type="reset" value="취소">
+			<input type="button" class="special" value="회원가입" onclick="javascript:join();">
+			<input type="reset" value="취소">
 		</div>
 		
 		

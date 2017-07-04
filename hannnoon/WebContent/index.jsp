@@ -1,13 +1,11 @@
-<%@page import="com.hannoon.util.SearchConstance"%>
-<%@page import="com.hannoon.user.model.UserDto"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <%@ include file="/common/public.jsp"%>
 <%
-	UserDto userDto = new UserDto();
-	userDto.setId("id");
-	userDto.setName("name");
-	session.setAttribute(SearchConstance.USER_INFO, userDto);
+	//UserDto userDto = new UserDto();
+	//userDto.setId("id");
+	//userDto.setName("name");
+	//session.setAttribute(SearchConstance.USER_INFO, userDto);
 	response.sendRedirect(publicRoot + "/test.jsp");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">

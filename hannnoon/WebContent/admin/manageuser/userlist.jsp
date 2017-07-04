@@ -1,6 +1,5 @@
-<%@page import="com.hannoon.user.model.UserDto"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR" import="java.util.List,com.hannoon.util.*"%>
+	pageEncoding="EUC-KR" import="java.util.List"%>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <%@ include file="/common/header.jsp"%>
 <%
@@ -86,22 +85,23 @@ function ulSearchArticle() { //ÆûÀÌ ÀÖÀ»¶§´Â  submitÀ¸·Î ³Ñ±è ÆûÀÌ´Ï±î  hiddenÀ¸
 int size = list.size();
 if(size != 0) {
 	for(int i=0; i<size; i++) {
-		UserDto userDto = list.get(i);
+		UserDto userDtoList = list.get(i);
 %>
 			<tr class="trhover" onclick="javascript:showModal(<%=i%>);">
-				<td id="id<%=i%>"><%= userDto.getId()%></td>
+				<td id="id<%=i%>"><%= userDtoList.getId()%></td>
+				<input type="hidden" id="id" value="<%= userDtoList.getId()%>">
 				<td></td>
-				<td id="name<%=i%>"><%= userDto.getName()%></td>
+				<td id="name<%=i%>"><%= userDtoList.getName()%></td>
 				<td></td>
-				<td id="schoolname<%=i%>"><%= userDto.getSchoolName() %></td>
+				<td id="schoolname<%=i%>"><%= userDtoList.getSchoolName() %></td>
 				<td></td>
-				<td id="partname<%=i%>"><%= userDto.getPartName() %></td>
+				<td id="partname<%=i%>"><%= userDtoList.getPartName() %></td>
 				<td></td>
-				<td id="tel<%=i%>"><%= userDto.getTel1() %> <%= userDto.getTel2() %> <%= userDto.getTel3() %></td>
+				<td id="tel<%=i%>"><%= userDtoList.getTel1() %> <%= userDtoList.getTel2() %> <%= userDtoList.getTel3() %></td>
 				<td></td>
-				<td id="email<%=i%>"><%= userDto.getEmail1() %><%= userDto.getEmail2() %></td>
+				<td id="email<%=i%>"><%= userDtoList.getEmail1() %><%= userDtoList.getEmail2() %></td>
 				<td></td>
-				<td id="birth<%=i%>"><%= userDto.getBirth1() %>.<%= userDto.getBirth2() %>.<%= userDto.getBirth3() %></td>
+				<td id="birth<%=i%>"><%= userDtoList.getBirth1() %>.<%= userDtoList.getBirth2() %>.<%= userDtoList.getBirth3() %></td>
 			</tr>
 <%
 	}

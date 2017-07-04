@@ -19,6 +19,7 @@ public class UserDto {
 	private String birth1;
 	private String birth2;
 	private String birth3;
+	private String isManager;
 	
 	private String schoolName;
 	private String partName;
@@ -137,6 +138,12 @@ public class UserDto {
 	}
 	public void setBirth3(String birth3) {
 		this.birth3 = birth3;
+	}
+	public String getIsManager() {
+		return isManager;
+	}
+	public void setIsManager(String isManager) {
+		this.isManager = isManager;
 	}
 	
 }

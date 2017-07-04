@@ -1,11 +1,16 @@
-<%@page import="com.hannoon.util.SearchConstance"%>
+<%@page import="com.hannoon.util.*, com.hannoon.user.model.UserDto"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <%--<%@ include file="/common/public.jsp"%> --%>
 <%
 String root = request.getContextPath();
-%>
 
+UserDto userDto  = (UserDto) session.getAttribute(SearchConstance.USER_INFO);
+if (userDto == null) {
+	String nologinroot = "/tip/tip.jsp";
+	response.sendRedirect(root + nologinroot);
+}
+%>
 
 <!-- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
  -->
@@ -36,7 +41,6 @@ var root = "<%=root%>";
 var keywordName = "<%=SearchConstance.KEYWROD%>";
 var keywordRank = "<%=SearchConstance.KEYWORD_RANK%>";
 </script>
-
 
 </head>
 <body>

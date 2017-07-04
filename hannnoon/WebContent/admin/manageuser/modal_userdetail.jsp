@@ -10,7 +10,6 @@
 	font-size: 35px;
 }
 </style>
-
 <div class="modal fade" id="modal_userdetail" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
  <div class="modal-dialog modal-lg">
    <div class="modal-content">
@@ -18,16 +17,18 @@
 		<button type="button" class="close closeButton" data-dismiss="modal"><span aria-hidden="true">¡¿</span><span class="sr-only">Close</span></button>
 		<h2 class="modal-title" id="myModalLabel">Detail Info</h2>
      </div>
-     <div class="modal-body">
-<!-- Æû ½ÃÀÛ -->
-<div class="row" style="float:right;">
-	<ul class="actions">
-		<li><input type="button" class="special" value="ºí·¢ LIST" onclick=""></li>
-		<li><input type="button" class="special" value="°­Åð" onclick=""></li>
-	</ul>
-</div>
-<br><br><br>
+    	<div class="modal-body">
+     
+		<div class="row" style="float:right;">
+			<ul class="actions">
+				<li><input type="button" class="special" value="ºí·¢ LIST" data-toggle="modal" data-target="#modal_rblacklist"></li>
+				<%@ include file="/admin/manageuser/modal_rblacklist.jsp" %>
+			</ul>
+		</div>
+		<br><br><br>
 
+<!-- Æû ½ÃÀÛ -->
+<form name="userdetailform" method="post" action="#">
 <div class="table-wrapper">
 	<table>
 		<thead>
@@ -48,7 +49,7 @@
 		</thead>
 		<tbody>
 			<tr class="trhover">
-				<td id="modalid"></td>
+				<td id="modalid" value=""></td>
 				<td></td>
 				<td id="modalname"></td>
 				<td></td>
@@ -65,8 +66,14 @@
 		</tbody>
 	</table>
 </div>
+</form>
 <!-- Æû ³¡ -->
      </div>
     </div>
   </div>
 </div>
+<script>
+function modal_rblacklist_close() {
+	$('#modal_rblacklist .rblcloseButton').click();
+}
+</script>

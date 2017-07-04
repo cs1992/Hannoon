@@ -44,7 +44,7 @@ public class AdminDaoImpl implements AdminDao {
 			sql.append("	from user_info ui, school_name sn, school_part sp \n");
 			sql.append("	where ui.school_code = sn.school_code \n");
 			sql.append("	and ui.part_code = sp.part_code \n");
-			sql.append("	and is_manager = 0 \n");
+			sql.append("	and is_manager <> '1' \n");
 			String key = map.get("key");
 			String word = map.get("word");
 			
@@ -128,7 +128,7 @@ public class AdminDaoImpl implements AdminDao {
 			StringBuffer sql = new StringBuffer();
 			sql.append("select count(id) \n");
 			sql.append("from user_info \n");
-			sql.append("where is_manager = 0 \n");
+			sql.append("where is_manager <> '1' \n");
 			String key = map.get("key"); //검색조건 이름이냐 id냐
 			String word = map.get("word"); //검색어
 			if(!key.isEmpty() && !word.isEmpty()) {	
@@ -151,6 +151,29 @@ public class AdminDaoImpl implements AdminDao {
 			DBClose.close(conn, pstmt, rs);
 		}
 		return count;
+	}
+
+	@Override
+	public int userBlackList(String bid) {
+		Connection conn = null;
+	      PreparedStatement pstmt = null;
+	      int cnt = 0;
+	      try {
+	    	  
+	         conn = DBConnection.getConnection();
+	         String sql = "update user_info set is_manager='2' \n";
+	         sql += "where id = ?";
+	         pstmt = conn.prepareStatement(sql);
+
+	         pstmt.setString(1, bid);
+	         cnt = pstmt.executeUpdate();
+
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      } finally {
+	         DBClose.close(conn, pstmt);
+	      }
+	      return cnt;
 	}
 
 }
