@@ -8,8 +8,6 @@ int gcode = NumberCheck.nullToZero(request.getParameter("gcode"));
 int pg = NumberCheck.nullToOne(request.getParameter("pg"));
 String key = Encoding.nullToBlank(request.getParameter("key"));
 String word = Encoding.isoToEuc(request.getParameter("word"));
-
-UserDto userDto = (UserDto) session.getAttribute("loginInfo");
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

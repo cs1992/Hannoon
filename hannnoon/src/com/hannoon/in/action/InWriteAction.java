@@ -40,9 +40,9 @@ public class InWriteAction implements Action {
 			int cnt = InServiceImpl.getInService().writeArticle(inDto);
 			if(cnt != 0) {
 				request.setAttribute("gseq", gseq + "");
-				path = "/hannoonin/writeok.jsp";
+				path = "/in/writeok.jsp";
 			} else {
-				path = "/hannoonin/writefail.jsp";
+				path = "/in/writefail.jsp";
 			}
 		}	
 		return path;

@@ -33,7 +33,7 @@ public class InController extends HttpServlet {
 		String path = "/index.jsp";
 		
 		if("write".equals(act)){
-			path = "/hannoonin/question.jsp" + queryString;
+			path = "/in/question.jsp" + queryString;
 			PageMove.redirect(path, request, response);
 		} else if("list".equals(act)){
 			path = BoardActionFactory.getNoticeBoardListAction().execute(request, response);

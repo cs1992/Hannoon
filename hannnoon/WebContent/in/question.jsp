@@ -82,8 +82,8 @@
 				</script>
 				<center>
 				<ul class="actions small" style="align: center;">
-					<li><a href="#" class="button special small">질문등록</a></li>
-					<li><a href="#" class="button special small">질문취소</a></li>
+					<li><a href="<%=root%>/in/writeok.jsp" class="button special small">질문등록</a></li>
+					<li><a href="<%=root%>/in/writefail.jsp" class="button special small">질문취소</a></li>
 				</ul>
 				</center>
 			</div>

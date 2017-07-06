@@ -32,7 +32,7 @@ public class InListAction implements Action {
 		pageNavigation.setNavigator();
 		request.setAttribute("navigator", pageNavigation);
 			
-		return "/hannoonin/hannooninmain.jsp";
+		return "/in/main.jsp";
 	}
 
 }

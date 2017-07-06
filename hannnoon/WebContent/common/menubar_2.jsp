@@ -102,7 +102,7 @@ String StudyName= SRD.getStudy_name();
 						<li><a href="">소프트웨어</a></li>
 						<li><a href="">경제</a></li>
 					</ul></li>
-				<li><a href="<%=menubarRoot%>/hannoonin/hannooninmain.jsp">한눈인</a></li>
+				<li><a href="<%=menubarRoot%>/in/main.jsp">한눈인</a></li>
 				<li><a href="<%=menubarRoot%>/cafe/cafemap_2.jsp">스터디카페</a></li>
 
 				<li><a href="#">마이페이지</a></li>
